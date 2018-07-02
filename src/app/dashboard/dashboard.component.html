@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-xl-12 image">
+     <img src="assets/img/artboard-1.png"
+     srcset="assets/img/artboard-1@2x.png 2x,
+             assets/img/artboard-1@3x.png 3x"
+     class="sl-banner">
+        <h2 class="textOverImage">Welcome to</h2>
+        <h1 class="textOverImage">ShiftLeft</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-xl-4">
+        <mat-card class="sl-card" (click)="utils.changeRoute('SA')">
+          <img src="assets/img/blue-assessments-icon.svg" class="Assessments-icon" style="position: absolute;">
+          <mat-card-content>
+            <mat-card-title>
+              Security Assessment Management
+            </mat-card-title>
+            <mat-card-subtitle>
+              <small class="sl-pl0">Workflow of a questionnaire which will access the Security based on the answers</small>
+            </mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-xl-4" (click)="utils.changeRoute('TSR')">
+        <mat-card class="sl-card">
+          <img src="assets/img/blue-library.svg" class="Assessments-icon" style="position: absolute;">
+          <mat-card-content>
+            <mat-card-title>
+              Technical Security Requirements
+            </mat-card-title>
+            <mat-card-subtitle>
+              <small class="sl-pl0">Policies and procedures that apply to technology at Visa</small>
+            </mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div *ngIf="admin" class="col-sm-12 col-md-6 col-xl-4" (click)="utils.changeRoute('SA/admin-dashboard')">
+        <mat-card class="sl-card">
+          <img src="assets/img/blue-admin-dash-icon.svg" class="Assessments-icon" style="position: absolute; height: 55px; top: 20px;">
+          <mat-card-content>
+            <mat-card-title>
+              Admin Dashboard for Assessments
+            </mat-card-title>
+            <mat-card-subtitle>
+              <!--todo add the correct description and title-->
+              <small class="sl-pl0">Dashboard with the summary of all the Assessments</small>
+            </mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div *ngIf="admin" class="col-sm-12 col-md-6 col-xl-4" (click)="goToSLAP()">
+        <mat-card class="sl-card">
+          <img src="assets/img/blue-kcc-icon.svg" class="Assessments-icon" style="position: absolute; height: 55px; top: 20px;">
+          <mat-card-content>
+            <mat-card-title>
+              Shift Left Admin Console
+            </mat-card-title>
+            <mat-card-subtitle>
+              <!--todo add the correct description and title-->
+              <small class="sl-pl0">Portal to manage SA and also manage various applicable SA engagements</small>
+            </mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+<button mat-fab (click)="openDialog()" class="cta-top"><span matTooltip="Submit a new KCC"><mat-icon class="whiteFont">add</mat-icon></span></button>
+<button type="button" class="btn btn-default slide-out-btn" (click)="showStyle = !showStyle;"><mat-icon>more</mat-icon></button>
+
+<div class="clearfix"></div>
+<div class="row" id="kcc">
+    <div class="col-sm-12 col-md-12 col-xl-12 table-wrapper">
+        <h3 class="dialog-title">Key Controls Checklist Details</h3>
+        <div *ngIf="stillloading" class="loading">
+            <mat-spinner class="centered"></mat-spinner>
+            <h4>Loading ...</h4>
+        </div>
+        <div *ngIf="records">
+            <div class="table-inner-wrapper">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="tbodyTrRow">
+                            <th>KCC Id</th>
+                            <th>RTN#</th>
+                            <th>Project</th>
+                            <th>Project Manager</th>
+                            <th>Business Sponsor</th>
+                            <th>KCC Requestor</th>
+                            <th>KCC Accessor</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tbodyTrRow" *ngFor="let key of kccDetails.kccAssessmentDOs">
+                            <td class="column leftAlignedColumn">{{key.kccId || 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.rtnOreu || 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.projectName|| 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.projectManager|| 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.businessSponsor|| 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.kccRequestorName|| 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.kccAccessorName|| 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.statusMessage|| 'N/A'}}</td>
+                            <td class="column centerAlignedColumn">
+                                <app-dyn-menu [menuInfo]="key" [actnsComp]="actnsComp" (clickedItem)="hostClickHandler($event)"></app-dyn-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="norecords" class="norecords-tile">
+            <div class="start-new-btn" (click)="openDialog()"><button mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button></div>
+            <h4>No KCC's submitted. Click to begin</h4>
+        </div>
+        <div *ngIf="recordsErr" class="err-msg">
+            <mat-icon class="centered">error</mat-icon>
+            <div class="clearfix"></div>
+            <h4>Error accessing the records</h4>
+        </div>
+    </div>
+    <div class="container summary-wrapper">
+        <div id="slideout" [class]="getStyle()">
+            <div class="summary-wrapper-inner">
+                <h5>Key Controls Checklist Overview</h5>
+                <div class="summary-details">
+                    <p>Total In Review: <b>{{kccDetails.inReview}}</b></p>
+                    <p>Total Accepted: <b>{{kccDetails.accepted}}</b></p>
+                    <p>Total On Hold: <b>{{kccDetails.onHold}}</b></p>
+                    <p>Total Abandoned: <b>{{kccDetails.abandoned}}</b></p>
+                <div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

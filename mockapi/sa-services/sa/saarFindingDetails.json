@@ -1,0 +1,27 @@
+{  
+   "id":32768,
+   "findingName":"TEST",
+   "findingType":"Authentication",
+   "vulnerabilityDescription":"The authentication scheme or implementation uses key data elements that are assumed to be immutable, but can be controlled or modified by the attacker.",
+   "impact":"",
+   "likely":"",
+   "description":"TEST",
+   "attackAgent":null,
+   "dataAsset":"Visa Confidential",
+   "mitigation":null,
+   "resolution":"TEST",
+   "resolutionStatus":"Close",
+   "vid":3,
+   "tsrdoList":[  
+      {  
+         "number":"4.4",
+         "type":"Web Application TSR",
+         "description":null
+      },
+      {  
+         "number":"6.*",
+         "type":"IAM TSR",
+         "description":null
+      }
+   ]
+}

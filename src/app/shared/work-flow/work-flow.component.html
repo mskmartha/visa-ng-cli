@@ -1,0 +1,48 @@
+<div class="mat-step" [ngClass]="{ 'mat-active': isActive() }">
+    <div class="mat-stepper" [ngClass]="{ 'mat-active': isActive() }">
+      <div class="mat-steppers-header mat-steppers-vertical" (click)="toggleOpen(stepNumber)">
+        <button class="mat-stepper-indicator"
+                [ngClass]="{'mat-active': stepNumber === wrkFlwStepper.currentStep,
+                            'mat-completed': wrkFlwStepper.isCompleted(stepNumber),
+                            'mat-error': hasError,
+                            'mat-stepper-optional': optional || hasError}"
+                (click)="wrkFlwStepper.goto(stepNumber);"
+                [disabled]="!wrkFlwStepper.isEnabled(stepNumber) || wrkFlwStepper.options.linear || stepNumber === wrkFlwStepper.currentStep">
+          <div class="mat-stepper-indicator-wrapper">
+            <div class="mat-stepper-number" *ngIf="!hasError" [ngClass]="{'mat-stepper-done': wrkFlwStepper.isCompleted(stepNumber)}">
+              <span *ngIf="!wrkFlwStepper.isCompleted(stepNumber)">
+                <mat-icon *ngIf="(!wrkFlwStepper.isEnabled(stepNumber) || wrkFlwStepper.options.linear) && stepNumber !== 0" class="material-icons md-18 text-danger">lock</mat-icon>
+                <mat-icon *ngIf="wrkFlwStepper.isNotStarted(stepNumber)" class="material-icons md-18 unlockIcon">lock_open</mat-icon>
+                <mat-icon *ngIf="wrkFlwStepper.isInProgress(stepNumber)" class="material-icons md-18 editIcon">mode_edit</mat-icon>
+              </span>
+              <mat-icon class="material-icons md-18 mat-stepper-icon svg-icon" svgIcon="step-done" *ngIf="wrkFlwStepper.isCompleted(stepNumber) && wrkFlwStepper.options.enableSvgIcon">done</mat-icon>
+              <mat-icon class="material-icons md-18 mat-stepper-icon" *ngIf="wrkFlwStepper.isCompleted(stepNumber) && !wrkFlwStepper.options.enableSvgIcon">done</mat-icon>
+            </div>
+
+            <div class="mat-stepper-error-indicator" *ngIf="hasError">
+              <mat-icon class="material-icons md-18 text-danger" *ngIf="wrkFlwStepper.options.enableSvgIcon" svgIcon="step-warning">error</mat-icon>
+              <mat-icon class="material-icons md-18 text-danger" *ngIf="!wrkFlwStepper.options.enableSvgIcon">error</mat-icon>
+            </div>
+
+            <div class="mat-stepper-title">
+              <span>{{ label }}</span>
+              <small *ngIf="optional && !hasError">{{ optional }}</small>
+              <small class="mat-stepper-error-message" *ngIf="hasError">
+                {{ message }}
+              </small>
+            </div>
+          </div>
+          <mat-icon *ngIf="wrkFlwStepper.isEnabled(stepNumber)  && stepNumber !== wrkFlwStepper.currentStep" class="material-icons" style="float:right;">keyboard_arrow_down</mat-icon>
+        </button>
+        <div [hidden]="!wrkFlwStepper.hasFeedback"></div>
+        <!--TO DO: below can be used for notification on steppers -->
+        <!--<div class="mat-stepper-feedback-message" [hidden]="!wrkFlwStepper.hasFeedback">-->
+        <!--{{wrkFlwStepper.feedbackMessage}}-->
+        <!--</div>-->
+      </div>
+      <div class="mat-steppers-scope" [hidden]="!isOpen">
+        <ng-content select="app-work-flow-body"></ng-content>
+        <ng-content select="app-work-flow-actions"></ng-content>
+      </div>
+    </div>
+  </div>

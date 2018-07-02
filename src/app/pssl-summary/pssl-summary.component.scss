@@ -1,0 +1,136 @@
+mat-card-content{
+    min-height: 300px;
+}
+.summaryContainer{
+    width: 95%;
+    margin: 2em;
+    border: 1px groove black;
+}
+.summaryContainer #appSummary, #secAssessment{
+    float: left;
+}
+.summaryContainer #appSummary{
+    width: 30%;
+    margin: 1em;
+    border: 0.5px groove black;
+}
+.summaryContainer #secAssessment{
+    width: 60%;
+    margin: 1em;
+    border: 0.5px groove black;
+}
+#cont1, #cont2{
+    float: inherit;
+}
+#archReview, #codeScanning{
+    float: left;
+}
+#archReview, #codeScanning, #penTesting{
+    border: 0.5px groove black;
+    margin-left: 2.5em;
+    margin-top: 1.5em;
+    height: 150px;
+    text-align: justify;
+}
+#archReview{
+    background-color: lightskyblue;
+    width:40%;
+}
+#codeScanning{
+    background-color: lightgreen;
+    width:40%;
+}
+#penTesting{
+    background-color: lightgoldenrodyellow;
+    width:100%;
+}
+
+.mat-tab-nav-bar {
+    /*background: #f9f9f9;*/
+}
+.mat-tab-label-icon{
+    width:24px;
+}
+.headerBackground {
+  background-image: linear-gradient(81deg, #fa9b00, #f6be0d 73%, #f4ca12) !important;
+  border-bottom: 1px solid #fff;
+}
+.whiteFont {
+  color: #ffffff;
+}
+.closingWindow {
+  min-height: 100%;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+}
+.summary-details {
+  p {
+    text-transform: capitalize;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}
+
+:host ::ng-deep .mat-expansion-panel-body {
+  padding: 0;
+}
+
+
+/****** TODO: Move to common css ********/
+.slp-nav-bar, .slp-tab-group {
+  margin-bottom: 40px;
+
+  .unicorn-dark-theme & {
+    border-color: #464646;
+  }
+}
+.slp-nav-bar {
+  sunny-routed-content,
+  rainy-routed-content,
+  foggy-routed-content {
+    display: block;
+    padding: 12px;
+  }
+}
+.slp-tab-group {
+  flex-grow: 1;
+}
+tabs-slp .mat-card {
+  width: 160px;
+}
+.slp-dynamic-tabs {
+  display: flex;
+  width: 100%;
+
+  .mat-tab-group {
+    min-width: 200px;
+    margin-bottom: 0;
+    flex-grow: 1;
+  }
+
+  .mat-card {
+    min-width: 160px;
+    margin-right: 16px;
+
+    .mat-checkbox {
+      display: block;
+      margin-top: 8px;
+    }
+
+    .mat-form-field {
+      width: 100px;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.tab-content {
+  padding: 16px;
+}

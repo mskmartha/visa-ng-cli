@@ -1,0 +1,132 @@
+{
+  "genericSeverityRatings": [
+    "Low",
+    "Medium",
+    "High",
+    "Critical",
+    "Unknown"
+  ],
+  "findingTypes": [
+    "Spoofing",
+    "Tampering",
+    "Repudiation",
+    "Information disclosure",
+    "Denial of service",
+    "Elevation of privilege"
+  ],
+  "genericStatuses": [
+    "Open",
+    "Resolved",
+    "Closed",
+    "Duplicate"
+  ],
+  "threatCategory": [
+    "Authentication",
+    "Authorization",
+    "Data Validation",
+    "File Handling",
+    "Cryptography",
+    "Logging, Monitoring, and Error Handling",
+    "Session Management",
+    "XML and Web Services",
+    "Misc",
+    "Unknown"
+  ],
+  "attackVector": [
+    "Network",
+    "Adjacent",
+    "Local",
+    "Physical",
+    "Unknown"
+  ],
+  "dataAsset": [
+    "Visa Public",
+    "Visa Confidential",
+    "Visa Restricted - PII Private: CVV (Tier 0)",
+    "Visa Restricted - PII Private: PAN (Tier 1)",
+    "Visa Restricted - PII Private (Tier 1)",
+    "Visa Restricted - Other (special handling)",
+    "Unknown"
+  ],
+  "saarStatus": [
+    "Open",
+    "Close",
+    "Deferred",
+    "Best Practice",
+    "Unknown"
+  ],
+  "saActions": {
+    "1": "Start Triage",
+    "2": "Abandon",
+    "3": "Clone",
+    "4": "View Triage",
+    "5": "View Engagements",
+    "6": "View SA",
+    "7": "View SA Workflow",
+    "8": "Unknown",
+    "9": "Create SA",
+    "10": "View All SA",
+    "11": "Edit SA",
+    "12": "Submit Triage",
+    "13": "Get Questionnaire",
+    "14": "Submit Questionnaire",
+    "15": "Get QID",
+    "16": "Submit QID",
+    "17": "Delete QID",
+    "18": "Upload",
+    "19": "Download",
+    "20": "Start Scoping",
+    "21": "View Scoping",
+    "22": "Edit Scoping",
+    "23": "Edit Triage",
+    "24": "Submit Scoping",
+    "25": "Need more Information"
+  },
+  "kccActions": {
+    "1": "Pause",
+    "2": "Resume",
+    "3": "Abandon",
+    "5": "Manage KCC",
+    "6": "View KCC",
+    "7": "Need More Info",
+    "8": "Accept",
+    "9": "Edit",
+    "10": "Save",
+    "11": "In Review",
+    "12": "Submit",
+    "13": "Complete KCC",
+    "14": "View Pre-PPR",
+    "15": "View Pre-PIR",
+    "16": "Unkonwn"
+  },
+  "metaDataTypes": {
+    "1": "SA",
+    "2": "SAT",
+    "3": "SAAR",
+    "4": "KCC",
+    "5": "KCCP1",
+    "6": "KCCP2",
+    "7": "PENTEST-PRESCOPE",
+    "8": "SCOPING",
+    "9": "SCHEDULING",
+    "10": "CSA",
+    "11": "CSAT",
+    "12": "Unknown",
+    "13": "SAS"
+  },
+  "genericStates": {
+    "1": "Pending Triage",
+    "2": "Triage Complete",
+    "3": "In Progress",
+    "4": "Abandoned",
+    "5": "Completed",
+    "6": "Error",
+    "7": "Accepted",
+    "8": "In Review",
+    "9": "Need More Info",
+    "10": "Not Started",
+    "11": "On Hold",
+    "12": "Unknown",
+    "13": "Pending Scoping"
+  }
+}

@@ -1,0 +1,41 @@
+.sl-pointer:hover {
+  box-shadow: 3px 3px 1px #888888;
+}
+.card {
+  min-width: 220px;
+  overflow: hidden;
+  height: 220px;
+}
+.cardContent {
+  overflow-y: auto;
+  height: 130px;
+  mat-list-item {
+    padding: 0;
+  }
+}
+.listItem {
+  font-size: 14px;
+}
+mat-list-item {
+  height: auto !important;
+}
+.button {
+  margin-top: 5px;
+  line-height: 20px;
+  float: right;
+}
+.total {
+  font-size: 16px;
+  color: #eb980f;
+  font-weight: 600;
+  width: 40px;
+
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #171c66;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}

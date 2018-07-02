@@ -1,0 +1,108 @@
+<button type="button" class="btn btn-default slide-out-btn" (click)="showStyle = !showStyle;"><mat-icon>more</mat-icon></button>
+
+<div class="clearfix"></div>
+<div class="row" id="kcc-summary">
+  <div class="col-sm-12 col-md-12 col-xl-12 table-wrapper">
+    <h3 class="dialog-title">Key Controls Checklist Details</h3>
+    <div class="card-toolbar">
+        <mat-card-content>
+            <app-legend-component [legendData]="assmntDOsStatus"></app-legend-component>
+            <!--
+            <div class="fab-flyout-menu">
+                <fab dir="right">
+                    <fab-toggle>+</fab-toggle>
+                    <fab-button *ngFor="let lc of KCCSummary.lifeCycleActions" matTooltip="{{lc.name}}">
+
+                        <mat-icon *ngIf="lc.id == '6'">find_in_page</mat-icon>
+                        <mat-icon *ngIf="lc.id == '7'">find_in_page</mat-icon>
+                        <mat-icon *ngIf="lc.id == '8'">check_circle</mat-icon>
+
+                        <span class="fab-btn-txt">{{lc.name}}</span>
+                    </fab-button>
+                </fab>
+            </div>
+
+            <nav class='menu'>
+                <input class='menu-toggler' id='menu-toggler' type='checkbox'>
+                <label for='menu-toggler'></label>
+                <ul>
+
+                    <li class='menu-item' *ngFor="let lc of KCCSummary.lifeCycleActions" matTooltip="{{lc.name}}">
+
+                        <a *ngIf="lc.id == '1'" class='fa fa-pause' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '2'" class='fa fa-play' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '3'" class='fa fa-bell' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '4'" class='fa fa-bell' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '5'" class='fa fa-bell' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '6'" class='fa fa-check-circle' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '7'" class='fa fa-info' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '8'" class='fa fa-bell' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '11'" class='fa fa-bell' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '13'" class='fa fa-bell' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                    </li>
+                    <li class='menu-item' *ngFor="let lc of KCCSummary.miscActions" matTooltip="{{lc.name}}">
+
+                        <a *ngIf="lc.id == '7'" class='fa fa-pencil' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '8'" class='fa fa-pencil' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '9'" class='fa fa-pencil' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                        <a *ngIf="lc.id == '10'" class='fa fa-pencil' href='javascript:;' (click)="kccActions(lc.id, kccType)"></a>
+                    </li>
+
+                </ul>
+            </nav>
+            -->
+            <app-dyn-menu *ngIf="kccData.key.statusId !== 10" [menuInfo]="menuInfo" [actnsComp]="actnsComp" (clickedItem)="hostClickHandler($event)" style="float:right;"></app-dyn-menu>
+            <mat-tab-group [(selectedIndex)]="selectedIndex" #tabgroup (selectChange)="loadTabContent(tabgroup)">
+                <mat-tab [attr.data-pid]="'KCCP1'" [disabled]="!canMove('KCCP1')" layout-fill>
+                  <ng-template mat-tab-label>
+                    <div class="sl-flex sl-stack">
+                      <div>
+                        <mat-icon class="material-icons">filter</mat-icon>
+                        <svg width="10" height="10" style="position: absolute; margin-left: 5px;">
+                          <circle cx="5" cy="5" r="5" [attr.fill]="kccP1TabStatus"></circle>
+                        </svg>
+                      </div>
+                      <div>
+                        <b>Pre-PPR</b>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <app-manage-kcc [model]="model" (tabStatusEvent)="changeTabStatus($event)"></app-manage-kcc>
+                </mat-tab>
+                <mat-tab [attr.data-pid]="'KCCP2'" [disabled]="!canMove('KCCP2')" layout-fill>
+                  <ng-template mat-tab-label>
+                    <div class="sl-flex sl-stack">
+                      <div>
+                        <mat-icon class="material-icons">rate_review</mat-icon>
+                        <svg width="10" height="10" style="position: absolute; margin-left: 5px">
+                          <circle cx="5" cy="5" r="5" [attr.fill]="kccP2TabStatus"></circle>
+                        </svg>
+                      </div>
+                      <div>
+                        <b>Pre-PIR</b>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <app-manage-kcc [model]="model" (tabStatusEvent)="changeTabStatus($event)"></app-manage-kcc>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </div>
+    </div>
+    <div class="container summary-wrapper">
+        <div id="slideout" [class]="getStyle()">
+            <div class="summary-wrapper-inner">
+                <h5>KCC Summary</h5>
+                <div class="summary-details">
+                    <p>KCC ID: <b>{{KCCSummary.id}}</b></p>
+                    <p>CAMR ID: <b>{{KCCSummary.camrId}}</b></p>
+                    <p>Project: <b>{{KCCSummary.projectName}}</b></p>
+                    <p>Project Manager: <b>{{KCCSummary.projectManager}}</b></p>
+                    <p>Business Sponsor: <b>{{KCCSummary.businessSponsor}}</b></p>
+                    <p>IT Project Sponsor: <b>{{KCCSummary.itProjectSponsor}}</b></p>
+                    <p>IT Technology Vertical: <b>{{KCCSummary.itTechnologyVertical}}</b></p>
+                <div>
+            </div>
+        </div>
+    </div>
+</div>

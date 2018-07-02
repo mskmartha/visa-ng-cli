@@ -1,0 +1,208 @@
+{
+    "questionnaireVersion": "1.1",
+    "groupLayout":"",
+    "steps": [
+        {
+            "stepId": "S1",
+            "stepName": "",
+            "group": [
+                {
+                    "groupId": "G1",
+                    "groupName": "",
+                    "comments":[
+                        {
+                            "userName": null,
+                            "comment":null,
+                            "creationDate":null
+                        }
+                    ],
+                    "questions":[
+                        {
+                            "questionId":"SAAR01",
+                            "questionType":"radio",
+                            "questionLabel":"API Design",
+                            "info":"Are new APIs being introduced? Is it new APIs or new functionality or both?",
+                            "placeHolder":"API Descriptions",
+                            "description":null,
+                            "options":[
+                                {
+                                    "optionId":"1",
+                                    "text":"New",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                },
+                                {
+                                    "optionId":"2",
+                                    "text":"Updated",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                },
+                                {
+                                    "optionId":"3",
+                                    "text":"NA",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                }
+                            ],
+                            "validation": {
+                                "required": true,
+                                "regexPattern": null,
+                                "min": null,
+                                "max": null
+                            },
+                            "answers":[
+                                ""
+                            ]
+                        },
+                        {
+                            "questionId":"SAAR02",
+                            "questionType":"radio",
+                            "questionLabel":"Access Changes",
+                            "info":"Is there any change in the IAM processes, technologies, or protocols? For example, are changes being made to authentication and/or authorization protocols OR is there a role add/change resulting in admin or super admin rights?",
+                            "placeHolder":"Access Change Descriptions",
+                            "description": null,
+                            "options":[
+                                {
+                                    "optionId":"1",
+                                    "text":"Yes",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                },
+                                {
+                                    "optionId":"2",
+                                    "text":"No",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                }
+                            ],
+                            "validation": {
+                                "required": true,
+                                "regexPattern": null,
+                                "min": null,
+                                "max": null
+                            },
+                            "answers":[
+                                ""
+                            ]
+                        },
+                        {
+                            "questionId":"SAAR03",
+                            "questionType":"radio",
+                            "questionLabel":"Network Connection",
+                            "info":"Are new connections or a new firewall port opened?",
+                            "placeHolder":"Network Connection Descriptions",
+                            "description": null,
+                            "options":[
+                                {
+                                    "optionId":"1",
+                                    "text":"Yes",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                },
+                                {
+                                    "optionId":"2",
+                                    "text":"No",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                }
+                            ],
+                            "validation":{
+                                "required": true,
+                                "regexPattern": null,
+                                "min": null,
+                                "max": null
+                            },
+                            "answers":[
+                                ""
+                            ]
+                        },
+                        {
+                            "questionId":"SAAR04",
+                            "questionType":"radio",
+                            "questionLabel":"Network Zone Changes",
+                            "info":"Is there a change in system placement across zones and is there any change in the model? For example, an application or component is being moved from a higher zone to a lower zone? (e.g., restricted zone to business zone)",
+                            "placeHolder":"Zone Change Descriptions",
+                            "description": null,
+                            "options":[
+                                {
+                                    "optionId":"1",
+                                    "text":"Yes",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                },
+                                {
+                                    "optionId":"2",
+                                    "text":"No",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                }
+                            ],
+                            "validation":{
+                                "required": true,
+                                "regexPattern": null,
+                                "min": null,
+                                "max": null
+                            },
+                            "answers":[
+                                ""
+                            ]
+                        },
+                        {
+                            "questionId":"SAAR05",
+                            "questionType":"radio",
+                            "questionLabel":"Data Flow Changes",
+                            "info":"Is there new data protection methods (ex. encryption) being introduced for data in transit/in use and at rest or is there any place where PII data is stored/presented/transmitted in the clear?",
+                            "placeHolder":"Data Flow change descriptions",
+                            "description": null,
+                            "options":[
+                                {
+                                    "optionId":"1",
+                                    "text":"Yes",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                },
+                                {
+                                    "optionId":"2",
+                                    "text":"No",
+                                    "srule": null,
+                                    "grule": null,
+                                    "qrule": null,
+                                    "selected": false
+                                }
+                            ],
+                            "validation":{
+                                "required": true,
+                                "regexPattern": null,
+                                "min": null,
+                                "max": null
+                            },
+                            "answers":[
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

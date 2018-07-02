@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "name": "secAssessmentStateId",
+    "label": "Status",
+    "summary" : [
+      {
+        "id": 1,
+        "label": "Abandoned",
+        "total": 23
+      },
+      {
+        "id": 2,
+        "label": "Not Started",
+        "total": 120
+      },
+      {
+        "id": 3,
+        "label": "Started",
+        "total": 176
+      },
+      {
+        "id": 4,
+        "label": "On Hold",
+        "total": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "AcmRating",
+    "label": "ACM Rating",
+    "summary" : [
+      {
+        "id": 1,
+        "label": "Critical",
+        "total": 18
+      },
+      {
+        "id": 2,
+        "label": "High",
+        "total": 25
+      },
+      {
+        "id": 3,
+        "label": "Medium",
+        "total": 32
+      },
+      {
+        "id": 4,
+        "label": "Low",
+        "total": 46
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "saType",
+    "label": "Type",
+    "summary" : [
+      {
+        "id": "SA",
+        "label": "Internal",
+        "total": 230
+      },
+      {
+        "id": "CSA",
+        "label": "External",
+        "total": 77
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "departmentName",
+    "label": "TLT Group",
+    "summary" : [
+      {
+        "id": 103,
+        "label": "CyberSec",
+        "total": 230
+      },
+      {
+        "id": 95,
+        "label": "MAPPD",
+        "total": 102
+      },
+      {
+        "id": 105,
+        "label": "DMPD",
+        "total": 35
+      }
+    ]
+  }
+]

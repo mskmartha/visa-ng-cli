@@ -1,0 +1,18 @@
+[
+  {
+    "projectName": "Webgoat_9999_REL_July2017",
+    "scanDate": 1499769376000,
+    "releaseId": "July2017",
+    "highCount": 1,
+    "mediumCount": 10,
+    "lowCount":12
+  },
+  {
+    "projectName": "Test3_4680_REL_TestRelease3",
+    "scanDate": 1498225590000,
+    "releaseId": "TestRelease3",
+    "highCount": 6,
+    "mediumCount": 17,
+    "lowCount":6
+  }
+]

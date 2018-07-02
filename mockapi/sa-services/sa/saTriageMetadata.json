@@ -1,0 +1,261 @@
+{
+  "questionnaireVersion": "1.0",
+  "groupLayout": "",
+  "steps": [
+    {
+      "stepId": "S1",
+      "stepName": "SA Triage",
+      "group": [
+        {
+          "groupId": "G1",
+          "groupName": "",
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "SAT010",
+              "questionType": "dropdown",
+              "questionLabel": "View and Update SA Level",
+              "info": "Select One",
+              "placeHolder": "Select One",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Level 1",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "2",
+                  "text": "Level 2",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "3",
+                  "text": "Level 3",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "4",
+                  "text": "Level 4",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SAT003",
+              "questionType": "checkbox",
+              "questionLabel": "View and update SA Engagements",
+              "info": "Choose all that apply",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Security Scoping",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "2",
+                  "text": "Design Review",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "3",
+                  "text": "Architecture Review",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "4",
+                  "text": "Static Code Analysis",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "5",
+                  "text": "Pen Test",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "6",
+                  "text": "Dynamic AppSec Testing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "7",
+                  "text": "Manual Review",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SAT011",
+              "questionType": "comment",
+              "questionLabel": "Assessor Review Comment",
+              "info": "",
+              "placeHolder": "Enter your comment",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": false,
+                "regexPattern": "",
+                "min": 0,
+                "max": 140
+              },
+              "answers": [],
+              "comments": [
+                {
+                  "userName": "pbatada",
+                  "comment": "Test comment one, Test comment one Test comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment one",
+                  "creationDate": "1524639600000"
+                },{
+                  "userName": "abherani",
+                  "comment": "Test comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment two",
+                  "creationDate": "1624639600000"
+                },{
+                  "userName": "smartha",
+                  "comment": "Test comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment three",
+                  "creationDate": "1724639600000"
+                }
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SAT012",
+              "questionType": "comment",
+              "questionLabel": "Peer Review Comment",
+              "info": "",
+              "placeHolder": "Comment if Applicable",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": false,
+                "regexPattern": "[a-zA-Z0-9 ]*",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [],
+              "comments": [
+                {
+                  "userName": "pbatada",
+                  "comment": "Test comment one, Test comment one Test comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment oneTest comment one",
+                  "creationDate": "1524639600000"
+                },{
+                  "userName": "smartha",
+                  "comment": "Test comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment threeTest comment three",
+                  "creationDate": "1724639600000"
+                },{
+                  "userName": "abherani",
+                  "comment": "Test comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment twoTest comment two",
+                  "creationDate": "1624639600000"
+                }
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SAT013",
+              "questionType": "autocomplete",
+              "questionLabel": "Assign Assessor",
+              "info": null,
+              "placeHolder": "Search Assessor Name",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": "[a-zA-Z ]*",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": {
+                "url": "/config-services/users/search",
+                "backfillUrl": "/config-services/user",
+                "multi": {
+                  "hasPrimary": false,
+                  "primaryValue": null
+                }
+              }
+            },
+            {
+              "questionId": "SAT014",
+              "questionType": "comment",
+              "questionLabel": "Feedback/Comment for Security Assessor",
+              "info": "",
+              "placeHolder": "Comment if Applicable",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": false,
+                "regexPattern": "[a-zA-Z0-9 ]*",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [],
+              "comments": [
+              ],
+              "autocomplete": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": 0
+}

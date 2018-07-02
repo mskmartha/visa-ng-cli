@@ -1,0 +1,42 @@
+@mixin modal-theme($theme) {
+    
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+        
+
+    .mat-dialog-container {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 300;
+        border-radius: 6px;
+        font-size: 14px;
+        color: mat-color($mat-grey, 900);
+        height: auto;
+
+        .close {
+            color: mat-color($mat-grey, 900);
+            margin-top: -2px;
+            outline: 0;
+            .mat-icon {
+                width: 16px;
+                height: 16px;
+                font-size: 16px;
+            }
+        }
+        .mat-dialog-title {
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 300;
+            font-size: 1.25em;
+            line-height: 1.42857143;
+            color: mat-color($mat-blue-grey, 700);
+        }
+        .mat-button {
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+        }
+        
+    }
+
+}
+

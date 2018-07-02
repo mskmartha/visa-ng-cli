@@ -1,0 +1,1971 @@
+{
+	"questionnaireVersion": "1.0",
+	"groupLayout": "",
+	"steps": [
+		{
+			"stepId": "S1",
+			"stepName": "General Info",
+			"group": [
+				{
+					"groupId": "G1",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "GPX008",
+							"questionType": "radio",
+							"questionLabel": "Is this a Visa Europe-Initiated Project",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX001",
+							"questionType": "text",
+							"questionLabel": "RTN # or EU #   Please specify RTN or EU as prefix",
+							"info": "i.e. 'RTN-123456' or 'EU-56789'",
+							"placeHolder": "Enter RTN#",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX009",
+							"questionType": "text",
+							"questionLabel": "CAMR ID -OR- VE AP#",
+							"info": "Enter CamrId Specific to project",
+							"placeHolder": "Enter CamrId",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX002",
+							"questionType": "text",
+							"questionLabel": "Project Name",
+							"info": "Enter Project Name",
+							"placeHolder": "Enter Project Name",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX003",
+							"questionType": "text",
+							"questionLabel": "Project Manager",
+							"info": "Enter Project Manager",
+							"placeHolder": "Enter Project Manager",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX004",
+							"questionType": "text",
+							"questionLabel": "Project Manager e-mail Address",
+							"info": "Enter Project Manager E-mail Address",
+							"placeHolder": "",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX005",
+							"questionType": "text",
+							"questionLabel": "Business Sponsor",
+							"info": "Enter Business Sponsor Details",
+							"placeHolder": "Enter Business Sponsor",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX006",
+							"questionType": "text",
+							"questionLabel": "IT Project Sponsor",
+							"info": "Enter Project Sponsor Details",
+							"placeHolder": "Enter Project Sponsor",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISC001",
+							"questionType": "text",
+							"questionLabel": "Name of Information Steward",
+							"info": "Enter Information Steward Name",
+							"placeHolder": "Enter Information Steward Name",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISC003",
+							"questionType": "dropdown",
+							"questionLabel": "Information Classification of the information associated with this initiative",
+							"info": "Select One",
+							"placeHolder": "Select One",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Visa Public",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Visa Confidential",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Visa Restricted",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Visa Restricted - Personal Data",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISC004",
+							"questionType": "radio",
+							"questionLabel": "Will this initiative involve resources and/or data from the Europe Region",
+							"info": "Will this initiative involve resources and/or data from the Europe Region",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX007",
+							"questionType": "dropdown",
+							"questionLabel": "IT Technology Vertical",
+							"info": "Enter IT Technology Vertical",
+							"placeHolder": "Enter Technology Vertical",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Corporate IT",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Operations and Infrastructure",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Issuer Processing",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Network Processing",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Developer Platform",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "Data and Information Products",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "7",
+									"text": "Merchant and Acquirer Processing",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "8",
+									"text": "Digital and Mobile Products",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "9",
+									"text": "Information Security",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "10",
+									"text": "Other",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "BCW001",
+							"questionType": "radio",
+							"questionLabel": "Will there be any exceptions to the Visa Key Controls required by this initiative",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "PPR-001",
+							"questionType": "text",
+							"questionLabel": "Pre-PPR Date",
+							"info": "Enter the Pre-PPR Date ",
+							"placeHolder": "Enter Pre-PPR Date",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "PIR-001",
+							"questionType": "text",
+							"questionLabel": "Pre-PIR Date",
+							"info": "Enter the Pre-PIR Date ",
+							"placeHolder": "Enter Pre-PIR Date",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"stepId": "S2",
+			"stepName": "Critical Attributes",
+			"group": [
+				{
+					"groupId": "G2",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "ISA001",
+							"questionType": "radio",
+							"questionLabel": "Will this initiative involve a system containing information classified as Visa Restricted, or Visa Restricted  - Personal Data",
+							"info": "Yes if contains restricted information.",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA001A",
+							"questionType": "radio",
+							"questionLabel": "Will this initiative involve a system containing  PAN or Cardholder Data",
+							"info": "Yes if system contains sensitive data",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA002",
+							"questionType": "radio",
+							"questionLabel": "Will information classified as Visa Restricted or Visa Restricted - Personal Data be physically shipped to an external party",
+							"info": "Yes if Personal Data is shipped to external party.",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "VUL001",
+							"questionType": "radio",
+							"questionLabel": "Does this initiative involve a Visa hosted application that is Internet-facing.",
+							"info": "Yes if Visa application Internal-facing.",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA005",
+							"questionType": "checkbox",
+							"questionLabel": "Will this initiative involve any of the following",
+							"info": "choose all that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "New service, system or application",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Significant change to an existing application (as per definition of 'significant' in alignment with SA triggers and PCI 3.2)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Non-Significant Change",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Software Development",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA009",
+							"questionType": "radio",
+							"questionLabel": "Does this initiative involve an infrastructure change to a system that accesses, stores, transmits, or processes any information classified as Visa Restricted or Visa Restricted-Private Data",
+							"info": "Yes if initiative involve an infrastructure change to a system that accesses, stores, transmits, or processes any information classified as Visa Restricted or Visa Restricted-Private Data",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"stepId": "S3",
+			"stepName": "Application Attributes",
+			"group": [
+				{
+					"groupId": "G3",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "ISA006",
+							"questionType": "checkbox",
+							"questionLabel": "Will this initiative involve changes to any of the following:",
+							"info": "select one",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "User Interface (UI)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Application Program Interface (API)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "System Interface",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Dependencies with other systems",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Data Feed or Data Output to other system(s)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA007",
+							"questionType": "radio",
+							"questionLabel": "Does this initiative change any Identity Access Management (IAM) Process, Technology, or protocols?  i.e. changes to authentication and / or authorization protocols, or changes in administrative rights",
+							"info": "Yes if changes to authentication and / or authorization  protocols, or changes in administrative rights?",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA004",
+							"questionType": "checkbox",
+							"questionLabel": "Does this Initiative involve an encryption component for any of the following:",
+							"info": "select one",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "User identification",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Message Authentication",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Data Protection",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Data Transmission",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Data Delivery whether in-transit or at-rest",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "Key Management",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "SNC001",
+							"questionType": "checkbox",
+							"questionLabel": "Does this initiative involve the creation of new databases, or changes to existing databases",
+							"info": "Check all that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "New Database",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Database structure changes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Additions, deletions or changes to data element fields",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA003",
+							"questionType": "radio",
+							"questionLabel": "Has the application or system been enrolled into “Security Information Event Monitoring” for logging?",
+							"info": "Yes if application or system been enrolled into “Security Information Event Monitoring” for logging?",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA015",
+							"questionType": "radio",
+							"questionLabel": "Will this initiative contain a mobile component",
+							"info": "Yes if contains a mobile component",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"stepId": "S4",
+			"stepName": "System Infrastructure",
+			"group": [
+				{
+					"groupId": "G4",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "ISA008",
+							"questionType": "checkbox",
+							"questionLabel": "Will this initiative involve a technical infrastructure change, including new technology or an upgrade to existing infrastructure components?",
+							"info": "Please choose all that apply below:",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Network Components/Devices",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Firewall configuration changes and/or Components",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Appliances",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "New Data Center / Network Build-out",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "VisaNet Processing Environment",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "Introduction of other New hardware or Components not listed above",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "7",
+									"text": "Change to the Architecture Tier / Zone  i.e. move or Change from the restricted Zone to the business zone",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "8",
+									"text": "New or significant changes to the Operating System or Middleware",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA012",
+							"questionType": "checkbox",
+							"questionLabel": "Will this initiative involve a new connection to the Visa network, involving any of the following",
+							"info": "Choose all that apply below",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Client connections using a non-standard connection type",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "New services for client connections",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "External-vendor or External Party connections to the Visa network",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Visa connections to an external party or external vendor",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "VisaNet (Visa transaction processing environment)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "Development work or processing that is, or will be outsourced",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "RAX001",
+							"questionType": "radio",
+							"questionLabel": "Does this initiative involve any new or non-standard technologies (Hardware, Applications, or other Software components or Libraries) which have not been registered and approved on the Technology Registration Portal",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "TSX002",
+							"questionType": "radio",
+							"questionLabel": "Will this initiative use or procure any technologies that are not classified as 'Primary' or 'Available' in the Technology Standards",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "SNM001",
+							"questionType": "radio",
+							"questionLabel": "Does the application or system require additional resources or capacity for the network or the systems",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "LIS001",
+							"questionType": "checkbox",
+							"questionLabel": "Does this initiative involve a lab",
+							"info": "Please check all that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Construction of a new lab",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "A lab test environment",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "A Proof-of-Concept (POC) test in a lab",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Testing for a pre-production or non-production application",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "A lab test of a software application with scrubbed, masked or encrypted data",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "BCW003",
+							"questionType": "radio",
+							"questionLabel": "Will production data be transferred to a non-production environment as a result of this initiative",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "BCW004",
+							"questionType": "checkbox",
+							"questionLabel": "Will unscrubbed, unmasked or unencrypted production data be used in any of the following",
+							"info": " Please check all that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Development",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Test",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "QA",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Vendor",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Client Test Environment (CTE)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Secure Production Data Lab Environment (SPDLE)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"stepId": "S5",
+			"stepName": "External/3rd Party Info",
+			"group": [
+				{
+					"groupId": "G5",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "EXP004",
+							"questionType": "radio",
+							"questionLabel": "Does this initiative involve using an external party to provide any service that requires the external party to access Visa facilities or systems",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA017",
+							"questionType": "radio",
+							"questionLabel": "Will an External Party store, process, or transmit data classified as Visa Restricted, or Visa Restricted-Personal Data, including cardholder data, Personal Accountholder Information (PAI), or other Personal Data as defined in the Visa Key Controls?",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA018",
+							"questionType": "checkbox",
+							"questionLabel": "Will an External Party provide technology services",
+							"info": "Choose that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Web, or Application Hosting",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Cloud Solution or Component",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Software development",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "System Administration",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Internet Services (ISP)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "Managed Services or Hardware components",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "ISA019",
+							"questionType": "radio",
+							"questionLabel": "Will  Visa IT Intellectual Property  (software, source code, object code, data models or design documents) be transferred to, or accessed by, an external party?",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "TSX003",
+							"questionType": "radio",
+							"questionLabel": "Will this initiative use or procure any technologies that are considered External Technologies such as third-party hosted business applications, Internet-facing public websites, and social networking sites",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"stepId": "S6",
+			"stepName": "Additional Info",
+			"group": [
+				{
+					"groupId": "G6",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "IPR001",
+							"questionType": "radio",
+							"questionLabel": "Does the project create, improve or modify a Visa product, service or program?(IPR-001)",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "PHS001",
+							"questionType": "checkbox",
+							"questionLabel": "Is there a physical security component to this initiative? Please answer below for all that apply",
+							"info": "Choose all that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "A new Visa facility or data center",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "A significant expansion or re-purposing of an existing Visa facility",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "A new off-site location for the storage of sensitive data",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "An external party hosting or processing information classified as Visa Restricted or Visa Restricted - Personal Data",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Physical Access to a Visa Operations Center or Data Center",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "Other",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GSC004",
+							"questionType": "radio",
+							"questionLabel": "Given the scope of work, will the vendor need a Non-Disclosure Agreement (NDA)",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "LGL003",
+							"questionType": "checkbox",
+							"questionLabel": "Is any new technical information to be sent across international borders",
+							"info": " Please check all that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Encryption Technology",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Software Source Code (Excluding code visible in normal web traffic)",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Servers",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "In-Country Processing Solutions",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "CMP001",
+							"questionType": "radio",
+							"questionLabel": "Does this initiative have an objective to satisfy a legal or regulatory requirement(s)? (If you are unsure of either this question or the next, please confirm the answer with your Business Sponsor's Legal Advisor.)",
+							"info": "If you are unsure of either this question or the next, please confirm the answer with your Business Sponsor's Legal Advisor.",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "CMP002",
+							"questionType": "radio",
+							"questionLabel": "Will this initiative affect an existing control intended to ensure legal or regulatory compliance",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "SIA004",
+							"questionType": "radio",
+							"questionLabel": "Does this initiative introduce changes to the service, system, or application functionality that modify the business criticality or Recovery Time Objective (RTO)",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

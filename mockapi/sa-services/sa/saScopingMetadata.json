@@ -1,0 +1,678 @@
+{
+  "questionnaireVersion": "1.1",
+  "groupLayout": "",
+  "steps": [
+    {
+      "stepId": "S1",
+      "stepName": "Step 1",
+      "group": [
+        {
+          "groupId": "G1",
+          "groupName": null,
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "SAS004",
+              "questionType": "multiRow",
+              "questionLabel": "Internal Facing",
+              "info": "",
+              "placeHolder": "Provide URL",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": ["abc.com"]
+            }
+          ]
+        },
+        {
+          "groupId": "G3",
+          "groupName": "",
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "CSA073",
+              "questionType": "checkbox",
+              "questionLabel": "Identity and Access Management (IAM)",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Require SSO with Azure AD and VISA as IdP",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Require SSO with ForgeRock and VISA as IdP",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Require 2FA for users",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Require privileged access through SSO",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            }
+          ]
+        },
+        {
+          "groupId": "G4",
+          "groupName": "",
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "CSA120",
+              "questionType": "checkbox",
+              "questionLabel": "Mobile Access Platforms",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Android",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "iOS",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Other",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "CSA121",
+              "questionType": "radio",
+              "questionLabel": "Is the application developed by a Third Party",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Yes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "No",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "CSA122",
+              "questionType": "radio",
+              "questionLabel": "Does the mobile application need to be MDM deployed",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Yes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "No",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "CSA123",
+              "questionType": "radio",
+              "questionLabel": "Will the mobile app use SSO or Visa NTID",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Yes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "No",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "CSA124",
+              "questionType": "checkbox",
+              "questionLabel": "Mobile application access - Select all that apply",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Need to support managed device access from external network",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Need to support un-managed device access from external network",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Need to support managed device access from VISA corporate network",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Need to support un-managed device access from VISA corporate network",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            }
+          ]
+        },
+        {
+          "groupId": "G5",
+          "groupName": null,
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "SAS005",
+              "questionType": "checkbox",
+              "questionLabel": "Application Language used",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "C++",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Java",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "PHP",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Python",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": ".NET",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "13",
+                  "text": "Ruby",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "6",
+                  "text": "Go",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "7",
+                  "text": "Scala",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "8",
+                  "text": "NodeJS",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "9",
+                  "text": "Angular 2",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "10",
+                  "text": "Angular 4",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "11",
+                  "text": "BackboneJS",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "12",
+                  "text": "React JS",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 1,
+                "max": 0
+              },
+              "answers": [],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SAS006",
+              "questionType": "checkbox",
+              "questionLabel": "Type of Web Servers being used",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Tomcat",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "jBoss",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Vert.x",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "IIS",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "Apache",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "6",
+                  "text": "Websphere",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "7",
+                  "text": "WebLogic",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "8",
+                  "text": "Others",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 1,
+                "max": 0
+              },
+              "answers": [],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SAS007",
+              "questionType": "checkbox",
+              "questionLabel": "Network Security",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "WAF",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Splunk",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Akamai",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Web Proxy",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "WSI",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 1,
+                "max": 0
+              },
+              "answers": [],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SAS008",
+              "questionType": "radio",
+              "questionLabel": "Docker Container technology in use",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Yes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "No",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 1,
+                "max": 0
+              },
+              "answers": [],
+              "autocomplete": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": 0
+}

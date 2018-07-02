@@ -1,0 +1,140 @@
+<div class="dialog-container-inner">
+  <div class="sl-flex sl-main-space-between dialog-title">
+    <div>{{SADetails.saId}} - Low Level Design Review - Create</div>
+    <div class="sl-flex sl-cross-end " >
+      <button class="sl-flex sl-button" matDialogClose><mat-icon class="whiteFont">clear</mat-icon></button>
+    </div>
+  </div>
+  <div *ngIf="modalStepper" class="dialog-main">
+    <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)"  *ngIf="records">
+      <mat-dialog-content class="scrollbar">
+        <div class="container">
+            <div class="">
+              <div class="row">
+                  <!--findings-->
+                  <div formArrayName="ldrFindingsDOList">
+                    <div *ngFor="let address of myForm.controls.ldrFindingsDOList.controls; let i=index" class="panel panel-default">
+                      <div class="panel-heading">
+                        <span>Finding {{i + 1}}</span>
+                        <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.ldrFindingsDOList.controls.length > 1" (click)="removeFindings(i)"></span>
+                      </div>
+                      <div class="panel-body" [formGroupName]="i">
+
+                        <div class="form-group col-sm-9 sl-pl0">
+                          <mat-select placeholder="Finding Type" formControlName="findingName">
+                            <mat-option>--Select--</mat-option>
+                            <mat-option *ngFor="let findingType of SADetails.enums.findingTypes" [value]="findingType">
+                              {{ findingType }}
+                            </mat-option>
+                          </mat-select>
+                          <small *ngIf="!isDisabled && (myForm.controls.ldrFindingsDOList.controls[i].controls.findingName?.invalid && (
+                            myForm.controls.ldrFindingsDOList.controls[i].controls.findingName?.touched || mouseoverActionButton))" class="text-danger">
+                              Finding Type is required
+                          </small>
+                        </div>
+                        <div class="form-group col-sm-9 sl-pl0">
+                          <mat-form-field>
+                            <textarea matInput placeholder="Description" formControlName="findingDesc" value=""></textarea>
+                          </mat-form-field>
+                          <small *ngIf="!isDisabled && (myForm.controls.ldrFindingsDOList.controls[i].controls.findingDesc?.invalid && (
+                            myForm.controls.ldrFindingsDOList.controls[i].controls.findingDesc?.touched || mouseoverActionButton))" class="text-danger">
+                              Description is required
+                          </small>
+                        </div>
+                        <div class="form-group col-sm-9 sl-pl0">
+                          <mat-form-field>
+                            <textarea matInput placeholder="Remediation" formControlName="remediation" value=""></textarea>
+                          </mat-form-field>
+                          <small *ngIf="!isDisabled && (myForm.controls.ldrFindingsDOList.controls[i].controls.remediation?.invalid && (
+                            myForm.controls.ldrFindingsDOList.controls[i].controls.remediation?.touched || mouseoverActionButton))" class="text-danger">
+                              Remediation is required
+                          </small>
+                        </div>
+                        <div class="form-group col-sm-9 sl-pl0">
+
+                          <mat-select placeholder="Severity" formControlName="severity">
+                            <mat-option>--Select--</mat-option>
+                            <mat-option *ngFor="let severity of SADetails.enums.genericSeverityRatings" [value]="severity">
+                              {{ severity }}
+                            </mat-option>
+                          </mat-select>
+                          <small *ngIf="!isDisabled && (myForm.controls.ldrFindingsDOList.controls[i].controls.severity?.invalid && (
+                            myForm.controls.ldrFindingsDOList.controls[i].controls.severity?.touched || mouseoverActionButton))" class="text-danger">
+                              Severity is required
+                          </small>
+                        </div>
+                        <div class="form-group col-sm-9 sl-pl0">
+                          <mat-form-field>
+                            <input matInput placeholder="Component Name" formControlName="componentName" value="">
+                          </mat-form-field>
+                          <small *ngIf="!isDisabled && (myForm.controls.ldrFindingsDOList.controls[i].controls.componentName?.invalid && (
+                            myForm.controls.ldrFindingsDOList.controls[i].controls.componentName?.touched || mouseoverActionButton))" class="text-danger">
+                              Component Name is required
+                          </small>
+                        </div>
+                        <div class="form-group col-sm-9 sl-pl0">
+                          <mat-select placeholder="Status" formControlName="status">
+                            <mat-option>--Select--</mat-option>
+                            <mat-option *ngFor="let stat of SADetails.enums.genericStatuses" [value]="stat">
+                              {{ stat }}
+                            </mat-option>
+                          </mat-select>
+                          <small *ngIf="!isDisabled && (myForm.controls.ldrFindingsDOList.controls[i].controls.status?.invalid && (
+                            myForm.controls.ldrFindingsDOList.controls[i].controls.status?.touched || mouseoverActionButton))" class="text-danger">
+                              Finding Status is required
+                          </small>
+                        </div>
+                        <div class="form-group col-sm-9 sl-pl0">
+                          <mat-form-field>
+                            <textarea matInput placeholder="Finding Comments" formControlName="comments" value=""></textarea>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+            </div>
+
+        </div>
+      </mat-dialog-content>
+      <mat-card-actions *ngIf="!isDisabled" align="end">
+          <button mat-raised-button color="cta-secondary" class="cta-2" [matDialogClose] type="button">Cancel</button>
+          <button mat-mini-fab *ngIf="!editLDR" class="addmore-icon-btn" (click)="addFindings()"><mat-icon class="whiteFont">add</mat-icon></button>
+          <span (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+            <button type="submit" *ngIf="!editLDR" mat-raised-button class="cta-1" [disabled]="!myForm.valid" (click)="submitFindings()">Submit</button>
+            <button *ngIf="editLDR" mat-raised-button class="cta-1" [disabled]="!myForm.valid" (click)="submitFindings()" matDialogClose>Save</button>
+          </span>
+      </mat-card-actions>
+    </form>
+  </div>
+  <div *ngIf="showProgess" class="dialog-main">
+    <div class="submit-spinner">
+      <mat-spinner class="centered"></mat-spinner>
+      <h4>Processing...</h4>
+    </div>
+  </div>
+  <div *ngIf="recordsErr" class="cta-screen">
+      <div>
+          <img src="assets/img/error-circle.svg"/>
+          <div class="clearfix"></div>
+          <h4>Error accessing the records</h4>
+      </div>
+    </div>
+  <div *ngIf="submitSASucess" class="dialog-main">
+    <div class="submit-screen">
+      <img src="assets/img/ic-check-circle.svg"/>
+      <h5>LDR Finding submitted</h5>
+        <button mat-raised-button color="" class="cta-2" matDialogClose>Close</button>
+        <button mat-raised-button type="submit" color="primary" class="cta-1" matDialogClose>Go to Findings</button>
+    </div>
+  </div>
+  <div *ngIf="errOnSubmit" class="dialog-main">
+    <div class="submit-screen">
+      <img src="assets/img/error-circle.svg"/>
+      <h5>Something went wrong</h5>
+        <button mat-raised-button color="" class="cta-2" matDialogClose>Cancel</button>
+        <button mat-raised-button *ngIf="!errLoadQuestions" type="submit" color="primary" class="cta-1" matDialogClose>Try Again</button>
+    </div>
+  </div>
+</div>

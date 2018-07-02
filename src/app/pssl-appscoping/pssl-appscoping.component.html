@@ -1,0 +1,159 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-xl-12">
+        <div *ngIf="showProgess" class="cta-screen">
+            <div>
+                <mat-spinner class="centered"></mat-spinner>
+                <h4 class="centered">Processing...</h4>
+            </div>
+        </div>
+        <div class="table-inner-wrapper" *ngIf="records && (readOnly || hasPermission)">
+            <div *ngIf="hasPermission && !hasJiraFeatures && !norecords && !appScopeCompleted" class="forceSync"><mat-icon class="mat-16">info outline</mat-icon><a href="javascript:;" style="font-size:12px;" (click)="openClassicDialog('sync')">Force Sync JIRA features</a></div>
+            <div class="clearfix"></div>
+            <form [formGroup]="featuresForm" novalidate>
+                <div class="col-lg-12" formArrayName="ldrFindingsDOList">
+                    <table class="table table-hover table-bordered table-condensed ">
+                        <thead>
+                            <tr class="tbodyTrRow">
+                                <th>Key</th>
+                                <th>Feature Source</th>
+                                <th>Description</th>
+                                <th>Network Changes</th>
+                                <th>Auth Flow</th>
+                                <th>Data Flow</th>
+                                <th>Severity</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of featuresForm.controls.ldrFindingsDOList.controls; let i=index" [formGroupName]="i" (click)="toggle(row)" class="tbodyTrRow">
+                                <!-- key -->
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value === editRowId && row.controls.manualFeature.value">
+                                    <input type="text" formControlName="key"  value="" />
+                                    <br>
+                                    <small *ngIf="!isDisabled && !appScopeCompleted" [hidden]="!hasPermission || row.controls.key.valid" class="text-danger">*Required</small>
+                                </td>
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value === editRowId && !row.controls.manualFeature.value">{{row.controls.key.value}}</td>
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value !== editRowId && row.controls.key.valid"  >{{row.controls.key.value}}</td>
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value !== editRowId && !row.controls.key.valid">
+                                    <input type="text" formControlName="key"  value="" />
+                                    <br>
+                                    <small *ngIf="!isDisabled && !appScopeCompleted" [hidden]="!hasPermission || row.controls.key.valid" class="text-danger">*Required</small>
+                                </td>
+
+
+                                <!-- manualFeature -->
+                                <td class="column centerAlignedColumn" *ngIf="row.controls.manualFeature.value">Manual</td>
+                                <td class="column centerAlignedColumn" *ngIf="!row.controls.manualFeature.value">Jira</td>
+
+
+                                <!-- summary -->
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value === editRowId && row.controls.manualFeature.value">
+                                    <input type="text" formControlName="summary"  value="" />
+                                    <br>
+                                    <small *ngIf="!isDisabled && !appScopeCompleted" [hidden]="!hasPermission || row.controls.summary.valid" class="text-danger">*Required</small>
+                                </td>
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value === editRowId && !row.controls.manualFeature.value">{{row.controls.summary.value}}</td>
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value !== editRowId && row.controls.summary.valid"  >{{row.controls.summary.value}}</td>
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value !== editRowId && !row.controls.summary.valid">
+                                    <input type="text" formControlName="summary"  value="" />
+                                    <br>
+                                    <small *ngIf="!isDisabled && !appScopeCompleted" [hidden]="!hasPermission || row.controls.summary.valid" class="text-danger">*Required</small>
+                                </td>
+
+                                <!-- networkChanges -->
+                                <td class="column centerAlignedColumn">
+                                    <mat-slide-toggle ngDefaultControl formControlName="networkChanges"></mat-slide-toggle>
+                                </td>
+                                <!-- authFlow -->
+                                <td class="column centerAlignedColumn">
+                                    <mat-slide-toggle ngDefaultControl formControlName="authFlow"></mat-slide-toggle>
+                                </td>
+                                <!-- dataFlow -->
+                                <td class="column centerAlignedColumn">
+                                    <mat-slide-toggle ngDefaultControl formControlName="dataFlow"></mat-slide-toggle>
+                                </td>
+                                <!-- severity -->
+                                <td class="column centerAlignedColumn">
+                                    <mat-select formControlName="severity" placeholder="{{row.controls.severity.value ? '' : 'Select Severity'}}">
+                                        <mat-option>Select Severity</mat-option>
+                                        <mat-option *ngFor="let r of genericSeverityRatings" [value]="r">
+                                        {{r}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <br>
+                                    <!-- <small *ngIf="!isDisabled && !appScopeCompleted" [hidden]="row.controls.severity.valid" class="text-danger">*Required</small> -->
+                                </td>
+                                <!-- -->
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value === editRowId"><textarea formControlName="comments">{{row.controls.comments.value || ''}}</textarea></td>
+                                <td class="column leftAlignedColumn" *ngIf="row.controls.ranKey.value !== editRowId" >{{row.controls.comments.value}}</td>
+
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+            <!--<pre>{{tableData | json}}</pre>-->
+            <button mat-raised-button *ngIf="hasPermission && !hasJiraFeatures && !appScopeCompleted" class="cta-1" (click)="openClassicDialog();false">Get Features from JIRA</button>
+            <button type="submit" mat-raised-button *ngIf="hasPermission && !recordsErr && !appScopeCompleted" class="cta-2" (click)="addManualFeatures();false">Add New manual Feature/s</button>
+            <button type="submit" mat-raised-button *ngIf="hasPermission && !recordsErr && !appScopeCompleted && editedItems?.length > 0" [disabled]="!hasPermission || !featuresForm.valid" class="cta-1" (click)="saveAppScopefeatures();false">Save</button>
+            <button type="submit" title="Save Features before Completing App Scoping" [disabled]="!hasPermission || editedItems?.length > 0" mat-raised-button *ngIf="!recordsErr && featuresForm.valid && !appScopeCompleted" class="cta-1" (click)="submitCompleteAppScope();false" style="float:right;">Complete App Scoping</button>
+        </div>
+        <div *ngIf="appScopeCompleted && norecords" class="norecords-tile">
+            <h4>None submitted.</h4>
+        </div>
+        <div *ngIf="!appScopeCompleted && norecords && (readOnly || hasPermission)" class="norecords-tile">
+            <div class="row" [style.pointer-events]="(!hasPermission) ? none : ''">
+                <div class="col-sm-12 col-md-6 col-xl-4" *ngIf="hasPermission && !recordsErr" (click)="openClassicDialog()">
+                    <mat-card class="sl-card">
+                        <mat-icon class="centered mat-48">exit_to_app</mat-icon>
+                        <div class="clearfix"></div>
+                        <mat-card-title>Load features from JIRA</mat-card-title>
+                    </mat-card>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-xl-4" *ngIf="hasPermission && !recordsErr" (click)="addManualFeatures()">
+                    <mat-card class="sl-card">
+                    <mat-icon class="centered mat-48">playlist_add</mat-icon>
+                    <div class="clearfix"></div>
+                    <mat-card-title>Start new features</mat-card-title>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="(norecords || records) && !readOnly && !hasPermission" class="cta-screen">
+            <div>
+                <img src="assets/img/error-circle.svg"/>
+                <div class="clearfix"></div>
+                <h4>Forbidden - You don't have permission to access this.</h4>
+            </div>
+        </div>
+        <div *ngIf="recordsErr" class="cta-screen">
+            <div>
+                <img src="assets/img/error-circle.svg"/>
+                <div class="clearfix"></div>
+                <h4>Error accessing the records</h4>
+            </div>
+        </div>
+        <div *ngIf="submitAppScopeSuccess" class="cta-screen">
+            <div>
+                <img src="assets/img/ic-check-circle.svg"/>
+                <h5>App Scoping Completed</h5>
+                <button mat-raised-button type="submit" color="primary" (click)="showFeatures()" class="cta-1">Go to Features</button>
+                <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+            </div>
+        </div>
+        <div *ngIf="errOnSubmit" class="cta-screen">
+            <div>
+            <img src="assets/img/error-circle.svg"/>
+            <h5>Something went wrong</h5>
+                <button mat-raised-button (click)="showFeatures();" class="cta-2">Cancel</button>
+                <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="showFeatures();">Try Again</button>
+                <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+            </div>
+        </div>
+
+    </div>
+</div>

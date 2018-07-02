@@ -1,0 +1,54 @@
+<form [formGroup]="autocompForm" novalidate>
+
+  <mat-form-field *ngIf="!autocomplete.multi" class="col-sm-9">
+    <input matInput [readonly]="isViewDisabled || !(autocompForm.controls['multiAuto'].value === null)" placeholder="{{placeholder}}" (focus)="autoCompData(); subPanelScroll();" [matAutocomplete]="auto" [formControl]="autocompForm.controls['auto']">
+    <button mat-button *ngIf="!isViewDisabled && autocompForm.controls['multiAuto'].value" matSuffix mat-icon-button aria-label="Clear" (click)="autocompForm.controls['auto'].setValue('');autocompForm.controls['multiAuto'].reset()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of autoCompOptns" (click)="selAutoCompOpt(option)" [value]="option.id">
+        {{ option.cn }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="autocomplete.multi" class="col-sm-9">
+    <input type="text" placeholder="{{placeholder}}" [readonly]="isViewDisabled" (focus)="autoCompData(); subPanelScroll();" aria-label="Number" matInput [matAutocomplete]="auto" [formControl]="autocompForm.controls['auto']">
+    <mat-icon matSuffix>search</mat-icon>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of autoCompOptns" (click)="multiSelAutoCompOpt(option)" [value]="option.id">
+        {{ option.cn }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <div *ngIf="autocomplete.multi && !autocomplete.multi?.hasPrimary" class="sl-full-width sl-flex filter-btn">
+    <mat-chip-list #chipList>
+      <mat-chip class="sl-tt-capitalize" *ngFor="let autoOpt of getAutoCompArr();" [removable]="true">
+        <!--<mat-icon matPrefix class="material-icons">account_circle</mat-icon>-->
+        {{autoCompDataMap.get(autoOpt)}}
+        <mat-icon *ngIf="!isViewDisabled" (click)="removeAutoCompOpt(autoOpt)" matChipRemove matTooltip="Remove">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <mat-radio-group *ngIf="autocomplete.multi?.hasPrimary" name="multiAuto" [formControl]="autocompForm.controls['primary']">
+    <label *ngFor="let autoOpt of getAutoCompArr()" class="sl-label sl-ml20 col-sm-10">
+      <mat-radio-button [value]="autoOpt">
+        <div class="multiAuto" >
+          <span>{{autoCompDataMap.get(autoOpt)}}</span>
+          <a (click)="removeAutoCompOpt(autoOpt)">x</a>
+        </div>
+      </mat-radio-button>
+    </label>
+  </mat-radio-group>
+
+  <div [hidden]="autocompForm.controls['primary'].valid || autocompForm.controls['primary'].pristine"
+       class="text-danger">
+    <small [hidden]="!autocompForm.controls['primary'].hasError('required')">Select one as primary</small>
+   </div>
+  <!--{{primary | json}}
+  {{getAutoCompArr() | json}}
+  {{autocompForm.value | json}}-->
+</form>

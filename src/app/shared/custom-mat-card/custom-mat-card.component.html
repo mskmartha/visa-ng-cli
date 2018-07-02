@@ -1,0 +1,23 @@
+<mat-card class="sl-p10 sl-ml10 sl-pointer card">
+  <mat-card-header class="sl-flex sl-cross-center">
+    <mat-card-title *ngIf="title" style="color: #16267b; font-weight: 600; font-size: 14px;" class="sl-mb0">{{title}}</mat-card-title>
+    <mat-card-subtitle *ngIf="subtitle" class="sl-mb0">{{subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-nav-list class="cardContent">
+      <ng-container *ngFor="let obj of summary; let i = index">
+        <mat-list-item *ngIf="i < 4 || showMore" (click)="emitFilter(obj)">
+          <div class="sl-flex listItem sl-cross-center">
+            <div class="sl-flex sl-cross-center sl-main-center total">
+              {{obj.total}}
+            </div>
+            <div class="sl-ml15">{{obj.label}}</div>
+          </div>
+        </mat-list-item>
+      </ng-container>
+    </mat-nav-list>
+  </mat-card-content>
+  <button *ngIf="summary.length > 4 && showMore" mat-button class="button" (click)="showMore = false">Show Less</button>
+  <button *ngIf="summary.length > 4 && !showMore" mat-button class="button" (click)="showMore = true">More</button>
+</mat-card>
+

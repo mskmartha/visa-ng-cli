@@ -1,0 +1,108 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-xl-12">
+        <div *ngIf="showProgess" class="cta-screen">
+            <mat-spinner class="centered"></mat-spinner>
+            <h4 class="centered">Loading ...</h4>
+        </div>
+        <div *ngIf="records">
+            <div class="col-sm-12 col-md-12 col-xl-12">
+                <div class="table-inner-wrapper">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="tbodyTrRow">
+                                <th>Project Name</th>
+                                <th>Scan Date</th>
+                                <th>
+                                  <div class="sl-flex sl-stack sl-main-center">
+                                    <div class="sl-ta-center sl-bb">
+                                      Total
+                                    </div>
+                                    <div class="sl-flex sl-main-space-between">
+                                      <div>High</div>
+                                      <div>Med.</div>
+                                      <div>Low</div>
+                                    </div>
+                                  </div>
+
+                                </th>
+                                <th>
+                                  <div class="sl-flex sl-stack sl-main-center">
+                                    <div class="sl-ta-center sl-bb">
+                                      Confirmed
+                                    </div>
+                                    <div class="sl-flex sl-main-space-between">
+                                      <div>High</div>
+                                      <div>Med.</div>
+                                      <div>Low</div>
+                                    </div>
+                                  </div>
+                                </th>
+                                <th>Release Name</th>
+                                <th>Finding Metrics</th>
+                                <th class="centerAlignedColumn">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tbodyTrRow" *ngFor="let key of csDetails">
+                                <td class="column leftAlignedColumn">{{key.projectName}}</td>
+                                <td class="column leftAlignedColumn">{{key.scanDate | date:'MM-dd-yyyy'}}</td>
+                              <td class="column leftAlignedColumn">
+                                <div class="sl-flex sl-main-space-between">
+                                  <div class="text-danger sl-fw800">{{key?.highCount}}</div>
+                                  <div class="text-warning sl-fw800">{{key?.mediumCount}}</div>
+                                  <div class="text-success sl-fw800">{{key?.lowCount}}</div>
+                                </div>
+                              </td>
+                              <td class="column leftAlignedColumn">
+                                <div class="sl-flex sl-main-space-between">
+                                  <div class="text-danger sl-fw800">{{key?.confirmedHigh}}</div>
+                                  <div class="text-warning sl-fw800">{{key?.confirmedMedium}}</div>
+                                  <div class="text-success sl-fw800">{{key?.confirmedLow}}</div>
+                                </div>
+                                <td class="column leftAlignedColumn">{{key.releaseId}}</td>
+                                <td class="column leftAlignedColumn"><span *ngIf="key?.confirmedHigh > 0 || key?.confirmedMedium> 0 || key?.confirmedLow > 0; else elseBlock" class="link" (click)="openGraphDialog(key.scanId, key.projectName)">View Metrics</span> <ng-template #elseBlock>N/A</ng-template></td>
+                                <td class="centerAlignedColumn"><mat-icon (click)='removeProject(key.csmId)'>delete forever</mat-icon></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button mat-raised-button *ngIf="hasPermission" class="mt-2 mr-1" color="cta-secondary" class="cta-1" (click)="openClassicDialog()">Add Project</button>
+                    <button *ngIf="hasPermission && showGenerate" mat-raised-button class="mt-2 mr-1" color="cta-secondary" class="cta-1" (click)="genReport()">Generate Report</button>
+                    <button *ngIf="hasPermission && showDwnld" mat-raised-button class="mt-2 mr-1" color="cta-secondary" class="cta-1" (click)="dwldReport()">Download Report</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="norecords" class="norecords-tile">
+            <div class="start-new-btn" (click)="openClassicDialog()">
+                <button mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button>
+            </div>
+            <h4>No Code Scan Data submitted. Click to begin</h4>
+        </div>
+
+        <div *ngIf="recordsErr" class="cta-screen">
+            <div class="submit-screen">
+                <img src="assets/img/error-circle.svg"/>
+                <div class="clearfix"></div>
+                <h4>Error accessing the records</h4>
+            </div>
+        </div>
+
+        <div *ngIf="genReportSuccess" class="cta-screen">
+            <div class="submit-screen">
+                <img src="assets/img/ic-check-circle.svg"/>
+                <h5>Generate Report Completed</h5>
+                <button mat-raised-button type="submit" color="primary" (click)="getCodeScanDetails()" class="cta-1">Go to Projects</button>
+                <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+            </div>
+        </div>
+        <div *ngIf="errOnSubmit" class="cta-screen">
+            <div class="submit-screen">
+                <img src="assets/img/error-circle.svg"/>
+                <h5>Something went wrong</h5>
+                <button mat-raised-button (click)="getCodeScanDetails();" class="cta-2">Cancel</button>
+                <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="getCodeScanDetails();">Try Again</button>
+                <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+            </div>
+        </div>
+
+    </div>
+</div>

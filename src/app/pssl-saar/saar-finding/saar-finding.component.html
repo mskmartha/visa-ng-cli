@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-xl-12">
+        <div *ngIf="stillloading" class="loading">
+            <mat-spinner class="centered"></mat-spinner>
+            <h4>Loading ...</h4>
+        </div>
+        <div class="table-inner-wrapper" *ngIf="records && (readOnly || hasPermission)">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="tbodyTrRow">
+                        <th>Finding Id</th>
+                        <th>Finding Name</th>
+                        <th>Description</th>
+                        <th>Mitigation</th>
+                        <th>Resolution</th>
+                        <th>Impact / Likely</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tbodyTrRow" *ngFor="let key of saarFindingDetails">
+                        <td class="column leftAlignedColumn">{{key.findingId}}</td>
+                        <td class="column leftAlignedColumn">{{key.findingName}}</td>
+                        <td class="column leftAlignedColumn">{{key.description}}</td>
+                        <td class="column leftAlignedColumn">{{key.mitigations}}</td>
+                        <td class="column leftAlignedColumn">{{key.resolution}}</td>
+                        <td class="column leftAlignedColumn">{{key.impact}}/{{key.likely}}</td>
+                        <td class="column leftAlignedColumn">{{key.resolutionStatus}}</td>
+
+                        <td *ngIf="hasPermission" class="column centerAlignedColumn">
+                            <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>settings</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu" class="mat-menu">
+                                <button mat-menu-item (click)="openClassicDialog('view',key.findingId)">
+                                    <mat-icon> find_in_page </mat-icon>
+                                    <span> View Finding </span>
+                                </button>
+                                <button mat-menu-item (click)="openClassicDialog('edit',key.findingId)">
+                                    <mat-icon> edit </mat-icon>
+                                    <span> Edit </span>
+                                </button>
+                            </mat-menu>
+                        </td>
+                        <td *ngIf="!hasPermission"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button *ngIf="!recordsErr && hasPermission" mat-raised-button class="mt-2 mr-1 fl-r cta-1" (click)="openClassicDialog()"><span matTooltip="Submit new Finding/s">Submit new Finding/s</span></button>
+        </div>
+        <div *ngIf="norecords && (readOnly || hasPermission)" class="norecords-tile">
+            <div class="start-new-btn"><button type="button" [disabled]="!hasPermission" (click)="openClassicDialog()" mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button></div>
+            <h4>No SAAR Findings submitted. Click to begin</h4>
+        </div>
+        <div *ngIf="(norecords || records) && !readOnly && !hasPermission" class="cta-screen">
+            <div>
+                <img src="assets/img/error-circle.svg"/>
+                <div class="clearfix"></div>
+                <h4>Forbidden - You don't have permission to access this.</h4>
+            </div>
+        </div>
+        <div *ngIf="recordsErr" class="err-msg">
+            <mat-icon class="centered">error</mat-icon>
+            <div class="clearfix"></div>
+            <h4>Error accessing the records</h4>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+mat-dialog-content {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+mat-dialog-title{
+    color: #fff;
+    background-color: #1a1f71;
+}
+mat-card-actions{
+    margin:0px !important;
+    float:right;
+    padding: 10px 0;
+}
+.sl-dialog-container-inner{
+    margin: -24px !important;
+}
+.sl-dialog-title{
+    height: 47px;
+    background-color: #1a1f71;
+    padding: 10px 20px;
+    font-family: "Open Sans";
+    font-size: 20px;
+    text-align: left;
+    color: #ffffff !important;
+    margin: 0;
+}
+.sl-dialog-close{
+    color: #ffffff;
+    padding:10px;
+}
+.cancel{
+    float: left;
+    margin-top: -45px;
+    position: fixed;
+    margin-left: 10px;
+    z-index: 1;
+}
+.sl-dialog-main{
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+}
+.sl-dialog-content{
+    width:100%;
+}
+.sl-dialog-content-main{
+    padding: 8px;
+}
+.closeModal {
+  justify-content: flex-end;
+  width: 100%;
+}

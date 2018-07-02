@@ -1,0 +1,15 @@
+<button mat-raised-button class="cta-1 fl-l" *ngIf="selectedFiles" (click)="upload()"><mat-icon class="whiteIcon">backup</mat-icon>Upload</button>
+<mat-chip-list #chipList>
+  <mat-chip [disabled]="false" class="sl-tt-capitalize" *ngFor="let autoOpt of selectedFiles; let i = index" [removable]="true">
+    {{autoOpt.name}}
+    <mat-icon (click)="clearSelection()" matChipRemove matTooltip="Clear Selection">cancel</mat-icon>
+  </mat-chip>
+</mat-chip-list>
+<label *ngIf="!selectedFiles" class="btn btn-default fileContainer cta-2">
+  Choose a File to Upload
+  <!--<input type="file" (change)="selectFile($event)">-->
+  <input mat-raised-button class="cta-1" #fileInput type="file" (click)="showFileBrowseDlg($event)" >
+</label>
+
+
+

@@ -1,0 +1,25 @@
+@mixin list-theme($theme) {
+    
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    .main {
+        .list-group {
+            button {
+                color: mat-color($mat-blue-grey, 500);
+                &.active {
+                 color: mat-color($mat-grey, 50);   
+                }
+            }
+        }
+        .mat-list, .mat-nav-list {
+            .mat-list-item {
+                .mat-list-item-content {
+                    color: mat-color($mat-blue-grey, 500);
+                }
+            }
+        }
+  
+    }
+    
+}

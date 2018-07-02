@@ -1,0 +1,223 @@
+<div class="dialog-container-inner">
+  <div class="sl-flex sl-main-space-between dialog-title">
+    <div>{{this.SAARDetails.saId}} - Security Architecture Finding - Create</div>
+    <div class="sl-flex sl-cross-end " >
+      <button class="sl-flex sl-button" mat-dialog-close="cancel"><mat-icon class="whiteFont">clear</mat-icon></button>
+    </div>
+  </div>
+  <div *ngIf="modalStepper" class="dialog-main">
+    <form [formGroup]="saarForm" novalidate (ngSubmit)="save(saarForm)">
+      <mat-dialog-content class="scrollbar">
+        <div class="col-lg-12">
+          <div formArrayName="saarFindingDOList">
+            <div *ngFor="let saarFindingDOs of saarForm.controls.saarFindingDOList.controls; let i=index" class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Finding - {{i + 1}}</h4>
+
+                <span class="glyphicon glyphicon-remove pull-right" *ngIf="saarForm.controls.saarFindingDOList.controls.length > 1" (click)="removeFindings(i)"></span>
+                <span class="glyphicon glyphicon-remove pull-right"></span>
+              </div>
+              <div class="panel-body" [formGroupName]="i">
+                <div class="row">
+
+                  <div class="col-sm-12">
+                    <mat-form-field>
+                      <input matInput placeholder="Title" formControlName="findingName" value="">
+                    </mat-form-field>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.findingName?.invalid && (
+                      saarFindingDOs.controls.findingName?.touched || mouseoverActionButton))" class="text-danger">
+                        Finding Name is required
+                    </small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                      <mat-select #tc1 placeholder="Finding Type" formControlName="findingType">
+                        <mat-option value="">Select a Finding Type</mat-option>
+                        <mat-option *ngFor="let tc of SAARDetails.enums.threatCategory" [value]="tc" (click)="getVulnrTypes(i,tc)">
+                          {{tc}}
+                        </mat-option>
+                      </mat-select>
+                      <br>
+                      <small *ngIf="!isDisabled && (saarFindingDOs.controls.findingType?.invalid && (
+                        saarFindingDOs.controls.findingType?.touched || mouseoverActionButton))" class="text-danger">
+                          Finding Type is required
+                      </small>
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select placeholder="Vulnerability Type" formControlName="vid" [(ngModel)]="saarFindingDOs.value.vid">
+                        <mat-option value="">Select a Vulnerability Type</mat-option>
+                        <mat-option *ngFor="let vt of vulnerabilityTypes[i]" [value]="vt.vid" (click)="prefillVulnrDtls(i, vt.vid, vt)">
+                          {{vt.title}}
+                        </mat-option>
+                      </mat-select>
+                      <span *ngIf="saarFindingDOs.value.vtInfo" matTooltip="{{saarFindingDOs.value.vtInfo}}"><mat-icon>info</mat-icon></span>
+                      <br>
+                      <small *ngIf="!isDisabled && (saarFindingDOs.controls.vid?.invalid && (
+                        saarFindingDOs.controls.vid?.touched || mouseoverActionButton))" class="text-danger">
+                          Vulnerability Type is required
+                      </small> <br>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <mat-select placeholder="Impact" formControlName="impact" [(ngModel)]="saarFindingDOs.value.impact">
+                      <mat-option value="">Select Impact</mat-option>
+                      <mat-option *ngFor="let imp of SAARDetails.enums.genericSeverityRatings" [value]="imp">
+                        {{imp}}
+                      </mat-option>
+                    </mat-select>
+                    <br>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.impact?.invalid && (
+                      saarFindingDOs.controls.impact?.touched || mouseoverActionButton))" class="text-danger">
+                        Impact is required
+                    </small>
+                  </div>
+                  <div class="col-sm-4">
+                    <mat-select placeholder="Likely" formControlName="likely" [(ngModel)]="saarFindingDOs.value.likely">
+                      <mat-option value="">Select Likely</mat-option>
+                      <mat-option *ngFor="let li of SAARDetails.enums.genericSeverityRatings" [value]="li">
+                        {{li}}
+                      </mat-option>
+                    </mat-select>
+                    <br>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.likely?.invalid && (
+                      saarFindingDOs.controls.likely?.touched || mouseoverActionButton))" class="text-danger">
+                        Likely is required
+                    </small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <mat-form-field>
+                      <textarea matInput placeholder="Description" formControlName="description" value=""></textarea>
+                    </mat-form-field>
+                    <br>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <mat-select placeholder="Attack Vector" formControlName="attackVector">
+                      <mat-option value="">Select Attack Vector</mat-option>
+                      <mat-option *ngFor="let av of SAARDetails.enums.attackVector" [value]="av">
+                        {{av}}
+                      </mat-option>
+                    </mat-select>
+                    <br>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.attackVector?.invalid && (
+                      saarFindingDOs.controls.attackVector?.touched || mouseoverActionButton))" class="text-danger">
+                        Attack Vector is required
+                    </small>
+                  </div>
+                  <div class="col-sm-6">
+                    <mat-select placeholder="Data Asset" formControlName="dataAsset">
+                      <mat-option value="">Select Data Asset</mat-option>
+                      <mat-option *ngFor="let da of SAARDetails.enums.dataAsset" [value]="da">
+                        {{da}}
+                      </mat-option>
+                    </mat-select>
+                    <br>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.dataAsset?.invalid && (
+                      saarFindingDOs.controls.dataAsset?.touched || mouseoverActionButton))" class="text-danger">
+                        Data Asset is required
+                    </small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <mat-form-field>
+                      <textarea matInput placeholder="Mitigation" formControlName="mitigation" value=""></textarea>
+                    </mat-form-field>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.mitigation?.invalid && (
+                      saarFindingDOs.controls.mitigation?.touched || mouseoverActionButton))" class="text-danger">
+                        Mitigation is required
+                    </small>
+                    <span class="col-sm-2">
+                      <span *ngIf="!isDisabled && saarFindingDOs.value.vid" class="col-sm-2">
+                        <button type="button" class="cta-2 col-sm-2" (click)="getMitigations()">Show Mitigations</button>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <mat-form-field>
+                      <textarea matInput placeholder="Resolution" formControlName="resolution" value=""></textarea>
+                    </mat-form-field>
+                    <br>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.resolution?.invalid && (
+                      saarFindingDOs.controls.resolution?.touched || mouseoverActionButton))" class="text-danger">
+                        Resolution is required
+                    </small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <mat-select class="select-small" placeholder="Resolution Status" formControlName="resolutionStatus">
+                      <mat-option value="">Select Resolution Status</mat-option>
+                      <mat-option *ngFor="let rs of SAARDetails.enums.saarStatus" [value]="rs">
+                        {{rs}}
+                      </mat-option>
+                    </mat-select>
+                    <small *ngIf="!isDisabled && (saarFindingDOs.controls.resolutionStatus?.invalid && (
+                      saarFindingDOs.controls.resolutionStatus?.touched || mouseoverActionButton))" class="text-danger">
+                        Resolution Status is required
+                    </small><br>
+                  </div>
+                </div>
+                <div class="row">
+                  <h5 class="pad-l-10">Compliance Violation</h5>
+                  <div class="col-sm-12">
+                      <mat-form-field>
+                      <input matInput placeholder="TSR" formControlName="tsr" [(ngModel)]="saarFindingDOs.value.tsr" [value]="">
+                    </mat-form-field>
+                  </div>
+                  <!-- <div class="col-sm-12">
+                      <mat-form-field>
+                      <input matInput placeholder="KCC" formControlName="kcc" [value]="">
+                    </mat-form-field>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </mat-dialog-content>
+      <mat-card-actions *ngIf="!isDisabled" align="end">
+        <div>
+          <button mat-raised-button color="cta-secondary" class="cta-2" [matDialogClose] type="button">Cancel</button>
+          <button mat-mini-fab class="addmore-icon-btn" (click)="addFindings()"><mat-icon class="whiteFont">add</mat-icon></button>
+          <span (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+            <button type="submit" mat-raised-button class="cta-1" [disabled]="!saarForm.valid" (click)="submitFindings()">Submit</button>
+          </span>
+        </div>
+      </mat-card-actions>
+    </form>
+  </div>
+  <div *ngIf="submitSASucess" class="dialog-main">
+    <div class="submit-screen">
+      <img src="assets/img/ic-check-circle.svg"/>
+      <h5>Security Architecture Finding submitted</h5>
+        <button mat-raised-button color="" class="cta-2" matDialogClose>Close</button>
+        <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="utils.changeRoute('/PSSL/manage')" matDialogClose>Go to Finding</button>
+        <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+    </div>
+  </div>
+
+  <div *ngIf="errOnSubmit" class="dialog-main">
+    <div class="submit-screen">
+      <img src="assets/img/error-circle.svg"/>
+      <h5>Something went wrong</h5>
+        <button mat-raised-button color="" class="cta-2" matDialogClose>Cancel</button>
+        <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>
+        <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+    </div>
+  </div>
+  <div *ngIf="showProgess" class="dialog-main">
+    <div class="submit-spinner">
+      <mat-spinner class="centered"></mat-spinner>
+      <h4>Processing...</h4>
+    </div>
+  </div>
+</div>

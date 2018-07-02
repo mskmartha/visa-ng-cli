@@ -1,0 +1,14 @@
+[
+	{
+		"Id": 1010158,
+		"InitiatorName": "admin admin",
+		"ProjectName": "Test2_6892_REL_TestRelease2",
+		"PresetName": "High and Medium and Low",
+		"ReleaseId": "TestRelease2",
+		"ScanCompletedOn": 1498250438823,
+		"High": 0,
+		"Medium": 10,
+		"Low": 81,
+		"IsPresent": "false"
+	}
+]

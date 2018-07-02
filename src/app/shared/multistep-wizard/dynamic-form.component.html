@@ -1,0 +1,290 @@
+<form *ngIf="form" [formGroup]="form">
+  <div class="tab-content">
+    <div class="mb-20">
+      <mat-dialog-content class="scrollbar">
+        <div *ngIf="step.groupLayout=='accordion';else elseBlock">
+          <mat-expansion-panel *ngFor="let group of step.groupedQns; let i=index" [expanded]="stepNumber === i" (opened)="setStep(i)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon *ngIf="injectData?.isViewDisabled" class="group-valid-icon">check_circle</mat-icon>
+                <mat-icon *ngIf="!injectData?.isViewDisabled && form.controls[group.groupId].valid" class="group-valid-icon">check_circle</mat-icon>
+                <mat-icon *ngIf="!injectData?.isViewDisabled && !form.controls[group.groupId].valid" class="group-invalid-icon">warning</mat-icon>
+                {{group.groupName}}
+              </mat-panel-title>
+              <!--
+              <mat-panel-description>
+                description here
+              </mat-panel-description>
+              -->
+            </mat-expansion-panel-header>
+            <ng-template [ngTemplateOutlet]="grpQns" [ngTemplateOutletContext]="(grp_qns | async)[i]"></ng-template>
+
+            <!-- comments section -->
+            <div *ngIf="group.comments !== null && group.comments?.length === 0" class="container">
+              <button mat-button color="primary" (click)="openCommentsDialog(group.comments, injectData, group.groupId)">Add comment</button>
+            </div>
+            <div *ngIf="group.comments !== null && group.comments?.length > 0" class="container">
+              <div class="row">
+                <div class="col-sm-10">
+                  <div class="panel panel-white post panel-shadow">
+                    <h4 class="comments-header">Comments <a href="javascript:void(0)" (click)="openCommentsDialog(group.comments, injectData, group.groupId)" class="pull-right">Add / View Comments</a></h4>
+                    <div class="post-heading">
+                      <div class="pull-left image">
+                        <mat-icon class="img-circle avatar material-icons md-48" alt="user profile image">account_circle</mat-icon>
+                      </div>
+                      <div class="pull-left meta">
+                        <div class="title h5">
+                          <a href="#"><b>{{group.comments[0].userName}}</b></a>
+                        </div>
+                        <h6 class="text-muted time">{{group.comments[0].creationDate | fromNow}}</h6>
+                      </div>
+                    </div>
+                    <div class="post-description">
+                      <p>{{group.comments[0].comment}}</p>
+                      <!--
+                      <div class="stats">
+                          <a href="#" class="btn btn-default stat-item">
+                              <i class="fa fa-thumbs-up icon"></i>2
+                          </a>
+                          <a href="#" class="btn btn-default stat-item">
+                              <i class="fa fa-thumbs-down icon"></i>12
+                          </a>
+                      </div>
+                      -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <mat-action-row>
+              <button *ngIf="stepNumber !== 0" mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button *ngIf="stepNumber < (step.groupedQns.length-1)" mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+
+          </mat-expansion-panel>
+        </div>
+        <ng-template #elseBlock>
+          <div *ngFor="let group of step.groupedQns; let i= index">
+            <h6>{{group.groupName}}</h6>
+            <ng-template [ngTemplateOutlet]="grpQns" [ngTemplateOutletContext]="(grp_qns | async)[i]"></ng-template>
+            <!-- comments section -->
+            <div *ngIf="group.comments !== null && group.comments?.length === 0 && injectData?.formId === 'CSA'" class="container">
+              <button mat-button color="primary" (click)="openCommentsDialog(group.comments, injectData, group.groupId)">Add comment</button>
+            </div>
+            <div *ngIf="group.comments !== null && group.comments?.length > 0 && injectData?.formId === 'CSA'" class="container mb-20">
+              <div class="row">
+                <div class="col-sm-10">
+                  <div class="panel panel-white post panel-shadow">
+                    <h4 class="comments-header">Comments <a href="javascript:void(0)" (click)="openCommentsDialog(group.comments, injectData, group.groupId)" class="pull-right">Add / View Comments</a></h4>
+                    <div *ngFor="let comment of group.comments; index as j">
+                      <!--To restrict the number of comments to 4-->
+                      <div *ngIf="j < 4">
+                        <div class="post-heading">
+                          <div class="pull-left image">
+                            <mat-icon class="img-circle avatar material-icons md-48" alt="user profile image">account_circle</mat-icon>
+                          </div>
+                          <div class="pull-left meta">
+                            <div class="title h5">
+                              <a href="#"><b>{{comment.userName}}</b></a>
+                            </div>
+                            <h6 class="text-muted time">{{comment.creationDate | fromNow}}</h6>
+                          </div>
+                        </div>
+                        <div class="post-description">
+                          <p>{{comment.comment}}</p>
+                          <!--
+                          <div class="stats">
+                              <a href="#" class="btn btn-default stat-item">
+                                  <i class="fa fa-thumbs-up icon"></i>2
+                              </a>
+                              <a href="#" class="btn btn-default stat-item">
+                                  <i class="fa fa-thumbs-down icon"></i>12
+                              </a>
+                          </div>
+                          -->
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+
+
+        <!-- reusable grouped questions template for with/without accordion -->
+        <ng-template #grpQns let-questions="questions" let-groupId="groupId">
+          <!--Adding a flex class as per the requirements specific to CSA of adding button next to the dropdown-->
+          <div>
+            <!-- each group questions -->
+            <div formArrayName="{{groupId}}">
+              <div *ngFor="let grpContrl of form.controls[groupId].controls; let i=index" class="panel panel-default">
+                <div [formGroupName]="i">
+                  <div *ngFor="let question of questions">
+                    <div [ngSwitch]="question.questionType" [style.display]="step.qnsMap[question.questionId].jump ? 'block' : 'none'" class="indent_{{step.qnsMap[question.questionId].indent}}">
+                      <label class="sl-flex sl-cross-center" [attr.for]="question.questionId">
+                        <span>{{question.questionLabel}}</span>
+                        <!--<span *ngIf="question.info && (question.questionType == 'radio' || question.questionType == 'checkbox')" matTooltip="{{question.info}}"><mat-icon>info</mat-icon></span>-->
+                      </label>
+                      <div class="clearfix"></div>
+                      <!--<div [ngClass]="{'has-error':!form.controls[question.questionId].valid && form.controls[question.questionId].touched}">-->
+                      <fieldset>
+                        <mat-form-field *ngSwitchCase="'text'" class="col-sm-9">
+                          <input matInput placeholder="{{question.placeHolder}}" [formControlName]="question.questionId"
+                                 [id]="question.questionId" [type]="question.questionType"
+                                 [pattern]="question.validation.regexPattern"
+                                 [required]="question?.validation?.required"
+                                 minlength=""
+                                 maxlength=""
+                          >
+                          <mat-hint *ngIf="question.info" align="end">{{question.info}}</mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field *ngSwitchCase="'textarea'" class="col-sm-9">
+                          <textarea matInput placeholder="{{question.placeHolder}}" [formControlName]="question.questionId"
+                                    [id]="question.questionId" [type]="question.questionType"
+                                    [pattern]="question.validation.regexPattern"
+                                    minlength=""
+                                    maxlength=""
+                                    matTextareaAutosize matAutosizeMinRows="2"
+                                    matAutosizeMaxRows="5"
+                          ></textarea>
+                        </mat-form-field>
+
+                        <div *ngSwitchCase="'autocomplete'" class="col-sm-12 fl-l sl-p0">
+                          <app-autocomplete [isViewDisabled]="injectData?.isViewDisabled" [placeholder]="question.placeHolder" [parentForm]="{groupId: groupId, questionId: question.questionId, answers: question.answers, required: question.validation.required}" [autocomplete]="question.autocomplete" [formControl]="grpContrl.controls[question.questionId]" [formControlName]="question.questionId" (eventEmit)="autocompleteEvent($event)"></app-autocomplete>
+                        </div>
+
+                        <div *ngSwitchCase="'comment'" class="col-sm-9 fl-l sl-p0">
+                          <app-comments [isViewDisabled]="injectData?.isViewDisabled" [question]="question" [parentForm]="{groupId: groupId, questionId: question.questionId, answers: question.answers, required: question.validation.required}" (commentEmitter)="commentEvent($event)"></app-comments>
+                        </div>
+
+                        <div *ngSwitchCase="'multiRow'" class="col-sm-12 fl-l">
+                          <app-multi-row-question [isViewDisabled]="injectData?.isViewDisabled" [question]="question" [parentForm]="{groupId: groupId, questionId: question.questionId, answers: question.answers, required: question.validation.required}" (urlEmitter)="multiUrlEvent($event)"></app-multi-row-question>
+                        </div>
+
+                        <mat-select *ngSwitchCase="'dropdown'" placeholder="Select a {{question.questionLabel}}" class="col-sm-6" [formControlName]="question.questionId"
+                                   [id]="question.questionId">
+                          <mat-option value="">Select {{question.questionLabel}}</mat-option>
+                          <mat-option *ngFor="let opt of question.options" [value]="opt.optionId">{{opt.text}}</mat-option>
+                        </mat-select>
+
+                        <mat-radio-group *ngSwitchCase="'radio'" class="row sl-full-width sl-ml0" name="{{question.questionId}}" [formControlName]="question.questionId">
+                          <label *ngFor="let opt of question.options" class="sl-label col-sm-4">
+                            <mat-radio-button [value]="opt.optionId" (click)="forceClick($event, 'mat-radio-button');jumpLogic(groupId, question.questionId, question.questionType, opt.optionId, opt.qrule)">
+                              {{opt.text}}
+                            </mat-radio-button>
+                          </label>
+                        </mat-radio-group>
+
+                        <div *ngSwitchCase="'checkbox'">
+                          <div class="row sl-full-width" formArrayName="{{question.questionId}}">
+                            <div *ngFor="let opt of question.options; let i = index;" class="col-sm-6 col-md-6 col-xl-6">
+                              <mat-checkbox class="customCheckBox" [formControlName]="i" [value]="opt.optionId" (click)="forceClick($event, 'mat-checkbox');(opt.qrule) ? jumpLogic(groupId, question.questionId, question.questionType, opt.optionId, opt.qrule) : return;">{{opt.text}}</mat-checkbox>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div *ngSwitchCase="'date'" class="col-sm-6 sl-p0">
+                          <app-cva-date [isViewDisabled]="injectData?.isViewDisabled" [parentForm]="question" [formControl]="grpContrl.controls[question.questionId]" [formControlName]="question.questionId"></app-cva-date>
+                        </div>
+
+                        <div *ngIf="!invalidSubmit && (!grpContrl.controls[question.questionId].valid || grpContrl.controls[question.questionId].touched)"
+                             class="text-danger">
+                          <small *ngIf="grpContrl.controls[question.questionId].hasError('minlength')">{{question.questionLabel}} should be 10 digit</small>
+                          <small *ngIf="grpContrl.controls[question.questionId].hasError('required') && grpContrl?.controls[question.questionId]?.touched">{{question.questionLabel}} is required</small>
+                          <small *ngIf="grpContrl.controls[question.questionId].hasError('pattern')">{{question.questionLabel}} should match pattern {{question.validation.regexPattern}}</small>
+                          <small *ngIf="!grpContrl.controls[question.questionId].hasError('required')" [hidden]="!grpContrl.controls[question.questionId].getError('dateRestriction')">{{grpContrl.controls[question.questionId].getError('dateRestriction')}}</small>
+                          <small *ngIf="!(grpContrl.controls[question.questionId].hasError('minlength') ||
+                          grpContrl.controls[question.questionId].hasError('required') ||
+                          grpContrl.controls[question.questionId].hasError('pattern'))
+                          && grpContrl.controls[question.questionId].touched && grpContrl.controls[question.questionId].invalid">Please provide appropriate value</small>
+                        </div>
+                        <div class="text-danger">
+                          <small *ngIf="invalidSubmit && grpContrl?.controls[question.questionId]?.invalid">{{question.questionLabel}} is required</small>
+                        </div>
+
+                        <mat-form-field class="col-sm-6" *ngIf="question.questionType !== 'date' && question.description !== null">
+                          <textarea matInput placeholder="Description" value="">{{question.description}}</textarea>
+                        </mat-form-field>
+
+                        <!-- date field description special handling -->
+                        <mat-form-field class="col-sm-6" *ngIf="question.questionType === 'date' && question.description !== null && injectData?.isViewDisabled">
+                          <textarea matInput placeholder="Justification" disabled [formControl]="descField.controls[question.questionId]" #box value="{{question.description}}">{{question.description}}</textarea>
+                        </mat-form-field>
+                        <mat-form-field class="col-sm-6" *ngIf="question.questionType === 'date' && question.description !== null && !grpContrl.controls[question.questionId].hasError('required') && grpContrl.controls[question.questionId].hasError('dateRestriction')">
+                          <textarea matInput placeholder="Justification" [formControl]="descField.controls[question.questionId]" #box value="">{{question.description}}</textarea>
+                          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="setDateJustification(groupId, question.questionId);">
+                            <mat-icon>{{(box.value === '') ? null : 'check'}}</mat-icon>
+                          </button>
+                        </mat-form-field>
+                      </fieldset>
+                    </div>
+                    <div *ngIf="formIndex+1 == stepsLength && injectData?.canShow && injectData?.formId === 'CSA'">
+                      <button  mat-raised-button type="button" [disabled]="!form.valid" class="cta-1" (click)="onSubmit(formIndex+1, injectData.actionId)">{{'UPDATE'}}</button>
+                    </div>
+                    <!--</div>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end group questions -->
+          </div>
+
+
+        </ng-template>
+        <!-- for debugging -->
+        <!--
+        touchedForm: {{touchedForm | json}}
+        {{form.value | json}}
+        {{form.valid}}
+        injectData: {{injectData | json}}
+        -->
+        <!-- for debugging -->
+
+      </mat-dialog-content>
+    </div>
+    <!--Action button section-->
+    <div>
+      <mat-card-actions align="end" class="col-lg-12">
+        <!--
+          Ex:
+          {
+            buttonId: 1,
+            buttonTxt: 'Save for Later',
+            action: 10,
+            class: 'cta-1',
+            canShow: true,
+            enableOnFormDirty: true  // show even without formdirty
+          }
+        -->
+        <span *ngIf="injectData.customBttns" align="center" class="sl-custom-btns">
+        <span *ngFor="let btn of injectData.customBttns; let i = index">
+          <button *ngIf="btn.canShow" mat-raised-button type="button" [disabled]="btn.enableOnFormDirty && !form.dirty" class="{{btn.class}}" (click)="customBttnEvent(btn.action)">{{btn.buttonTxt}}</button>
+        </span>
+      </span>
+        <!--
+        <fab dir="right">
+          <fab-toggle>+</fab-toggle>
+          <fab-button>A</fab-button>
+          <fab-button>B</fab-button>
+          <fab-button>C</fab-button>
+          <fab-button>D</fab-button>
+        </fab>
+        -->
+        <button mat-raised-button *ngIf="formIndex > 0" type="button" class="cta-2" (click)="onSubmit(formIndex-1)">Previous</button>
+        <span *ngIf="formIndex+1 < stepsLength" (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+        <button mat-raised-button type="button" class="cta-1" (click)="form.valid || injectData.isViewDisabled ? onSubmit(formIndex+1) : invalidSubmitError()">Next</button>
+      </span>
+        <!-- TODO: actionId pass from enums -->
+        <span *ngIf="formIndex+1 == stepsLength && !injectData.canShow && !injectData.isViewDisabled" (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+        <button mat-raised-button type="button" class="cta-1" (click)="form.valid ? onSubmit(formIndex+1, injectData.actionId) : invalidSubmitError()">{{injectData.submitBtnlabel ? injectData.submitBtnlabel : 'Submit'}}</button>
+      </span>
+
+      </mat-card-actions>
+    </div>
+  </div>
+</form>

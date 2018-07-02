@@ -1,0 +1,127 @@
+<div class="dialog-container-inner">
+  <div class="sl-flex sl-main-space-between dialog-title">
+    <div>{{projectName || 'Code Scanning - Create'}}</div>
+    <div class="sl-flex sl-cross-end " >
+      <button class="sl-flex sl-button" mat-dialog-close="cancel"><mat-icon class="whiteFont">clear</mat-icon></button>
+    </div>
+  </div>
+  <div *ngIf="edited" class="dialog-main">
+      <form [formGroup]="addProjForm" novalidate (ngSubmit)="callCodeScan(addProjForm.value)">
+        <div class="tab-content">
+          <mat-card-title><h4>Enter project name below to pull the static code scans</h4></mat-card-title>
+          <mat-dialog-content layout="column">
+            <div class="form-group">
+                <mat-form-field>
+                  <input matInput placeholder="Enter Project Name" [formControl]="addProjForm.controls['project']" [matAutocomplete]="autoCodeScan" required>
+                </mat-form-field>
+                <mat-autocomplete class="col-lg-10 scrollbar" #autoCodeScan="matAutocomplete">
+                  <mat-option *ngFor="let proj of filteredOptions | async" [value]="proj">
+                    <!--Checking the width of the projName and enabling tooltip if overflow -->
+                    <span matTooltip="{{projName.offsetWidth > 420 ? proj : ''}}" #projName>{{proj}}</span>
+                  </mat-option>
+                </mat-autocomplete>
+                <br>
+                <small *ngIf="((mouseoverActionButton) && addProjForm.controls['project'].errors?.required) || (addProjForm.controls['project'].errors?.required && addProjForm.controls['project'].touched)" class="text-danger">
+                    Project name is required
+                </small>
+                <small *ngIf="addProjForm.value.project.length > 0 && !validateProject()" class="text-danger">
+                    Choose only available projects
+                </small>
+            </div>
+            <mat-card-actions align="end">
+              <span (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+                <button mat-raised-button type="mt-2 mr-1" color="cta-secondary" class="cta-1" [disabled]="!addProjForm.valid || !validateProject()" (click)="callCodeScan(addProjForm.value)">Next</button>
+              </span>
+            </mat-card-actions>
+          </mat-dialog-content>
+        </div>
+      </form>
+    </div>
+
+  <div *ngIf="records" class="dialog-main">
+      <div *ngIf="(!IsPresentVal && !submitScanSucess && !isScanValid)">
+        <div *ngIf="codeScanDetails?.length > 0" class="table-inner-wrapper">
+          <!--<h4>Code Scan List for Project: {{projectName}}</h4>-->
+          <table class="table table-hover">
+              <thead>
+                  <tr class="tbodyTrRow">
+                      <th>Scan Date</th>
+                      <th>Preset</th>
+                      <th>High</th>
+                      <th>Medium</th>
+                      <th>Low</th>
+                      <th>Select Scan</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="tbodyTrRow" *ngFor="let key of codeScanDetails">
+                    <td class="column leftAlignedColumn">{{key.ScanCompletedOn | date:'MM-dd-yyyy'}}</td>
+                    <td class="column leftAlignedColumn">{{key.PresetName}}</td>
+                    <td class="column leftAlignedColumn">{{key.High}}</td>
+                    <td class="column leftAlignedColumn">{{key.Medium}}</td>
+                    <td class="column leftAlignedColumn">{{key.Low}}</td>
+                    <td>
+                      <mat-radio-group *ngIf="key.High || key.Medium || key.Low; else elseBlock" [(ngModel)]="Id">
+                        <mat-radio-button value={{key.Id}}></mat-radio-button>
+                      </mat-radio-group>
+                      <ng-template #elseBlock><span>N/A</span></ng-template>
+                    </td>
+                  </tr>
+              </tbody>
+          </table>
+          <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Back</button>
+          <button [disabled]="!Id" mat-raised-button type="mt-2 mr-1" color="cta-secondary" class="cta-1" (click)="saveScan()">Submit</button>
+        </div>
+        <div *ngIf="!codeScanDetails?.length">
+          <div class="submit-spinner">
+            <h4>No Scans available for Project: {{projectName}}. Please try another project</h4>
+            <button mat-raised-button type="mt-2 mr-1" color="cta-secondary" class="cta-1" (click)="tryAgain()">Add Project</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="(!isScanValid && IsPresentVal)">
+        <div class="submit-screen">
+          <img src="assets/img/error-circle.svg"/>
+          <h5>Code Scan Project - {{projectName}} is already added. Please enter a valid Release scan and try again</h5>
+            <button mat-raised-button color="" class="cta-2" mat-dialog-close="cancel">Cancel</button>
+        </div>
+      </div>
+      <div *ngIf="(!isScanValid && !IsPresentVal && submitScanSucess)">
+        <div class="submit-screen">
+          <img src="assets/img/ic-check-circle.svg"/>
+          <h5>Scan submitted successfully</h5>
+            <button mat-raised-button color="" class="cta-2" mat-dialog-close="success">Close</button>
+        </div>
+      </div>
+  </div>
+
+  <div *ngIf="submitSuccess" class="cta-screen" style="padding: 0;">
+      <div class="submit-screen">
+          <img src="assets/img/ic-check-circle.svg"/>
+          <h5>Saved  Scan</h5>
+          <button mat-raised-button type="submit" color="primary" class="cta-1" matDialogClose>Go to Projects</button>
+          <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+      </div>
+  </div>
+
+  <div *ngIf="showProgess" class="dialog-main">
+    <div class="submit-spinner">
+      <mat-spinner class="centered"></mat-spinner>
+      <h4 *ngIf="!fullLengthMsg; else elseBlock">Processing...</h4>
+      <ng-template #elseBlock>
+        <h4> Please wait... This may take a while.</h4>
+      </ng-template>
+    </div>
+  </div>
+
+  <div *ngIf="errOnSubmit" class="dialog-main">
+    <div class="submit-screen">
+      <img src="assets/img/error-circle.svg"/>
+      <h5>Something went wrong</h5>
+        <button mat-raised-button color="" class="cta-2" mat-dialog-close="cancel">Cancel</button>
+        <button mat-raised-button *ngIf="!errLoadQuestions" type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>
+        <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+    </div>
+  </div>
+
+</div>

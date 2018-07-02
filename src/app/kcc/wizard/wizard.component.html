@@ -1,0 +1,55 @@
+<div *ngIf="askPMM">
+  <form [formGroup]="pmmForm" novalidate (ngSubmit)="savePmm()">
+    <mat-dialog-content>
+      <div class="form-group">
+        <label>Is this initiative subject to PMM(Project Management Methodology)</label>
+        <div class="clearfix"></div>
+        <mat-radio-group class="col-sm-12" formControlName="pmm">
+          <label class="sl-label col-sm-3">
+              <mat-radio-button value="true">Yes</mat-radio-button>
+          </label>
+          <label class="sl-label col-sm-3">
+              <mat-radio-button value="false">No</mat-radio-button>
+          </label>
+        </mat-radio-group>
+        <br>
+        <small *ngIf="(pmmForm.controls['pmm']?.invalid && mouseoverActionButton)" class="text-danger">
+            Please answer PMM
+        </small>
+      </div>
+    </mat-dialog-content>
+    <mat-card-actions align="end">
+      <span (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+        <button mat-raised-button type="submit" color="primary" class="cta-1" [disabled]="!pmmForm.valid && !isPMMDisabled">Next</button>
+      </span>
+    </mat-card-actions>
+  </form>
+</div>
+
+<div *ngIf="modalStepper">
+  <div class="qns-window" [style.width]="!model.data.id ? '100%' : ''"><app-multistep-wiz [qnsMeta]="qnsMeta" [injectData]="injectData" (stepEvent)="submitQns($event)"></app-multistep-wiz></div>
+  <div *ngIf="model.data.id" class="chat-window">
+    <app-chat [id]="model.data.id" [type]='kccMain'></app-chat>
+  </div>
+</div>
+
+<div *ngIf="submitSASucess">
+  <div class="submit-screen">
+    <img src="assets/img/ic-check-circle.svg"/>
+    <h5>Successfull</h5>
+  </div>
+</div>
+
+<div *ngIf="errOnSubmit">
+  <div class="submit-screen">
+    <img src="assets/img/error-circle.svg"/>
+    <h5>Something went wrong</h5>
+    <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>
+  </div>
+</div>
+<div *ngIf="showProgess">
+  <div class="submit-spinner">
+    <mat-spinner class="centered"></mat-spinner>
+    <h4>Processing...</h4>
+  </div>
+</div>

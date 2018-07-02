@@ -1,0 +1,13 @@
+.qns-window{
+    width:80%;
+    float:left;
+    background-color: #fff !important;
+    margin-right:10px;
+}
+.chat-window{
+    background-color: #eaeaea;
+    width:18%;
+    float:right;
+    min-height: 350px !important;
+    height:100%;
+}

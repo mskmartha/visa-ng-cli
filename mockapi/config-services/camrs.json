@@ -1,0 +1,27 @@
+{
+  "content": [
+    {
+      "id": 1009,
+      "cn": "1009 - Address Verification Service (AVS)",
+      "appShortName": "AVS"
+    },
+    {
+      "id": 1013,
+      "cn": "1013 - Bankruptcy Information Service (BIS)",
+      "appShortName": "BIS"
+    },
+    {
+      "id": 1012,
+      "cn": "1012 - Base I Offline Subscriber Reporting (BIOS)",
+      "appShortName": "BIOS"
+    }
+  ],
+  "last": false,
+  "totalPages": 3,
+  "totalElements": 57,
+  "sort": null,
+  "first": true,
+  "numberOfElements": 20,
+  "size": 20,
+  "number": 0
+}

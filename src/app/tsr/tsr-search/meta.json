@@ -1,0 +1,53 @@
+{
+  "sortBE":true,
+  "filter":false,
+  "mdSortActive":"tsrTitle",
+  "mdSortDirection":"asc",
+  "page":0,
+  "size":5,
+  "pageSizeOptions":[5, 10, 20, 30, 100],
+  "columns":[
+    {
+      "name":"id",
+      "label": "Id",
+      "display": false,
+      "sort": false,
+      "formType":"checkbox"
+    },
+    {
+      "name":"tsrTitle",
+      "label": "Title",
+      "display": true,
+      "sort": true,
+      "formType":"text"
+    },
+    {
+      "name":"tsrRequirement",
+      "label": "Requirement",
+      "display": true,
+      "sort": false,
+      "formType":"text"
+    },
+    {
+      "name":"rational",
+      "label": "Rational",
+      "display": true,
+      "sort": false,
+      "formType":"text"
+    },
+    {
+      "name":"keyControl",
+      "label": "Key Control",
+      "display": true,
+      "sort": false,
+      "formType":"text"
+    },
+    {
+      "name":"pcidss",
+      "label": "PCIDSS",
+      "display": true,
+      "sort": false,
+      "formType":"text"
+    }
+  ]
+}

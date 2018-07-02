@@ -1,0 +1,61 @@
+<div class="dialog-container-inner">
+  <div class="sl-flex sl-main-space-between dialog-title">
+    <div>{{params.saId}} - App Scoping - Add Features from JIRA</div>
+    <div class="sl-flex sl-cross-end " >
+      <button class="sl-flex sl-button" matDialogClose><mat-icon class="whiteFont">clear</mat-icon></button>
+    </div>
+  </div>
+  <div *ngIf="modalStepper" class="dialog-main">
+    <form #pubForm="ngForm" (ngSubmit)="getJIRAFeatures(pubForm)" novalidate>
+      <mat-dialog-content>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12 pad-t-20">
+                  <mat-form-field>
+                    <input matInput placeholder="Search by JIRA ID" name="jiraId" ngModel required>
+                  </mat-form-field>
+                  <small *ngIf="(pubForm.controls.jiraId?.invalid && (
+                    pubForm.controls.jiraId?.touched || mouseoverActionButton))" class="text-danger">
+                      Please provide Jira filter Id to proceed.
+                  </small>
+              </div>
+            </div>
+
+        </div>
+      </mat-dialog-content>
+      <mat-card-actions align="end">
+        <div class="margin-20">
+          <button mat-raised-button color="cta-secondary" class="cta-2" [matDialogClose] type="button">Cancel</button>
+          <span (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+            <button type="submit" [disabled]="pubForm.invalid" mat-raised-button class="cta-1">Submit</button>
+          </span>
+        </div>
+      </mat-card-actions>
+    </form>
+  </div>
+  <div *ngIf="submitSASucess" class="dialog-main">
+    <div class="submit-screen">
+      <img src="assets/img/ic-check-circle.svg"/>
+      <h5>Found {{totalJiraFeatures}} Features in JIRA</h5>
+        <button mat-raised-button color="" class="cta-2" matDialogClose>Close</button>
+        <button mat-raised-button type="submit" color="primary" class="cta-1" matDialogClose>Go to Features</button>
+        <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+    </div>
+  </div>
+
+  <div *ngIf="errOnSubmit" class="dialog-main">
+    <div class="submit-screen">
+      <img src="assets/img/error-circle.svg"/>
+      <h5>Something went wrong</h5>
+        <button mat-raised-button color="" class="cta-2" matDialogClose>Cancel</button>
+        <!-- TO DO: try again-->
+        <!--<button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>-->
+        <!--<button mat-raised-button color="primary" class="cta-1" (click)="next()" [disabled]="!canMove(2)">Next</button>-->
+    </div>
+  </div>
+  <div *ngIf="showProgess" class="dialog-main">
+    <div class="submit-spinner">
+      <mat-spinner class="centered"></mat-spinner>
+      <h4>Processing...</h4>
+    </div>
+  </div>

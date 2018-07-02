@@ -1,0 +1,131 @@
+@mixin main-theme($theme) {
+    
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    //fixed menu style
+    .fixed-menu {
+        .mat-menu-item {
+            text-align: left;
+        }
+    }
+    //material select options 
+    .mat-select-panel {
+        .mat-option {
+            font-size: 14px;
+            line-height: 44px;
+            height: 44px;
+            }
+        }
+
+    .mat-select-placeholder.mat-floating-placeholder {
+        top:-16px;
+    }
+    .mat-select {
+        .mat-select-placeholder {
+            font-size: 14px;
+        }
+        .mat-select-value-text {
+            font-size: 14px;
+            color: mat-color($mat-grey, 700);
+        }
+    }
+
+    
+
+    //
+     .mat-icon.green {
+        color: #4CAF50;        
+    }
+    .mat-icon.blue {
+        color: #2196F3;
+    }
+    .mat-icon.purple {
+        color: #9C27B0;
+    }
+    .mat-icon.pink {
+        color: #E91E63;
+    }
+    .mat-icon.blue-grey {
+        color: #607D8B;
+    }
+
+    .active.mat-menu-item {
+        background-color: rgba(0, 0, 0, 0.12) !important;
+    }
+    .main {
+        padding-bottom: 24px;
+        .mat-warn.mat-raised-button, 
+        .mat-warn.mat-fab, 
+        .mat-warn.mat-mini-fab {
+            color: #fff;
+        }
+        .mat-icon-button, 
+        .mat-raised-button, 
+        .mat-button, 
+        .mat-fab, 
+        .mat-mini-fab, 
+        .btn {
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .container-fluid {
+            padding: 0 30px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            min-height: 40px;
+            padding: 20px 30px 0;
+            list-style: none;
+            background: none;
+            border-radius: 0.25rem;
+            color: mat-color($mat-blue-grey, 500);
+
+            .breadcrumb-item a {
+                color: mat-color($primary, 500);
+            }
+
+            .breadcrumb-item.active {
+                color: mat-color($mat-blue-grey, 500);
+            }
+        }
+        fixed-plugin {
+            position: fixed;
+            top: 120px;
+            right: 0;
+            width: 64px;
+            background: rgba(0,0,0,.3);
+            z-index: 1031;
+            border-radius: 8px 0 0 8px;
+            text-align: center;
+            .settings {
+                padding: 5px 0 5px 0;
+                height: 24px;
+                width: 24px;
+                cursor: pointer;
+                color: mat-color($mat-grey, 200);
+                &:hover {
+                    color: #FFFFFF;
+                }
+            }
+           
+        }
+        
+           
+    }
+
+    @include media-breakpoint-down(sm) {
+        .main {
+            fixed-plugin {
+                top: 20px;;
+            }
+        }
+     }
+    
+
+     
+    
+}
+

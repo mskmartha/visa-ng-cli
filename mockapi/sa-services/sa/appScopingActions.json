@@ -1,0 +1,35 @@
+{
+  "jiraIssueFeaturesDOS": [
+    {
+      "id": 32805,
+      "key": "VDPDEV-1062",
+      "summary": "Defect Repair - Gateway/Reporting - Need Resources",
+      "networkChanges": null,
+      "authFlow": null,
+      "dataFlow": null,
+      "manualFeature": false,
+      "comments": null
+    },
+    {
+      "id": 32811,
+      "key": "VDPDEV-81",
+      "summary": "Technology: Outbound API Configuration for Production (VCTC) - Core Platform Changes - SBX Only",
+      "networkChanges": null,
+      "authFlow": null,
+      "dataFlow": null,
+      "manualFeature": false,
+      "comments": null
+    },
+    {
+      "id": 32823,
+      "key": "VDPDEV-155",
+      "summary": "SMS API",
+      "networkChanges": null,
+      "authFlow": null,
+      "dataFlow": null,
+      "manualFeature": true,
+      "comments": null
+    }
+  ]
+}
+

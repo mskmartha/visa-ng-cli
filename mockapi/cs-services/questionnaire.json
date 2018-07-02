@@ -1,0 +1,3520 @@
+{
+	"questionnaireVersion": "1.0",
+	"camrId":0,
+	"saId":0,
+	"groupLayout": "",
+	"steps": [
+	  {
+		"stepId": "S1",
+		"stepName": "Step 1",
+		"group": [
+		  {
+			"groupId": "G1",
+			"groupName": "General Info",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA001",
+				"questionType": "text",
+				"questionLabel": "CAMR App Name",
+				"info": "",
+				"placeHolder": "CAMR App Name",
+				"description": null,
+				"options": [
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				]
+			  },
+			  {
+				"questionId": "CSA002",
+				"questionType": "text",
+				"questionLabel": "ATC NTID",
+				"info": "",
+				"placeHolder": "ATC NTID",
+				"description": null,
+				"options": [
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				]
+			  },
+			  {
+				"questionId": "CSA003",
+				"questionType": "dropdown",
+				"questionLabel": "ACM Rating",
+				"info": "",
+				"placeHolder": "ACM Rating",
+				"description": null,
+				"options": [
+				  {
+				  "optionId": "1",
+				  "text": "Critical",
+				  "srule": null,
+				  "grule": null,
+				  "qrule": null,
+				  "selected": false
+				},
+				  {
+					"optionId": "2",
+					"text": "High",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Medium",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Low",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Unknown",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				]
+			  },
+			  {
+				"questionId": "CSA004",
+				"questionType": "date",
+				"questionLabel": "Target Release Date",
+				"info": "",
+				"placeHolder": "Target Release Date",
+				"description": null,
+				"options": [
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				]
+			  }
+			]
+		  },
+		  {
+			"groupId": "G2",
+			"groupName": "Data Classification - 1",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA005",
+				"questionType": "dropdown",
+				"questionLabel": "Service Tier",
+				"info": "Select One",
+				"placeHolder": "Select One",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Tier Real Time - RT",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Tier 0",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Tier 1",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Tier 2",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Tier 3",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "6",
+					"text": "NA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  },
+		  {
+			"groupId": "G3",
+			"groupName": "Data Classification - 2",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA006",
+				"questionType": "radio",
+				"questionLabel": "VISA Public",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA007", "CSA008", "CSA010"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA007",
+				"questionType": "dropdown",
+				"questionLabel": "Data Volume",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Less than 1000",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Less than 1 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Less than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "More than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA008",
+				"questionType": "radio",
+				"questionLabel": "In transit",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA009"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA009",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA010",
+				"questionType": "radio",
+				"questionLabel": "At rest",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA011"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA011",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA012",
+				"questionType": "radio",
+				"questionLabel": "VISA Confidential",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA013", "CSA014", "CSA016"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA013",
+				"questionType": "dropdown",
+				"questionLabel": "Data Volume",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Less than 1000",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Less than 1 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Less than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "More than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA014",
+				"questionType": "radio",
+				"questionLabel": "In transit",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA015"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA015",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA016",
+				"questionType": "radio",
+				"questionLabel": "At rest",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA017"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA017",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA018",
+				"questionType": "radio",
+				"questionLabel": "VISA Restricted - PII Private - PAN",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA019", "CSA020", "CSA022"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA019",
+				"questionType": "dropdown",
+				"questionLabel": "Data Volume",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Less than 1000",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Less than 1 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Less than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "More than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA020",
+				"questionType": "radio",
+				"questionLabel": "In transit",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA021"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA021",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA022",
+				"questionType": "radio",
+				"questionLabel": "At rest",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA023"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA023",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA024",
+				"questionType": "radio",
+				"questionLabel": "VISA Restricted - PII Private CVV",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA025", "CSA026", "CSA028"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA025",
+				"questionType": "dropdown",
+				"questionLabel": "Data Volume",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Less than 1000",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Less than 1 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Less than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "More than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA026",
+				"questionType": "radio",
+				"questionLabel": "In transit",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA027"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA027",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA028",
+				"questionType": "radio",
+				"questionLabel": "At rest",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA029"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA029",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA030",
+				"questionType": "radio",
+				"questionLabel": "VISA Restricted - PII Private - Other",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA031", "CSA032", "CSA034"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA031",
+				"questionType": "dropdown",
+				"questionLabel": "Data Volume",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Less than 1000",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Less than 1 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Less than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "More than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA032",
+				"questionType": "radio",
+				"questionLabel": "In transit",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA033"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA033",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA034",
+				"questionType": "radio",
+				"questionLabel": "At rest",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA035"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA035",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA036",
+				"questionType": "radio",
+				"questionLabel": "VISA Restricted - Special Handling",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA037", "CSA038", "CSA040"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA037",
+				"questionType": "dropdown",
+				"questionLabel": "Data Volume",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Less than 1000",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Less than 1 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Less than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "More than 5 Million",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA038",
+				"questionType": "radio",
+				"questionLabel": "In transit",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA039"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA039",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA040",
+				"questionType": "radio",
+				"questionLabel": "At rest",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA041"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA041",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "In clear text",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Encrypted by network protocol",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Encrypted by key, managed by VISA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Encrypted by key, managed by Service Provider",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA042",
+				"questionType": "checkbox",
+				"questionLabel": "Please check the following boxes if TRUE",
+				"info": "Please check the following boxes if TRUE",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Data Loss Prevention (DLP) should be in place to avoid VISA DLP sensitive data to go to the cloud applications",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Data Loss Prevention (DLP) should be in place to avoid VISA DLP sensitive data to be leaked from the cloud applications to internet",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  },
+		  {
+			"groupId": "G4",
+			"groupName": "Compliance",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA043",
+				"questionType": "checkbox",
+				"questionLabel": "The application is compliant with the following regulatory standards",
+				"info": "select one",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "GLBA",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "PCI-DSS",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "SOX",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "FFIEC",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Others",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "6",
+					"text": "None",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  },
+		  {
+			"groupId": "G5",
+			"groupName": "Users",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA044",
+				"questionType": "text",
+				"questionLabel": "Number of Admin users",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[0-9]",
+				  "min": 1,
+				  "max": 3
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA045",
+				"questionType": "text",
+				"questionLabel": "Number of users from VISA Internal network",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[0-9]",
+				  "min": 1,
+				  "max": 6
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA046",
+				"questionType": "text",
+				"questionLabel": "Number of users from external network",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[0-9]",
+				  "min": 1,
+				  "max": 6
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"stepId": "S2",
+		"stepName": "Step 2",
+		"group": [
+		  {
+			"groupId": "G6",
+			"groupName": "Data Center Information",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA047",
+				"questionType": "dropdown",
+				"questionLabel": "Location (Country)",
+				"info": "Select One",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Andorra",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "United Arab Emirates",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Afghanistan",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Antigua and Barbuda",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Anguilla",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "6",
+					"text": "Albania",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "7",
+					"text": "Armenia",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "8",
+					"text": "Netherlands Antilles",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "9",
+					"text": "Australia",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "10",
+					"text": "Argentina",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "11",
+					"text": "Brazil",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "12",
+					"text": "Canada",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "13",
+					"text": "The Democratic Republic Of Congo",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "14",
+					"text": "Congo",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "15",
+					"text": "Switzerland",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "16",
+					"text": "Chile",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "17",
+					"text": "China",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "18",
+					"text": "Colombia",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "19",
+					"text": "Costa Rica",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "20",
+					"text": "Cuba",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "21",
+					"text": "Czech Republic",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "22",
+					"text": "Germany",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "23",
+					"text": "Denmark",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "24",
+					"text": "Egypt",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "25",
+					"text": "Spain",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "26",
+					"text": "United Kingdom",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "27",
+					"text": "Greece",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "28",
+					"text": "Hong Kong",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "29",
+					"text": "Indonesia",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "30",
+					"text": "Ireland",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "31",
+					"text": "Israel",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "32",
+					"text": "India",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "33",
+					"text": "British Indian Ocean Territory",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "34",
+					"text": "Iraq",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "35",
+					"text": "Iran",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "36",
+					"text": "Iceland",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "37",
+					"text": "Italy",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "38",
+					"text": "Japan",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "39",
+					"text": "North Korea",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "40",
+					"text": "South Korea",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "41",
+					"text": "Mexico",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "42",
+					"text": "Norway",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "43",
+					"text": "Philippines",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "44",
+					"text": "Pakistan",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "45",
+					"text": "Russia",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "46",
+					"text": "Singapore",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "47",
+					"text": "Turkey",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "48",
+					"text": "Ukraine",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "49",
+					"text": "United States Minor Outlying Islands",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "50",
+					"text": "United States",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "51",
+					"text": "Other",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA048",
+				"questionType": "text",
+				"questionLabel": "Location (City)",
+				"info": "Location (City)",
+				"placeHolder": "Location (City)",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA049",
+				"questionType": "radio",
+				"questionLabel": "VISA PAN/PII/Confidential Data at rest?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA050",
+				"questionType": "checkbox",
+				"questionLabel": "Data Center physical security",
+				"info": "Select all that apply",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Badge Access",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Camera Surveillance",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Man Trap",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Natural Disaster protection",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Power redundancy",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA051",
+				"questionType": "text",
+				"questionLabel": "Operation SLA: 7/24/365",
+				"info": "",
+				"placeHolder": "99.99%",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA052",
+				"questionType": "radio",
+				"questionLabel": "High Availability",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA053",
+				"questionType": "radio",
+				"questionLabel": "Disaster Recovery",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA054",
+				"questionType": "radio",
+				"questionLabel": "Does the organization have a defined security office with staff dedicated to manage information security activities?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA055",
+				"questionType": "radio",
+				"questionLabel": "Have all employees passed US background check?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA056",
+				"questionType": "text",
+				"questionLabel": "Number of employees who can access VISA data?",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[0-9]",
+				  "min": 1,
+				  "max": 6
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA057",
+				"questionType": "radio",
+				"questionLabel": "Is the Data Center outsourced?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA058",
+				"questionType": "checkbox",
+				"questionLabel": "If outsourced, do you have third party compliance attestation such as SOC1?",
+				"info": "Select all that apply",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "SOC1",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "SOC2",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "SOC3",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA059",
+				"questionType": "text",
+				"questionLabel": "If it is a third party data center, please provide details below",
+				"info": "Please provide the third party's commercial name, web page, and contact information.",
+				"placeHolder": "Please provide the third party's commercial name, web page, and contact information.",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": 1,
+				  "max": 1000
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"stepId": "S3",
+		"stepName": "Step 3",
+		"group": [
+		  {
+			"groupId": "G7",
+			"groupName": "Cloud Vendor Questions",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA060",
+				"questionType": "checkbox",
+				"questionLabel": "Will VISA specific security event logs be shared with VISA?",
+				"info": "Select all that apply",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Access Logs",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Authentication / Access failure logs",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Change of user accounts",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Data access history",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Administrative activities",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "6",
+					"text": "Source of Access IP",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA061",
+				"questionType": "text",
+				"questionLabel": "Additional Comments",
+				"info": "",
+				"placeHolder": "Additional Comments if any",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": 1,
+				  "max": 500
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA062",
+				"questionType": "checkbox",
+				"questionLabel": "How will the log information be provided to VISA?",
+				"info": "Select all that apply",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "API interface",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Electrical file transfer (SFTP/FTPS, etc)",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Native admin console download",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Manual process",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA063",
+				"questionType": "text",
+				"questionLabel": "SLA of providing VISA specific security event logs in minutes",
+				"info": "",
+				"placeHolder": "SLA in minutes",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[0-9]",
+				  "min": 1,
+				  "max": 10
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA064",
+				"questionType": "radio",
+				"questionLabel": "Can vendor provide pentest report?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA065",
+				"questionType": "radio",
+				"questionLabel": "Does vendor allow VISA to conduct pentesting?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  },
+		  {
+			"groupId": "G8",
+			"groupName": "Incident Management",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA066",
+				"questionType": "radio",
+				"questionLabel": "Is there a defined process for incident management including incidents involving customer data?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA067",
+				"questionType": "radio",
+				"questionLabel": "Have there been incidents resulting in compromise of customer data in the past 2 years?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA068"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA068",
+				"questionType": "text",
+				"questionLabel": "If yes, please provide details of the incident and how it is reported externally",
+				"info": "",
+				"placeHolder": "Please provide details of the incident and how it is reported externally",
+				"description": null,
+				"options": [],
+				"validation": {
+				  "required": true,
+				  "regexPattern": "[a-z]^[A-Z]^[0-9]",
+				  "min": 10,
+				  "max": 1000
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  }
+		]
+	  },
+	  {
+		"stepId": "S4",
+		"stepName": "Step 4",
+		"group": [
+		  {
+			"groupId": "G9",
+			"groupName": "Multi-tenancy model",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA069",
+				"questionType": "checkbox",
+				"questionLabel": "Multi-tenancy model: Please mark the components that will be multi-tenancy with other non-VISA entities",
+				"info": "Please check all the boxes that apply",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Network Infrastructure",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA070"],
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Virutalization/Hypervisor/Orchestration Infrastructure",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA070"],
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Operating Systems",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA070"],
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Middleware application servers, JVMs, etc",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA070"],
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Databases/Hadoop",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA070"],
+					"selected": false
+				  },
+				  {
+					"optionId": "6",
+					"text": "Tables, contents (structured and non-structured)",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA070"],
+					"selected": false
+				  },
+				  {
+					"optionId": "7",
+					"text": "PaaS Application (AWS, Azure, Google Cloud)",
+					"srule": null,
+					"grule": null,
+					"qrule": ["CSA070"],
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA070",
+				"questionType": "dropdown",
+				"questionLabel": "Select One",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "VISA Managed",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Service Provider Managed",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA071",
+				"questionType": "radio",
+				"questionLabel": "Is there any VISA developed code for this integration?",
+				"info": "Yes or No",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "Yes",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "No",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  },
+		  {
+			"groupId": "G10",
+			"groupName": "Mobile access and user provisioning",
+			"comments": [
+			  {
+				"userName": null,
+				"comment": null,
+				"time": null
+			  }
+			],
+			"questions": [
+			  {
+				"questionId": "CSA072",
+				"questionType": "checkbox",
+				"questionLabel": "Please check the folowing boxes if TRUE",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "The application provides mobile user access",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "Need to support IOS browser",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Need to support Android browser",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Need to support IOS native app",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Need to support Android native app",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "6",
+					"text": "Need to support managed device access from external network",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "7",
+					"text": "Need to support un-managed device access from external network",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "8",
+					"text": "Need to support managed device access from VISA on premise network",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "9",
+					"text": "Need to support un-managed device access from VISA on premise network",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  },
+			  {
+				"questionId": "CSA073",
+				"questionType": "checkbox",
+				"questionLabel": "Please check the folowing boxes if TRUE",
+				"info": "",
+				"placeHolder": "",
+				"description": null,
+				"options": [
+				  {
+					"optionId": "1",
+					"text": "The third party solution ALLOWS VISA to act as the Identity Provider through Single Sign On",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "2",
+					"text": "For business reason, for example, conflict of interest, VISA cannot be the identity provider for this application",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "3",
+					"text": "Support SAML 2.0 for Single Sign On (VISA as IdP)",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "4",
+					"text": "Support SCIM for identity provisioning",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "5",
+					"text": "Support SCIM for identity de-provisioning",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "6",
+					"text": "Support JIT (Just-In-Time) for identity provisioning",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "7",
+					"text": "Support JIT (Just-In-Time) for identity de-provisioning",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "8",
+					"text": "Support WS API for identity provisioning",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "9",
+					"text": "Support WS API for identity de-provisioning",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "10",
+					"text": "Support Azure AD as identity provider with SAML",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "11",
+					"text": "Support ForgeRock SAML Integration",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  },
+				  {
+					"optionId": "12",
+					"text": "The third party solution provides native second factor authentication",
+					"srule": null,
+					"grule": null,
+					"qrule": null,
+					"selected": false
+				  }
+				],
+				"validation": {
+				  "required": true,
+				  "regexPattern": null,
+				  "min": null,
+				  "max": null
+				},
+				"answers": [
+				  ""
+				]
+			  }
+			]
+		  }
+		]
+	  }
+	]
+  }

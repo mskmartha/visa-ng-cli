@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "secAssessmentStateId",
+    "label": "Status"
+  },
+  {
+    "id": 2,
+    "name": "saRatingName",
+    "label": "Rating"
+  },
+  {
+    "id": 3,
+    "name": "saType",
+    "label": "Type"
+  },
+  {
+    "id": 4,
+    "name": "departmentName",
+    "label": "Department"
+  },
+  {
+    "id": 5,
+    "name": "users",
+    "label": "User"
+  }
+]

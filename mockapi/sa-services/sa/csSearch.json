@@ -1,0 +1,20 @@
+[
+    {
+      "High":1,
+      "Id": 1000961,
+      "InitiatorName": "BHARADWAJA CHERUVU",
+      "Medium": 654,
+      "PresetName": "VISA_HIGH_MEDIUM_LOW",
+      "ProjectName": "TEST_6539_REL_Test_Release",
+      "ScanCompletedOn": 1496873032917
+    },
+    {
+      "High":4,
+      "Id": 1000962,
+      "InitiatorName": "BHARADWAJA CHERUVU",
+      "Medium": 456,
+      "PresetName": "VISA_HIGH_MEDIUM_LOW",
+      "ProjectName": "TEST_6540_REL_Test_Release",
+      "ScanCompletedOn": 1496873032917
+    }
+]

@@ -1,0 +1,34 @@
+<div class="dialog-container-inner">
+  <div class="sl-flex sl-main-space-between dialog-title">
+    <div>{{tsr.tsrTitle || 'TSR Details'}}</div>
+    <div class="sl-flex sl-cross-end " >
+      <button class="sl-flex sl-button" matDialogClose><mat-icon class="whiteFont">clear</mat-icon></button>
+    </div>
+  </div>
+  <div *ngIf="modalStepper" class="dialog-main">
+    <mat-dialog-content class="scrollbar">
+
+      <h4>Requirement</h4>
+      <p>{{tsr.tsrRequirement || 'N/A'}}</p>
+
+      <h4>Rational</h4>
+      <p>{{tsr.rational || 'N/A'}}</p>
+
+      <h4>Key Control</h4>
+      <p>{{tsr.keyControl || 'N/A'}}</p>
+
+      <h4>PCIDSS</h4>
+      <p>{{tsr.pcidss || 'N/A'}}</p>
+
+    </mat-dialog-content>
+    <mat-card-actions align="end">
+        <button mat-raised-button color="cta-secondary" class="cta-2" [matDialogClose] type="button">Close</button>
+    </mat-card-actions>
+  </div>
+  <div *ngIf="showProgess" class="dialog-main">
+    <div class="submit-spinner">
+      <mat-spinner class="centered"></mat-spinner>
+      <h4>Processing...</h4>
+    </div>
+  </div>
+</div>

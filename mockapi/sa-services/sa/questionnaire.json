@@ -1,0 +1,1192 @@
+{
+  "questionnaireVersion": "1.3",
+  "groupLayout": "",
+  "steps": [
+    {
+      "stepId": "S1",
+      "stepName": "Step One",
+      "group": [
+        {
+          "groupId": "G1",
+          "groupName": "",
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "SA25",
+              "questionType": "radio",
+              "questionLabel": "Region",
+              "info": "Please select the Region for this application",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Visa Inc (VI)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Visa Europe (VE)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Visa China (VC)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA29",
+              "questionType": "text",
+              "questionLabel": "Project Description",
+              "info": "Please Enter the project description",
+              "placeHolder": "Enter Project Description",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 1,
+                "max": 300
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA01",
+              "questionType": "autocomplete",
+              "questionLabel": "Project Manager Name",
+              "info": "Enter Project Manager's Name",
+              "placeHolder": "Project Manager Name",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": "[a-zA-Z ]*",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [],
+              "autocomplete": {
+                "url": "/config-services/users/search",
+                "backfillUrl": "/config-services/user",
+                "cachedObj": null,
+                "multi": null
+              }
+            },
+            {
+              "questionId": "SA23",
+              "questionType": "autocomplete",
+              "questionLabel": "Solution Architect",
+              "info": "Enter Solution Architect's Name",
+              "placeHolder": "Solution Architect Name",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": "[a-zA-Z ]*",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [],
+              "autocomplete": {
+                "url": "/config-services/users/search",
+                "backfillUrl": "/config-services/user",
+                "cachedObj": null,
+                "multi": null
+              }
+            },
+            {
+              "questionId": "SA24",
+              "questionType": "text",
+              "questionLabel": "RTN Number",
+              "info": "Enter RTN Number No.",
+              "placeHolder": "RTN Number",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": "[a-zA-Z0-9 ]*",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA02",
+              "questionType": "dropdown",
+              "questionLabel": "Application Service Tier",
+              "info": "Please select appropriate service tier for this application",
+              "placeHolder": "Choose a Service Tier",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Tier Real-Time RT",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Tier 0",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Tier 1",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Tier 2",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "Tier 3",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "6",
+                  "text": "NA",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA06",
+              "questionType": "text",
+              "questionLabel": "Release Name",
+              "info": "Provide Product Release name, it needs to be short name such as VDP July 5.8",
+              "placeHolder": "Enter Release Name",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 1,
+                "max": 100
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA08",
+              "questionType": "date",
+              "questionLabel": " Go-Live Date",
+              "info": "Select approximate Go-Live date",
+              "placeHolder": "Select Date",
+              "description": "",
+              "options": [],
+              "validation": {
+                "required": true,
+                "regexPattern": "Check_11_days",
+                "min": 0,
+                "max": 365
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA31",
+              "questionType": "autocomplete",
+              "questionLabel": "Select Adjacent CAMR Dependency(s)",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [],
+              "validation": {
+                "required": false,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [],
+              "autocomplete": {
+                "url": "/config-services/camrs/search",
+                "backfillUrl": "/config-services/camr",
+                "multi": {
+                  "hasPrimary": false,
+                  "primaryValue": null
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "S2",
+      "stepName": "Step Two",
+      "group": [
+        {
+          "groupId": "G2",
+          "groupName": "",
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "SA32",
+              "questionType": "checkbox",
+              "questionLabel": "Security Assessment Type",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Application",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA26"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Infrastructure",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA27"
+                  ],
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA26",
+              "questionType": "checkbox",
+              "questionLabel": "Application",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "3rd Party Developed",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA28"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "COTs",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA28"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Internally developed",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA28"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Cloud Application",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA28"
+                  ],
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA28",
+              "questionType": "checkbox",
+              "questionLabel": "Application Change Type",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Major Release",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "New Application",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "New API",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Change Existing API",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "Maintenance Release ",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "6",
+                  "text": "Config Changes ",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "7",
+                  "text": "UI Changes ",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "8",
+                  "text": "Minor Release ",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "9",
+                  "text": "Major Vendor Release ",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA27",
+              "questionType": "checkbox",
+              "questionLabel": "Infrastructure",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Network Change",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA21"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Firewall Changes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "COTs",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Appliance/Servers",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA17"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "Public Cloud",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA21",
+              "questionType": "checkbox",
+              "questionLabel": "Network and Zoning Changes",
+              "info": "Select the network hosting environment for your application",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Extranet",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Commercial",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Corporate",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "VMSN",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "Third Party Network",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "6",
+                  "text": "eVMSN-Core",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "7",
+                  "text": "eVMSN-Edge",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "8",
+                  "text": "Non-Prod ICL",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "9",
+                  "text": "Non-Prod GL",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "10",
+                  "text": "OCE bubble",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "11",
+                  "text": "Network Zone (Perimeter)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "12",
+                  "text": "Network Zone (Business)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "13",
+                  "text": "Network Zone (restricted)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA17",
+              "questionType": "checkbox",
+              "questionLabel": "Hardware/Appliance Changes",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Using Visa SOE Image",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Hardware/Appliance External Facing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Hardware/Appliance Internal Facing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA09",
+              "questionType": "checkbox",
+              "questionLabel": "Additional Application/Infrastructure Changes",
+              "info": "This is one of the critical information to detect if the changes would require Architecture Review and Pent Tests. Usually all visa applications will be required to go through Static Code Analysis",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Authentication and Authorization",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA30"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Data Classification",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA11"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Web Application - Internal Facing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Web Application - External Facing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "Middleware Changes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA16"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "6",
+                  "text": "Database Changes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA18"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "7",
+                  "text": "Mobile / IoT",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA19"
+                  ],
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "8",
+                  "text": "Configuration Logging",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "9",
+                  "text": "OS Changes",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": [
+                    "SA22"
+                  ],
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA11",
+              "questionType": "checkbox",
+              "questionLabel": "Data Asset Changes",
+              "info": "Select if the current release touches any of the code part that involve in processing one of the data types",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Visa Public",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Visa Confidential",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Visa Restricted - PII Private: CVV (Tier 0)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Visa Restricted - PII Private: PAN (Tier 1)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "Visa Restricted - PII Private (Tier 1)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "6",
+                  "text": "Visa Restricted - Other (special handling)",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA16",
+              "questionType": "checkbox",
+              "questionLabel": "Middleware Changes",
+              "info": "Select if Middleware that your application is using also include any of the below changes for this release",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "TechCentral Approved",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Middleware with Privilege Account",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA18",
+              "questionType": "checkbox",
+              "questionLabel": "Database Changes",
+              "info": "Select appropriate Database changes specific to this release",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Database Replication",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Database Monitoring",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "Database Encryption",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "Database Access Control",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA19",
+              "questionType": "checkbox",
+              "questionLabel": "Mobile/IoT Changes",
+              "info": "Please select appropriate changes",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Mobile SDK",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "Mobile Application",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA22",
+              "questionType": "checkbox",
+              "questionLabel": "OS/VM Changes:",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Custom OS Configurations",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "SOE Image",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            },
+            {
+              "questionId": "SA30",
+              "questionType": "checkbox",
+              "questionLabel": "Authentication and Authorization Flow Change:",
+              "info": "",
+              "placeHolder": "",
+              "description": null,
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Admin 2FA",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "2",
+                  "text": "User 2FA",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "3",
+                  "text": "SSO Request",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "4",
+                  "text": "API Authentication",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                },
+                {
+                  "optionId": "5",
+                  "text": "User Authentication",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false,
+                  "other": null
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": 0,
+                "max": 0
+              },
+              "answers": [
+                ""
+              ],
+              "autocomplete": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": 0
+}

@@ -1,0 +1,29 @@
+<form [formGroup]="multiRowForm" novalidate>
+  <div formArrayName="URLs">
+    <ng-container *ngFor="let url of multiRowForm?.controls?.URLs?.controls; let i=index">
+      <div class="row">
+        <mat-form-field [formGroupName]="i" class="col-md-9 sl-pl0">
+          <input matInput placeholder="{{question.placeHolder}}" formControlName="URL"
+                 [id]="question.questionId" [type]="'text'"
+                 [disabled]="true"
+                 [pattern]="question.validation.regexPattern"
+                 [required]="question?.validation?.required"
+                 minlength=""
+                 maxlength=""
+          >
+          <span *ngIf="i>0 && !isViewDisabled" matSuffix class="sl-flex">
+            <button mat-button matTooltip="Remove current row"
+                mat-icon-button aria-label="Clear"
+                (click)="removeURL(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+          <mat-hint *ngIf="!multiRowForm?.controls?.URLs?.controls[i]?.controls?.URL?.valid && multiRowForm?.controls?.URLs?.controls[i]?.controls?.URL?.touched"  class="text-danger">Please provide appropriate value</mat-hint>
+        </mat-form-field>
+      </div>
+    </ng-container>
+    <button mat-button class="addButton sl-mb15" *ngIf="multiRowForm?.controls?.URLs?.controls.length <10 && !isViewDisabled" (click)="addURL();">
+      Add more <mat-icon class="iconColor">add</mat-icon>
+    </button>
+  </div>
+</form>

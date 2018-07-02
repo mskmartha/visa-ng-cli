@@ -1,0 +1,55 @@
+app-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    }
+
+.app-header {
+  display: flex;
+}
+
+.mat-sidenav {
+    width: $sidebar-width;
+    padding-bottom: 30px;
+}
+
+.mat-sidenav-content {
+    background-color: mat-color($mat-grey, 200);
+}
+
+.container-fluid {
+    margin-bottom: 30px;
+}
+
+
+.main {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    }
+
+.fixed-hide {
+    .main {
+        fixed-plugin {
+            display: none;
+        }
+    }
+}
+
+@media ($mat-xsmall) and (orientation: portrait) {
+    .app-body {
+        margin-top: $mat-toolbar-height-mobile-portrait;
+        }
+    .main {
+        height: calc(100vh - #{$mat-toolbar-height-mobile-portrait});
+        }
+    }
+
+@media ($mat-small) and (orientation: landscape) {
+    .app-body {
+        margin-top: $mat-toolbar-height-mobile-landscape
+        }
+     .main {
+        height: calc(100vh - #{$mat-toolbar-height-mobile-landscape});
+        }
+    }

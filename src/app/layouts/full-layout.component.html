@@ -1,0 +1,90 @@
+<div class="sl-flex sl-stack">
+  <mat-toolbar color="primary" class="app-header sl-toolbar">
+    <div class="sl-flex sl-main-space-between sl-cross-center sl-full-width">
+      <div class="sl-flex">
+        <div class="desktop-menu sl-flex">
+          <!--Using the hamburger menu to toggle the detail section on the mat-sidenav-->
+          <button class="hamburger-menu sl-pointer mat-icon-button" (click)="showDetailView = !showDetailView; showDetail = false;" id="menu-toggler" *ngIf="sidenavOpenStyle !== 'off'">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <div [routerLink]="['/dashboard']"  class="simple-text logo sl-flex sl-cross-center">
+          <img src="assets/img/logo.svg" class="Logo">
+        </div>
+      </div>
+
+        <div class="profile">
+          <div class="profileInfo sl-flex">
+            <!--<div class="sl-mr20">-->
+              <!--<img width="40" height="40" [src]="'http://www.fillmurray.com/40/40'" />-->
+            <!--</div>-->
+            <div class="sl-fs14"  *ngIf="detailedUserInfo">Hello, <span class="sl-fw600">{{detailedUserInfo?.firstName}} !</span></div>
+            <div class="userImg sl-ml10">
+              <div *ngIf="detailedUserInfo?.avatarImage; else elseBlock" class="smallProfilePic sl-image sl-border" [ngStyle]="{'background-image':'url(data:image/png;base64,' + detailedUserInfo?.avatarImage + ')'}"></div>
+              <ng-template #elseBlock>
+                <img width="40" height="40" [src]="'assets/img/user.svg'" />
+              </ng-template>
+              <!--<img width="40" height="40" [src]="getImageUrl()" (load)="onImageLoaded()" (error)="onImageError()" />-->
+            </div>
+          </div>
+
+          <div class="mat-menu" *ngIf="detailedUserInfo">
+            <div class="leftFlex">
+              <!--Base64 encoded image-->
+              <div class="profilePic sl-image sl-border" [ngStyle]="{'background-image':'url(data:image/png;base64,' + detailedUserInfo?.avatarImage + ')'}"></div>
+              <!--<div class="profilePic sl-image" [ngStyle]="{'background-image':'url(' + getImageUrl() + ')'}"></div>-->
+            </div>
+            <div class="rightFlex">
+              <div class="name">{{detailedUserInfo?.lastName}}, {{detailedUserInfo?.firstName}}</div>
+              <div class="sl-mt10">{{detailedUserInfo?.department}}</div>
+              <div>{{detailedUserInfo?.ntId}}@visa.com</div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </mat-toolbar>
+
+  <!--Opened is used to keep the sidenav open by default and just toggle the detail section-->
+  <mat-sidenav-container fullscreen class="app-body" style="top: 64px !important;">
+    <!--on mouse over the sidenav we show the detail section-->
+    <mat-sidenav (click)="showDetail = false"
+                 mode="side"
+                 #sidenav
+                 (mouseover)="showDetail = true"
+                 [ngClass]="{'sliderClass': (showDetail || showDetailView)}"
+                 [opened]
+                 [(opened)]="opened">
+      <mat-nav-list class="side-nav" [ngStyle]="{'height': height}">
+        <div class="mat-list-item sl-pointer listItem sl-pl20 sl-pr10 sl-flex sl-cross-center" [routerLink]="['/SA']">
+          <img src="assets/img/assessments-icon.svg" class="Assessments-icon sl-block">
+          <div *ngIf="showDetail || showDetailView" class="whiteFont sl-flex sl-cross-center sl-ml20 showDetails">Security Assessment Management</div>
+        </div>
+       <div class="mat-list-item sl-pointer listItem sl-pl20 sl-pr10 sl-flex sl-cross-center" [routerLink]="['/TSR']">
+          <img src="assets/img/library.svg" class="Assessments-icon sl-block">
+          <div *ngIf="showDetail || showDetailView" class="whiteFont sl-flex sl-cross-center sl-ml20 showDetails">Technical Security Requirements</div>
+        </div>
+        <div *ngIf="admin" class="mat-list-item sl-pointer listItem sl-pl20 sl-pr10 sl-flex sl-cross-center" [routerLink]="['/SA/admin-dashboard']">
+          <img src="assets/img/admin-dash-icon.svg" class="Assessments-icon sl-block">
+          <div *ngIf="showDetail || showDetailView" class="whiteFont sl-flex sl-cross-center sl-ml20 showDetails">Admin Dashboard for Assessments</div>
+        </div>
+        <div *ngIf="admin" class="mat-list-item sl-pointer listItem sl-pl20 sl-pr10 sl-flex sl-cross-center" (click)="goToSLAP()">
+          <img src="assets/img/kcc-icon.svg" class="Assessments-icon sl-block">
+          <div *ngIf="showDetail || showDetailView" class="whiteFont sl-flex sl-cross-center sl-ml20 showDetails">ShiftLeft Admin Console</div>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <!-- On mouse over the content we hide the sidenav detail section-->
+    <mat-sidenav-content (click)="showDetailView = false" (mouseover)="showDetail = false" class="app-content">
+      <div class="main">
+        <ol class="breadcrumb mb-0">
+          <breadcrumbs></breadcrumbs>
+        </ol>
+        <div class="container-fluid">
+          <router-outlet (activate)="scrollToTop()"></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

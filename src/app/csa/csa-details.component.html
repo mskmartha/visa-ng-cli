@@ -1,0 +1,66 @@
+<button mat-fab (click)="openDialog()" class="cta-top"><span matTooltip="Submit a new CSA"><mat-icon class="whiteFont">add</mat-icon></span></button>
+
+<div class="clearfix"></div>
+<div class="row" id="kcc">
+    <div class="col-sm-12 col-md-6 col-xl-9 table-wrapper">
+        <h3 class="dialog-title">Cloud Security Management Details</h3>
+        <div *ngIf="stillloading" class="loading">
+            <mat-spinner class="centered"></mat-spinner>
+            <h4>Loading ...</h4>
+        </div>
+        <div *ngIf="records">
+            <div class="table-inner-wrapper">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="tbodyTrRow">
+                            <th>SA Id</th>
+                            <th>CAMR</th>
+                            <th>Requestor</th>
+                            <th>Created Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody (mouseleave) ="mouseLeave('div B');" >
+                        <tr class="tbodyTrRow" *ngFor="let key of csaDetails.cloudSecurityAssessmentDOS; let i = index;" (mouseenter) ="mouseEnter(key.manageSaTeamListDO.manageSaTeamDOList);">
+                            <td class="column leftAlignedColumn">{{key.saId || 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.camrId || 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.saRequestorName|| 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.createdDate | date:'MM-dd-yyyy' || 'N/A'}}</td>
+                            <td class="column leftAlignedColumn">{{key.statusMessage|| 'N/A'}}</td>
+                            <td class="column centerAlignedColumn">
+                                <app-dyn-menu [menuInfo]="key" [actnsComp]="actnsComp" (clickedItem)="hostClickHandler($event)"></app-dyn-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="norecords" class="norecords-tile">
+            <div class="start-new-btn" (click)="openDialog()"><button mat-mini-fab><mat-icon  class="whiteFont">add</mat-icon></button></div>
+            <h4>No CSA's submitted. Click to begin</h4>
+        </div>
+        <div *ngIf="recordsErr" class="err-msg">
+            <mat-icon class="centered">error</mat-icon>
+            <div class="clearfix"></div>
+            <h4>Error accessing the records</h4>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-xl-3 summary-wrapper">
+        <div class="summary-wrapper-inner">
+            <h5>Cloud Security Management Overview</h5>
+            <div *ngIf="showTeamStats" class="summary-details">
+              <div *ngFor='let team of teams'>
+                <h6><b>{{team?.assessmentTeamName}}</b><span style="float:right;">{{team?.statusMessage}}</span></h6>
+              </div>
+            </div>
+            <div *ngIf="!showTeamStats" class="summary-details">
+                <p>Total Not Started: <b>{{csaDetails.notStarted}}</b></p>
+                <p>Total Completed: <b>{{csaDetails.completed}}</b></p>
+                <p>Total Started: <b>{{csaDetails.started}}</b></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

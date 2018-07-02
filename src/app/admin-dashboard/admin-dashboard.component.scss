@@ -1,0 +1,56 @@
+.more-menu {
+  transform: rotate(90deg);
+  cursor: pointer;
+  color: #fff;
+  margin-left: 15px;
+  &:hover {
+    transform: rotate(180deg);
+    transition: 0.1s linear all;
+  }
+}
+.scroll-to-top-icon {
+  position: fixed;
+  bottom: 15px;
+  right: 25px;
+  z-index: 100;
+  display: flex;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.filter {
+  position: absolute;
+  top: 100px;
+  overflow: hidden;
+  right: -240px;
+  z-index: 1000;
+  display: flex;
+  transition-duration: .4s;
+  transition-timing-function: ease-out;
+  .filterBody {
+    width: 240px;
+    background-color: #fff;
+  }
+  .filter-icon{
+    height: 40px;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.dateFilter {
+  right: 0 !important;
+  height: auto;
+}
+table {
+  table-layout: fixed;
+}
+.row {
+  margin: 10px 0;
+}
+.parentcard {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -1,0 +1,71 @@
+<div *ngIf="showProgess">
+  <div class="submit-spinner">
+    <mat-spinner class="centered"></mat-spinner>
+    <h4>Processing...</h4>
+  </div>
+</div>
+<div *ngIf="errOnLoadTable">
+  <div class="submit-screen">
+    <img src="assets/img/error-circle.svg"/>
+    <h5>Something went wrong</h5>
+    <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>
+  </div>
+</div>
+<div *ngIf="showTable">
+  <button mat-raised-button type="button" class="cta-3" (click)="enableTable();dataSource.createNew(tableConfig)" [disabled]="thresholdMax || tableConfig.disabled|| tableConfig.complete"><mat-icon class="whiteIcon mat-20">add</mat-icon> {{tableConfig.title}}</button>
+  <span *ngIf="thresholdMax" class="text-danger">Reached max entries</span>
+  <mat-table *ngIf="startTable" class="table-margin-bottom" #table [dataSource]="dataSource">
+
+
+    <!-- Generic column definition -->
+    <ng-container *ngFor="let column of tableConfig.columns" [matColumnDef]="column.columnDef">
+
+      <div *ngIf="column.columnDef !== 'actionsColumn'">
+        <mat-header-cell *matHeaderCellDef [ngClass]="showColumn(column.columnDef)">{{ column.header }}</mat-header-cell>
+        <mat-cell *matCellDef="let row" [ngClass]="showColumn(column.columnDef)">
+          <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+            <input matInput [formControl]="row.validator.controls[column.columnDef]" type="{{column.type}}" placeholder="{{column.header}}" [(ngModel)]="row.currentData[column.columnDef]"
+                   [id]="column.columnDef"
+                   [pattern]="column.validation.regexPattern"
+                   [required]="column?.validation?.required"
+                   minlength="column.validation.min"
+                   maxlength="column.validation.max"
+            >
+          </mat-form-field>
+          <div [hidden]="row.validator.controls[column.columnDef].valid || row.validator.controls[column.columnDef].pristine" class="text-danger">
+            <small [hidden]="!row.validator.controls[column.columnDef].hasError('minlength')">Should be 10 digit</small>
+            <small [hidden]="!row.validator.controls[column.columnDef].hasError('required')">Required</small>
+            <small [hidden]="!row.validator.controls[column.columnDef].hasError('pattern')">Should match pattern</small>
+          </div>
+        </mat-cell>
+      </div>
+
+      <div *ngIf="column.columnDef === 'actionsColumn'">
+        <mat-header-cell *matHeaderCellDef [ngClass]="showColumn(column.columnDef)">{{ column.header }}
+
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" [ngClass]="showColumn(column.columnDef)">
+          <button *ngIf="!row.editing && !tableConfig.disabled && !tableConfig.complete" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+            <mat-icon>mode_edit</mat-icon>
+          </button>
+          <button *ngIf="row.editing && !tableConfig.disabled && !tableConfig.complete" mat-icon-button color="primary" focusable="false" (click)="confirmEditCreate(row)">
+            <mat-icon>check</mat-icon>
+          </button>
+          <button *ngIf="!tableConfig.disabled && !tableConfig.complete" mat-icon-button color="primary" focusable="false" (click)="openDialog(row);">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <!--{{row.validator.value.id | json}}-->
+        </mat-cell>
+      </div>
+
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+  <!--<mat-card-actions align="end" class="col-lg-12">
+    <button mat-raised-button type="button" class="cta-2" (click)="saveTableData()">Save</button>
+  </mat-card-actions>-->
+</div>
+

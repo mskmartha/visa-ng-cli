@@ -1,0 +1,34 @@
+{
+    "jiraIssueFeaturesDOS": [
+        {
+            "id": 65538,
+            "key": "Manual-1",
+            "summary": "manually entered feature 1",
+            "networkChanges": null,
+            "authFlow": null,
+            "dataFlow": null,
+            "comments": null,
+            "manualFeature":true
+        },
+        {
+            "id": 65537,
+            "key": "Manual-3",
+            "summary": "manually entered feature 3",
+            "networkChanges": null,
+            "authFlow": null,
+            "dataFlow": null,
+            "comments": null,
+            "manualFeature":true
+        },
+        {
+            "id": 65536,
+            "key": "Manual-2",
+            "summary": "manually entered feature 2",
+            "networkChanges": null,
+            "authFlow": null,
+            "dataFlow": null,
+            "comments": null,
+            "manualFeature":false
+        }
+    ]
+} 

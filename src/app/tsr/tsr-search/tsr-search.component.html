@@ -1,0 +1,96 @@
+<div>
+    <mat-card>
+      <form [formGroup]="tsrForm" novalidate>
+        <mat-form-field class="search">
+          <input matInput type="text" formControlName="keyword" placeholder="Search by keyword">
+        </mat-form-field>
+    
+        <mat-select placeholder="Select TSR Group" #sel formControlName="tsrGroup" (change)="tsrChange(selectedGroup)" [(ngModel)]="selectedGroup">
+          <mat-option value="">Select a group</mat-option>
+          <mat-option *ngFor="let tsrgroup of tsrGroupsDetails" value="{{tsrgroup.id}}">
+            {{tsrgroup.name}}
+          </mat-option>
+        </mat-select>
+      
+        <mat-select placeholder="Select TSR Type" formControlName="tsrType" [(ngModel)]="type">
+          <mat-option *ngFor="let p of types" value="{{p.id}}">
+            {{p.name}}
+          </mat-option>
+        </mat-select>
+        <button mat-raised-button class="cta-1" color="primary" (click)="onTSRSearch()" [disabled]="!tsrForm.valid">search</button>
+      </form>
+      <div class="clearfix"></div>
+    </mat-card>
+    
+</div>
+
+<div class="clearfix"></div>
+<!--TODO: extract table rendering html to common template -->
+<div class="example-container mat-elevation-z8">
+
+  <div *ngIf="tableMeta.filter && dataSource" class="example-header" [style.display]="dataSource ? '' : 'none'">
+    <mat-form-field floatPlaceholder="never">
+      <input matInput #filter placeholder="Filter records">
+    </mat-form-field>
+  </div>
+
+  <div class="example-header example-selection-header"
+     *ngIf="!selection.isEmpty()">
+    {{selection.selected.length}}
+    {{selection.selected.length == 1 ? 'record' : 'records'}}
+    selected
+  </div>
+
+  <mat-table *ngIf="meta.attributes.length" [style.display]="dataSource ? '' : 'none'" class="example-table" #table [dataSource]="dataSource" matSort matSortActive="{{tableMeta.matSortActive}}" matSortDisableClear matSortDirection="{{tableMeta.matSortDirection}}">
+    
+    <ng-container *ngFor="let attr of meta.attributes">
+      <!-- Checkbox Column -->
+      <ng-container *ngIf="attr.formType=='checkbox'" [cdkColumnDef]="attr.name">
+        
+        <mat-header-cell *cdkHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row.id) : null"
+                      [checked]="selection.isSelected(row.id)">
+          </mat-checkbox>
+        </mat-cell>
+        
+      </ng-container>
+      <ng-container *ngIf="attr.formType!='checkbox' && attr.sort" [cdkColumnDef]="attr.name">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header>{{attr.label}}</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">
+          {{attr.formType =='date' ? (row[attr.name] | date:'MM-dd-yyyy') :  (row[attr.name])}}
+        </mat-cell>
+      </ng-container>
+      <ng-container *ngIf="attr.formType!='checkbox' && !attr.sort" [cdkColumnDef]="attr.name">
+        <mat-header-cell *cdkHeaderCellDef>{{attr.label}}</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">
+          {{attr.formType =='date' ? (row[attr.name] | date:'MM-dd-yyyy') :  (row[attr.name])}}
+        </mat-cell>
+      </ng-container>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: displayedColumns;"
+             [class.example-selected-row]="selection.isSelected(row.id)"
+             (click)="$event ? viewTSR(row) : null">
+    </mat-row>
+  </mat-table>
+
+  <div class="example-no-results"
+       [style.display]="!dataSource ? '' : 'none'">
+    No records found.
+  </div>
+
+  <mat-paginator [style.display]="dataSource ? '' : 'none'" #paginator
+                [length]="dataSource ? dataSource.totalElements : 0"
+                [pageIndex]="dataSource ? dataSource.pageableNumber : 0"
+                [pageSize]="tableMeta.size"
+                [pageSizeOptions]="tableMeta.pageSizeOptions">
+  </mat-paginator>
+</div>

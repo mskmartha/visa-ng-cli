@@ -1,0 +1,33 @@
+{
+	"camrId": 567,
+	"rtnOreu": "1234",
+	"projectName": "vasa",
+	"projectManager": "brij",
+	"projectManagerEmail": "brij",
+	"businessSponsor": "brij",
+	"itProjectSponsor": "brij",
+	"itTechnologyVertical": "1",
+	"statusId": 1,
+	"lifeCycleActions":[
+	    {
+	        "name": "Need More Info",
+	        "id": 7
+	    },
+	    {
+	        "name": "Accept",
+	        "id": 8
+	    },
+	    {
+	        "name": "View kcc",
+	        "id": 6
+	    }
+	    
+	],
+	"miscActions":[
+	    {
+	        "name": "Edit kcc",
+	        "id": 9
+	    }
+		
+	]
+}

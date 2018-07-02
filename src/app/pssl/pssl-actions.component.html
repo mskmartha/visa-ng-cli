@@ -1,0 +1,16 @@
+<!--<div>{{showNum}}{{id}}{{saId}}{{camrId}}</div>-->
+<mat-spinner class="menu-loading" *ngIf="!key && !actnsErr"></mat-spinner>
+<div *ngIf="key && key.length > 0">
+  <button class="mat-menu-btn" *ngFor="let lc of key" value={{lc}} #status mat-menu-item (click)="psslActions(saInfo, key, lc)">
+    <mat-icon>{{saActions[lc].mdIcon}}</mat-icon>
+    <span class="mat-menu-span">{{saActions[lc].name}}</span>
+  </button>
+</div>
+<div *ngIf="key && key.length === 0">
+    <mat-icon class="material-icons mat-18">notifications_none</mat-icon>
+    <span class="mat-menu-span">No Actions</span>
+</div>
+<div *ngIf="actnsErr">
+  <mat-icon class="material-icons mat-18 text-danger">error</mat-icon>
+  <span class="mat-menu-span text-danger">Error</span>
+</div>

@@ -1,0 +1,116 @@
+{
+  "1":{
+    "assessment": "Security Scoping",
+    "icon": "filter",
+    "image": null,
+    "template": null
+  },
+  "2":{
+    "assessment": "Mobile SSDLC",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "3":{
+    "assessment": "Architecture Review",
+    "icon": null,
+    "image": "assets/img/blue-assessments-icon.svg",
+    "template": null
+  },
+  "4":{
+    "assessment": "Static Code Analysis(SSDLC)",
+    "icon": null,
+    "image": "assets/img/blue-scanning.svg",
+    "template": null
+  },
+  "5":{
+    "assessment": "Pen Test",
+    "icon": null,
+    "image": "assets/img/blue-pentest.svg",
+    "template": null
+  },
+  "6":{
+    "assessment": "Dynamic AppSec Testing",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "7":{
+    "assessment": "Manual Review",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "8":{
+    "assessment": "IAM",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "9":{
+    "assessment": "CASB",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "10":{
+    "assessment": "SIEM",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "11":{
+    "assessment": "Applied Crypto",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "12":{
+    "assessment": "Mobile",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "13": {
+    "assessment": "Incident Investigation",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "14": {
+    "assessment": "DDOS",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "15": {
+    "assessment": "Risk",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "16":{
+    "assessment": "Third Party Risk",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "17":{
+    "assessment": "Control Assessment",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "18":{
+    "assessment": "PCI Assessment",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  },
+  "19":{
+    "assessment": "Sensor Tuning Engineering (STE)",
+    "icon": "rate_review",
+    "image": null,
+    "template": null
+  }
+}

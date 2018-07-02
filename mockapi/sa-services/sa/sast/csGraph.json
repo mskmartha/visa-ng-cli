@@ -1,0 +1,21 @@
+{
+  "topFiles": [
+    { "label" : "file1", "value" : 5 },
+    { "label" : "file2", "value" : 7 },
+    { "label" : "file3", "value" : 4 },
+    { "label" : "file4", "value" : 9 },
+    { "label" : "file5", "value" : 1 }
+  ],
+  "topFindings": [
+    { "label" : "file11", "value" : 55 },
+    { "label" : "file12", "value" : 77 },
+    { "label" : "file13", "value" : 44 },
+    { "label" : "file14", "value" : 99 },
+    { "label" : "file15", "value" : 111 }
+  ],
+  "status": [
+    { "label" : "High", "value" : 4 },
+    { "label" : "Medium", "value" : 8 },
+    { "label" : "Low", "value" : 12 }
+  ]
+}

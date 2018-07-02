@@ -1,0 +1,252 @@
+{
+	"questionnaireVersion": "1.0",
+	"groupLayout": "",
+	"steps": [
+		{
+			"stepId": "S1",
+			"stepName": "General Info",
+			"group": [
+				{
+					"groupId": "G1",
+					"groupName": "group name here",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "GPX008",
+							"questionType": "radio",
+							"questionLabel": "Is this a Visa Europe-Initiated Project",
+							"info": "Yes if applicable to any",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Yes",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "No",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "GPX001",
+							"questionType": "text",
+							"questionLabel": "RTN # or EU #   Please specify RTN or EU as prefix",
+							"info": "i.e. 'RTN-123456' or 'EU-56789'",
+							"placeHolder": "Enter RTN#",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"stepId": "S2",
+			"stepName": "Critical Attributes",
+			"group": [
+				{
+					"groupId": "G2",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "ISC003",
+							"questionType": "dropdown",
+							"questionLabel": "Information Classification of the information associated with this initiative",
+							"info": "Select One",
+							"placeHolder": "Select One",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Visa Public",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Visa Confidential",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Visa Restricted",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Visa Restricted - Personal Data",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "PPR-001",
+							"questionType": "date",
+							"questionLabel": "Pre-PPR Date",
+							"info": "Enter the Pre-PPR Date ",
+							"placeHolder": "Enter Pre-PPR Date",
+							"description": null,
+							"options": [],
+							"validation": {
+								"required": true,
+								"regexPattern": "[a-z]^[A-Z]^[0-9]",
+								"min": 1,
+								"max": 100
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"stepId": "S6",
+			"stepName": "Additional Info",
+			"group": [
+				{
+					"groupId": "G6",
+					"groupName": "",
+					"comments": [
+						{
+							"userName": null,
+							"comment": null,
+							"time": null
+						}
+					],
+					"questions": [
+						{
+							"questionId": "PHS001",
+							"questionType": "checkbox",
+							"questionLabel": "Is there a physical security component to this initiative? Please answer below for all that apply",
+							"info": "Choose all that apply",
+							"placeHolder": "",
+							"description": null,
+							"options": [
+								{
+									"optionId": "1",
+									"text": "A new Visa facility or data center",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "A significant expansion or re-purposing of an existing Visa facility",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "A new off-site location for the storage of sensitive data",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "An external party hosting or processing information classified as Visa Restricted or Visa Restricted - Personal Data",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Physical Access to a Visa Operations Center or Data Center",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "Other",
+									"srule": null,
+									"grule": null,
+									"qrule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"required": true,
+								"regexPattern": null,
+								"min": 0,
+								"max": 0
+							},
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

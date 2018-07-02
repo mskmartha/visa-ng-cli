@@ -1,0 +1,24 @@
+{
+    "ldrFindingsDOList":[
+        {
+            "findingId":"0001",
+            "findingName":"Spoofing",
+            "findingDesc":"Cross Site Scripting",
+            "remediation":"Source Code has to be modified",
+            "severity":"High",
+            "componentName":"component.ts",
+            "status":"Open",
+            "comments":"High Priority Issue - Immediate fix required"
+        },
+        {
+            "findingId":"0002",
+            "findingName":"Tampering",
+            "findingDesc":"SQL Injection",
+            "remediation":"Remove SQL queries",
+            "severity":"Medium",
+            "componentName":"details.ts",
+            "status":"Open",
+            "comments":"Security Issue"
+        }
+    ]
+}

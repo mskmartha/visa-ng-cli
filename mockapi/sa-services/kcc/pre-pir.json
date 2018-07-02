@@ -1,0 +1,162 @@
+{
+  "questionnaireVersion": "1.0",
+  "groupLayout": "accordion",
+  "steps": [
+    {
+      "stepId": "S1",
+      "stepName": "Step One",
+      "group": [
+        {
+          "groupId": "G2",
+          "groupName": "",
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "PIR001",
+              "questionType": "dropdown",
+              "questionLabel": "Information Classification of the Project Materials for this project (Choose from drop-down menu on right):",
+              "info": "",
+              "placeHolder": "",
+              "description": "",
+              "options": [
+                {
+                  "optionId": "1",
+                  "text": "Corporate IT",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "2",
+                  "text": "Operations and Infrastructure",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "3",
+                  "text": "Issuer Processing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "4",
+                  "text": "Network Processing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "5",
+                  "text": "Developer Platform",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "6",
+                  "text": "Data and Information Products",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "7",
+                  "text": "Merchant and Acquirer Processing",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "8",
+                  "text": "Digital and Mobile Products",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "9",
+                  "text": "Information Security",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                },
+                {
+                  "optionId": "10",
+                  "text": "Other",
+                  "srule": null,
+                  "grule": null,
+                  "qrule": null,
+                  "selected": false
+                }
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": null,
+                "min": null,
+                "max": null
+              },
+              "answers": [
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "S2",
+      "stepName": "Step Two",
+      "group": [
+        {
+          "groupId": "G7",
+          "groupName": "",
+          "comments": [
+            {
+              "userName": null,
+              "comment": null,
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "PIR014",
+              "questionType": "text",
+              "questionLabel": "Global Payment System Security Representative responsible for the Due Diligence Review",
+              "info": "Enter Global Payment System Security Representative Name",
+              "placeHolder": "Global Payment System Security Representative Name",
+              "description": "",
+              "options": [
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": "[a-z]^[A-Z]^[0-9]",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<div>
+  <div class="chat" #scrollMe>
+    <ol>
+      <span *ngFor="let c of comments">
+        <li class="{{ c.userName == user ? 'self' : 'other' }}">
+            <div class="avatar" style="margin-right: 10px;">
+              <mat-icon>account_circle</mat-icon>
+            </div>
+            <div class="msg">
+              <i><u><p>{{ c.userName }}</p></u></i>
+              <p>{{ c.comment }}</p>
+              <time>{{ c.creationDate | fromNow }}</time>
+            </div>
+        </li>
+      </span>
+    </ol>
+  </div>
+  <div class="panel-footer">
+    <form (ngSubmit)="sendMessage(message)" #msgForm="ngForm">
+      <div class="input-group">
+        <mat-form-field>
+          <textarea matInput placeholder="Write a comment.." [(ngModel)]='message' name='message' required="" maxLength=250 value=""></textarea>
+        </mat-form-field>
+      </div>
+      <span class="send-button">
+          <button mat-raised-button id="btn-chat" (click)="sendMessage(message)" [disabled]="!msgForm.form.valid">Send</button>
+      </span>
+    </form>
+  </div>
+</div>

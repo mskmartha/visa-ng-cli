@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1000961,
+      "projectName": "TEST_6539_REL_Test_Release",
+      "scanDate": 1496873032917,
+      "releaseId": "Release1"
+    },
+    {
+      "id": 1000962,
+      "projectName": "TEST_6540_REL_Test_Release",
+      "scanDate": 1496873032917,
+      "releaseId": "Release2"
+    }
+]

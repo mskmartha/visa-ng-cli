@@ -1,0 +1,24 @@
+.radio-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    min-height: 50px;
+}
+.checkbox-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    min-height: 50px;
+}
+
+.select-section {
+    // height: 60px;
+}
+
+.mat-slider-horizontal {
+  width: 300px;
+}
+
+.mat-slider-vertical {
+  height: 300px;
+}

@@ -1,0 +1,100 @@
+{
+
+    "camrId" : "1234",
+
+    "saId" : "SA123",
+
+    "user" : "gprakash",
+
+    "assessment": [ 
+        {
+
+            "type" : "1", 
+
+            "typeName" : "Arch Review",
+
+            "assessmentId" : "1", 
+
+            "assessment" : "Not Required",
+
+            "automated" : "False", 
+
+            "assignee" : "", 
+
+            "assigneeUserId" : "", 
+
+            "statusId" : "", 
+
+            "statusMessage" : ""
+
+        },
+
+        {
+
+            "type" : "2", 
+
+            "typeName" : "Code Review",
+
+            "assessmentId" : "2", 
+
+            "assessment" : "Required",
+
+            "automated" : "False",
+
+            "assignee" : "Brij Garg",
+
+            "assigneeUserId" : "205", 
+
+            "statusId" : "3", 
+
+            "statusMessage" : "InProgress"
+
+        },
+
+        {
+
+            "type" : "3", 
+
+            "typeName" : "Pen Testing",
+
+            "assessmentId" : "2", 
+
+            "assessment" : "Required",
+
+            "automated" : "False",
+
+            "assignee" : "Bill Chen",
+
+            "assigneeUserId" : "201", 
+
+            "statusId" : "3", 
+
+            "statusMessage" : "Completed"
+
+        },
+
+        {
+
+            "type" : "2", 
+
+            "typeName" : "SAST",
+
+            "assessmentId" : "2", 
+
+            "assessment" : "Required",
+
+            "automated" : "True",
+
+            "assignee" : "",
+
+            "assigneeUserId" : "", 
+
+            "statusId" : "2", 
+
+            "statusMessage" : "InProgress"
+
+        }
+
+    ]
+
+}

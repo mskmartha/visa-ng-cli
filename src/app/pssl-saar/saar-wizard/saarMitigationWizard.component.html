@@ -1,0 +1,12 @@
+<div class="mitigation-Container">
+  <mat-dialog-content class="scrollbar">
+    <div class="col-lg-12">
+      <div *ngFor="let key of mitigationLst.mitigationList">
+          <h4>{{key.title}}</h4>
+          {{key.description}}
+          <br/>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </mat-dialog-content>
+</div>

@@ -1,0 +1,49 @@
+<div class="dialog-container-inner">
+  <div class="sl-flex sl-main-space-between dialog-title">
+    <div>{{ codeScanDtls.projectName }}</div>
+    <div class="sl-flex sl-cross-end " >
+      <button class="sl-flex sl-button" matDialogClose><mat-icon class="whiteFont">clear</mat-icon></button>
+    </div>
+  </div>
+    <mat-dialog-content class="scrollbar">
+    <section class="chart-container">
+      <!-- {{barDatasets}} -->
+      <div class="chart-box pad-t-20" *ngIf="isDataAvailable">
+          <h5>{{ pieChartTitle }}</h5>
+          <div class="chart-tile">
+              <canvas baseChart
+                  [data]="pieChartData"
+                  [labels]="pieChartLabels"
+                  [chartType]="pieChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+              </canvas>
+          </div>
+      </div>
+      <div class="chart-box" *ngIf="isDataAvailable">
+          <h5>{{ doughChartTitle }}</h5>
+          <div class="chart-tile">
+              <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+              </canvas>
+          </div>
+      </div>
+      <div class="chart-box" *ngIf="isDataAvailable">
+        <h5>{{ barChartTitle }}</h5>
+        <div class="chart-tile">
+          <canvas baseChart
+                  [labels]="barChartLabels"
+                  [datasets]="barDatasets"
+                  [chartType]="barChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+          </canvas>
+        </div>
+      </div>
+    </section>
+    </mat-dialog-content>
+</div>

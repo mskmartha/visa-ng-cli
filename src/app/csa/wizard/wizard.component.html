@@ -1,0 +1,60 @@
+<div *ngIf="askCAMR">
+  <form [formGroup]="camrForm" novalidate (ngSubmit)="saveCAMR(camrForm.value, camrForm.valid)">
+    <mat-dialog-content>
+      <div class="form-group">
+        <div [ngClass]="{'has-error':!camrForm.controls['camr'].valid && camrForm.controls['camr'].touched}">
+          <mat-form-field class="col-lg-10">
+            <input matInput placeholder="Search CAMR by name or ID" name="camr" [formControl]="camrForm.controls['camr']" [matAutocomplete]="auto">
+          </mat-form-field>
+          <!-- The hasError method will tell us if a particular error exists -->
+          <mat-autocomplete class="col-lg-10" #auto="matAutocomplete">
+            <mat-option *ngFor="let camrConcat of filteredCAMRs | async" (click)="camrSelected(camrConcat)" [value]="camrConcat">
+              {{ camrConcat }}
+            </mat-option>
+          </mat-autocomplete>
+        </div>
+        <small *ngIf="camrForm.controls['camr'].hasError('required') && (mouseoverActionButton || camrForm.controls['camr'].touched)" class="text-danger">Please select your camr.</small>
+        <div class="err-msg" *ngIf="errCamr">
+          **Error processing CAMR's. Please try again later.
+        </div>
+        <div class="intab-spinner" *ngIf="showInTabProgess">
+          <mat-spinner class="centered"></mat-spinner>
+        </div>
+        <div class="err-msg" *ngIf="errLoadQuestions">
+          {{errtext}}
+        </div>
+      </div>
+    </mat-dialog-content>
+
+    <mat-card-actions align="end">
+      <span (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+        <button mat-raised-button type="submit" color="primary" class="cta-1">Next</button>
+      </span>
+    </mat-card-actions>
+  </form>
+</div>
+
+<div *ngIf="modalStepper">
+  <div class="qns-window"><app-multistep-wiz [qnsMeta]="qnsMeta" [injectData]="injectData" (stepEvent)="submitQns($event)"></app-multistep-wiz></div>
+</div>
+
+<div *ngIf="submitSASucess">
+  <div class="submit-screen">
+    <img src="assets/img/ic-check-circle.svg"/>
+    <h5>CSA submitted</h5>
+  </div>
+</div>
+
+<div *ngIf="errOnSubmit">
+  <div class="submit-screen">
+    <img src="assets/img/error-circle.svg"/>
+    <h5>Something went wrong</h5>
+    <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>
+  </div>
+</div>
+<div *ngIf="showProgess">
+  <div class="submit-spinner">
+    <mat-spinner class="centered"></mat-spinner>
+    <h4>Processing...</h4>
+  </div>
+</div>

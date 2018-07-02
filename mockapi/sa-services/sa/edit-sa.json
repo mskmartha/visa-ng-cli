@@ -1,0 +1,735 @@
+{
+	"questionnaireVersion": "1.1",
+	"camrId": 1013,
+	"acmRating": 3,
+	"id": 3,
+	"saId": "SA-0003",
+	"generalInfo": {
+		"camrAppName": "Bankruptcy Information Service",
+		"camrShortName": "BIS",
+		"projectManager": "Bharat",
+		"solutionArchitect": "Shravan",
+		"rtnNumber": 0,
+		"jiraTicket": "",
+		"releaseAppName": "",
+		"releaseName": "VASA-Phase1",
+		"releaseDate": "6/12/17"
+	},
+	"steps": [
+		{
+			"group": [
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA02",
+							"questionType": "dropdown",
+							"questionLabel": "Application Service Tier",
+							"info": "",
+							"placeHolder": "Choose a Service Tier",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Tier Real-Time RT",
+									"rule": null,
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "Tier 0",
+									"rule": null,
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Tier 1",
+									"rule": null,
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Tier 2",
+									"rule": null,
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Tier 3",
+									"rule": null,
+									"selected": false
+								},
+								{
+									"optionId": "6",
+									"text": "NA",
+									"rule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "q7 = '1|2'  and (q2 = '1' or q3 = '4')",
+							"answers": [
+								"1"
+							]
+						},
+						{
+							"questionId": "SA03",
+							"questionType": "radio",
+							"questionLabel": "Security Assessment Type",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Visa developed and hosted application",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "Visa application hosted by external",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Third party product in Visa data center",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Third party application externally hosted",
+									"rule": "",
+									"selected": false
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1"
+							]
+						}
+					]
+				},
+				{
+					"groupName": "Release Information",
+					"questions": [
+						{
+							"questionId": "SA05",
+							"questionType": "radio",
+							"questionLabel": "Release Type",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Release Major",
+									"rule": null,
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Release Minor",
+									"rule": null,
+									"selected": false
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "SA06",
+							"questionType": "text",
+							"questionLabel": "Release Name",
+							"info": "For Ex - R-1012",
+							"placeHolder": "",
+							"options": [],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								""
+							]
+						},
+						{
+							"questionId": "SA08",
+							"questionType": "date",
+							"questionLabel": "Release Date",
+							"info": "",
+							"placeHolder": "",
+							"options": [],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								""
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"group": [
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA09",
+							"questionType": "checkbox",
+							"questionLabel": "Application Features Update",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Authentication and Authorization",
+									"rule": null,
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "Data Classification",
+									"rule": "SA11",
+									"selected": true
+								},
+								{
+									"optionId": "3",
+									"text": "Data Flow",
+									"rule": null,
+									"selected": true
+								},
+								{
+									"optionId": "4",
+									"text": "Application Access Control Change",
+									"rule": null,
+									"selected": true
+								},
+								{
+									"optionId": "5",
+									"text": "Web Application - Internal Facing",
+									"rule": null,
+									"selected": true
+								},
+								{
+									"optionId": "6",
+									"text": "Web Application - External Facing",
+									"rule": null,
+									"selected": true
+								},
+								{
+									"optionId": "7",
+									"text": "Middelware Changes",
+									"rule": "SA16",
+									"selected": true
+								},
+								{
+									"optionId": "8",
+									"text": "Hardware / Appliance",
+									"rule": "SA17",
+									"selected": true
+								},
+								{
+									"optionId": "9",
+									"text": "Database",
+									"rule": "SA18",
+									"selected": true
+								},
+								{
+									"optionId": "10",
+									"text": "Mobile / IoT",
+									"rule": "SA19",
+									"selected": false
+								},
+								{
+									"optionId": "11",
+									"text": "Configuration and logging",
+									"rule": null,
+									"selected": true
+								},
+								{
+									"optionId": "12",
+									"text": "Network Zone Changes",
+									"rule": "SA21",
+									"selected": true
+								},
+								{
+									"optionId": "13",
+									"text": "OS Changes",
+									"rule": "SA22",
+									"selected": true
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1",
+								"2",
+								"3",
+								"4",
+								"5",
+								"6",
+								"7",
+								"8",
+								"9",
+								"11",
+								"12",
+								"13"
+							]
+						}
+					]
+				},
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA11",
+							"questionType": "checkbox",
+							"questionLabel": "Data Asset Changes",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Visa Public",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "Visa Confidential",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "3",
+									"text": "Visa Restricted - PII Private: CVV (Tier 0)",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "4",
+									"text": "Visa Restricted - PII Private: PAN (Tier 1)",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "5",
+									"text": "Visa Restricted - PII Private (Tier 1)",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "6",
+									"text": "Visa Restricted - Other (special handling)",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "",
+									"text": "NA",
+									"rule": "",
+									"selected": false
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1",
+								"2",
+								"3",
+								"4",
+								"5"
+							]
+						}
+					]
+				},
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA16",
+							"questionType": "checkbox",
+							"questionLabel": "Middleware Changes",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "TechCentral Approved",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "TechCentral Not Approved",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "3",
+									"text": "Middleware Name",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "4",
+									"text": "Middleware with Privilege Account",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "5",
+									"text": "Middleware Configurations",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "6",
+									"text": "Open Source(Yes)",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "7",
+									"text": "Open Source(No)",
+									"rule": "",
+									"selected": false
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1",
+								"2",
+								"3",
+								"4",
+								"5",
+								"6"
+							]
+						}
+					]
+				},
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA17",
+							"questionType": "checkbox",
+							"questionLabel": "Hardware/Appliance Changes",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Hardware Type",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "Network Zone",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "3",
+									"text": "Hardware Internet Facing",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "4",
+									"text": "Hardware Internal Facing",
+									"rule": "",
+									"selected": false
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1",
+								"2",
+								"3"
+							]
+						}
+					]
+				},
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA18",
+							"questionType": "checkbox",
+							"questionLabel": "Database Changes",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Database Replication",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "Database Monitoring",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Database Encryption",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "4",
+									"text": "Database Access Control",
+									"rule": "",
+									"selected": true
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1",
+								"3",
+								"4"
+							]
+						}
+					]
+				},
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA19",
+							"questionType": "checkbox",
+							"questionLabel": "Mobile/IoT Changes",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Mobile SDK",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "2",
+									"text": "Mobile Application",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "Mobile OS Type",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "4",
+									"text": "Application Exposure (Internal)",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Application Exposure (External)",
+									"rule": "",
+									"selected": false
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								""
+							]
+						}
+					]
+				},
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA21",
+							"questionType": "checkbox",
+							"questionLabel": "Network and Zoning Changes",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "Extranet",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "Commercial",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "3",
+									"text": "Corporate",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "4",
+									"text": "VMSN",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "5",
+									"text": "Third Party Network",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "6",
+									"text": "eVMSN-Core",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "7",
+									"text": "eVMSN-Edge",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "8",
+									"text": "Non-Prod ICL",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "9",
+									"text": "Non-Prod GL",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "10",
+									"text": "OCE bubble",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "11",
+									"text": "Network Zone (Perimeter)",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "12",
+									"text": "Network Zone (Business)",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "13",
+									"text": "Network Zone (restricted)",
+									"rule": "",
+									"selected": true
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1",
+								"2",
+								"3",
+								"5",
+								"6",
+								"7",
+								"8",
+								"9",
+								"10",
+								"11",
+								"12",
+								"13"
+							]
+						}
+					]
+				},
+				{
+					"groupName": "",
+					"questions": [
+						{
+							"questionId": "SA22",
+							"questionType": "checkbox",
+							"questionLabel": "OS/VM Changes:",
+							"info": "",
+							"placeHolder": "",
+							"options": [
+								{
+									"optionId": "1",
+									"text": "OS/VM Type",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "2",
+									"text": "OS/VM Patch",
+									"rule": "",
+									"selected": false
+								},
+								{
+									"optionId": "3",
+									"text": "OS/VM Configuration",
+									"rule": "",
+									"selected": true
+								},
+								{
+									"optionId": "4",
+									"text": "OS/VM File System",
+									"rule": "",
+									"selected": true
+								}
+							],
+							"validation": {
+								"type": 2
+							},
+							"jumpLogic": "",
+							"answers": [
+								"1",
+								"3",
+								"4"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

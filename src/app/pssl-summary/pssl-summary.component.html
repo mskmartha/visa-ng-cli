@@ -1,0 +1,117 @@
+<button type="button" class="btn btn-default slide-out-btn" (click)="showStyle = !showStyle;"><mat-icon>more</mat-icon></button>
+<!--AB: To enable closing of accordion on click outside-->
+<div class="closingWindow" *ngIf="showStyle" (click)="showStyle = false"></div>
+<div class="clearfix"></div>
+<div class="row" id="pssl-summary" *ngIf="PSSLSummary">
+  <div class="col-sm-12 col-md-12 col-xl-12 table-wrapper">
+    <h3 class="dialog-title">{{PSSLSummary.saId}} - Security Assessment Details</h3>
+    <div class="card-toolbar">
+        <mat-card-content>
+            <app-legend-component [legendData]="assmntDOsStatus"></app-legend-component>
+            <div class="slp-nav-bar">
+              <app-nav-bar-pagination>
+                <nav mat-tab-nav-bar aria-label="weather navigation links" [backgroundColor]="tabNavBackground">
+
+                  <a mat-tab-link
+                     *ngFor="let tabLink of tabLinks; let i = index"
+                     [routerLink]="[tabLink.link]"
+                     routerLinkActive #rla="routerLinkActive"
+                     [active]="rla.isActive">
+
+                    <div class="sl-flex sl-stack">
+                      <div>
+                        <mat-icon class="material-icons">{{engagementsConfig[tabLink.id].icon}}<img *ngIf="engagementsConfig[tabLink.id].image" src="{{engagementsConfig[tabLink.id].image}}" class="mat-tab-label-icon"></mat-icon>
+                        <svg width="10" height="10" style="position: absolute; margin-left: 5px;">
+                          <circle cx="5" cy="5" r="5" [attr.fill]="assmntDOsStatus[tabLink.statusId]?.color || '#d3ddeb'"></circle>
+                        </svg>
+                      </div>
+                      <div>
+                        <b>{{tabLink.label}}</b>
+                      </div>
+                    </div>
+                  </a>
+                  <!--<a mat-tab-link disabled>Disabled Link</a>-->
+                </nav>
+              </app-nav-bar-pagination>
+              <router-outlet></router-outlet>
+            </div>
+        </mat-card-content>
+    </div>
+    <div *ngIf="errOnSubmit">
+      <div class="submit-screen">
+        <img src="assets/img/error-circle.svg"/>
+        <h5>Something went wrong</h5>
+        <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>
+      </div>
+    </div>
+    <div *ngIf="showProgess">
+      <div class="submit-spinner">
+        <mat-spinner class="centered"></mat-spinner>
+        <h4>Processing...</h4>
+      </div>
+    </div>
+  </div>
+  <div class="container summary-wrapper">
+      <div id="slideout" [class]="getStyle()">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header class="headerBackground">
+              <mat-panel-title class="whiteFont">
+                Application Release Summary
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="summary-details">
+              <p><b>SA ID:</b> {{PSSLSummary.saId}}</p>
+              <p><b>SA Rating:</b> {{PSSLSummary.saRating}}</p>
+              <p><b>ACM Rating:</b> {{PSSLSummary.acm}}</p>
+              <p><b>CAMR ID:</b> {{PSSLSummary.camrId}}</p>
+              <p><b>Project Name:</b> {{(PSSLSummary.releaseName) ? PSSLSummary.releaseName: '--'}}</p>
+              <p><b>Release Date:</b> {{PSSLSummary.releaseDate? (PSSLSummary.releaseDate | date:'MM-dd-yyyy'): '--'}}</p>
+              <p *ngIf="PSSLSummary.comments">
+                <b>comments:</b> {{PSSLSummary.comments.substring(0, 120)}}
+                          <span *ngIf="PSSLSummary.comments.length > 120 && !showFullComment" (click)="openDialog($event, PSSLSummary.comments)" style="cursor: pointer">... </span>
+              </p>
+            </div>
+          </mat-expansion-panel>
+          <!--Violations-->
+          <mat-expansion-panel *ngIf="PSSLSummary?.violations?.length > 0">
+            <mat-expansion-panel-header class="headerBackground">
+              <mat-panel-title class="whiteFont">
+                Violations
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="summary-details">
+              <ng-container *ngFor="let violation of PSSLSummary?.violations; let i= index">
+                <p *ngIf="PSSLSummary.comments">
+                  <b>{{i + 1}}:</b> {{violation.substring(0, 140)}}
+                  <span *ngIf="violation.length > 140 && !showFullComment" matTooltip="show more" (click)="openDialog($event, violation)" style="cursor: pointer">... </span>
+                </p>
+              </ng-container>
+            </div>
+          </mat-expansion-panel>
+          <div *ngFor="let engagement of PSSLSummary?.assessmentDOs">
+            <mat-expansion-panel *ngIf="engagement?.assessmentId !== 1">
+
+              <mat-expansion-panel-header class="headerBackground">
+                <mat-panel-title class="whiteFont">
+                  {{engagement?.assessment}} Summary
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div class="summary-details">
+                <p *ngIf="engagement?.assignee"><b>assignee:</b> {{engagement?.assignee}}</p>
+                <p *ngIf="engagement?.statusMessage"><b>status Message:</b> {{engagement?.statusMessage}}</p>
+                <p *ngIf="engagement?.assignedDate"><b>assigned Date:</b> {{engagement?.assignedDate ? (engagement?.assignedDate | date:'MM-dd-yyyy'): '--'}}</p>
+                <p *ngIf="engagement?.referenceNumber"><b>reference Number:</b> {{engagement?.referenceNumber}}</p>
+                <p *ngIf="engagement?.completedDate"><b>completed Date:</b> {{engagement?.completedDate ? (engagement?.completedDate | date:'MM-dd-yyyy'): '--'}}</p>
+                <p *ngIf="engagement?.comments">
+                  <b>comments:</b> {{engagement?.comments.substring(0, 120)}}
+                            <span *ngIf="engagement?.comments.length > 120 && !showFullComment" matTooltip="show more" (click)="openDialog($event, engagement?.comments)" style="cursor: pointer">... </span>
+                </p>
+              </div>
+            </mat-expansion-panel>
+          </div>
+        </mat-accordion>
+      </div>
+  </div>
+</div>

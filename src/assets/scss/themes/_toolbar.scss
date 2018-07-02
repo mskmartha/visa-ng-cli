@@ -1,0 +1,92 @@
+@mixin toolbar-theme($theme) {
+    
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    .list-menu {
+        .mat-nav-list {
+            .mat-list-item {
+                .mat-list-item-content {
+                    color: mat-color($mat-blue-grey, 500);
+                    height: 42px;
+                    font-size: 14px;
+                    &:hover {
+                        background-color: mat-color($primary, 500);
+                        color: mat-color($mat-grey, 50);
+                        }
+                    }
+                }
+            }
+    }
+
+.mat-toolbar {
+    z-index: 2;
+    box-shadow: 
+        0 3px 5px -1px rgba(0,0,0,.2), 
+        0 6px 10px 0 rgba(0,0,0,.14), 
+        0 1px 18px 0 rgba(0,0,0,.12);
+    
+    .logo {
+        text-align: center;
+        
+        width: $sidebar-width - 16px - 50px; //toolbar-padding and menu icon
+        
+        a {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 18px;
+            text-decoration: none;
+            color: mat-color($mat-grey,200);
+            &:hover {
+                color: mat-color($mat-grey,50);
+            }
+        }
+        
+
+    }
+    .mat-icon-button, .mat-mini-fab {
+        width: 50px;
+        height: $mat-toolbar-height-desktop;
+        line-height: $mat-toolbar-height-desktop;
+        border-radius: 0;
+        // color: mat-contrast($mat-red, 400);
+        color: mat-color($mat-grey,200);
+        // transition: .3s ease-in-out;
+        // transform: rotate(0deg);
+        .mat-button-focus-overlay {
+            background: transparent;
+        }
+        .mat-button-ripple {
+            border-radius: 0;
+        }
+        &:hover {
+            // transform: rotate(180deg);
+            color: mat-color($mat-grey,50);
+        }
+    }
+    .toolbar-right {
+        flex: 1 1 auto;
+    }
+    
+}
+
+@media ($mat-xsmall) and (orientation: portrait) {
+    .mat-toolbar {
+        .mat-icon-button {
+            height: $mat-toolbar-height-mobile-portrait;
+            line-height: $mat-toolbar-height-mobile-portrait;
+            }
+        }
+    }
+
+@media ($mat-small) and (orientation: landscape) {
+    .mat-toolbar {
+        .mat-icon-button {
+            height: $mat-toolbar-height-mobile-landscape;
+            line-height: $mat-toolbar-height-mobile-landscape;
+            }
+        }
+    }
+
+}
+  

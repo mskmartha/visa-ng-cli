@@ -1,0 +1,23 @@
+textarea{
+	height: 50px;
+}
+
+.centered{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+.forceSync{
+	float: right;
+	cursor: pointer;
+}
+ul.pagination li {
+	padding-right:10px;
+}
+input[type=text] {
+	width:100%;
+}
+.sl-card{
+	cursor: pointer;
+}
+

@@ -1,0 +1,23 @@
+{
+    "ldrFindingsDOList":[
+        {
+            "findingName":"gyan",
+            "findingDesc":"amit",
+            "remediation":"amit",
+            "severity":"2",
+            "componentName":"hello",
+            "status":"med",
+            "comments":"hello hi"
+        },
+        {
+            "findingName":"amit",
+            "findingDesc":"bharath",
+            "remediation":"bharath",
+            "severity":"3",
+            "componentName":"hello",
+            "status":"med",
+            "comments":"hello hi"
+        }
+    ]
+} 
+

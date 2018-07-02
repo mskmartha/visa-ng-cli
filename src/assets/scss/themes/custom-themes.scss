@@ -1,0 +1,115 @@
+@import '~@angular/material/theming';
+@import "variables";
+@import "custom/icons";
+@import "custom/list";
+@import "custom/forms";
+@import "custom/modal";
+@import "custom/notification";
+@import "layout";
+@import "toolbar";
+@import "main";
+@import "footer";
+@import "card";
+@import "simple-layout";
+
+
+@include mat-core();
+
+.visa-theme {
+    $light-primary: mat-palette($mat-blue, 500);
+    $light-accent:  mat-palette($mat-indigo, 500);
+    $light-warn:    mat-palette($mat-orange, 500);
+    $light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+    @include angular-material-theme($light-theme);
+    @include toolbar-theme($light-theme);
+    @include main-theme($light-theme);
+    @include list-theme($light-theme);
+    @include card-theme($light-theme);
+    @include modal-theme($light-theme);
+    @include simple-layout-theme($light-theme);
+    @include notifications-theme($light-theme);
+
+}
+
+.green-light-blue-orange {
+    $light-primary: mat-palette($mat-green, 500);
+    $light-accent:  mat-palette($mat-cyan, 500);
+    $light-warn:    mat-palette($mat-orange, 500);
+    $light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+    @include angular-material-theme($light-theme);
+    @include toolbar-theme($light-theme);
+    @include main-theme($light-theme);
+    @include list-theme($light-theme);
+    @include card-theme($light-theme);
+    @include modal-theme($light-theme);
+    @include simple-layout-theme($light-theme);
+    @include notifications-theme($light-theme);
+
+
+}
+
+.blue-teal-pink {
+    $light-primary: mat-palette($mat-blue, 500);
+    $light-accent:  mat-palette($mat-pink, 500);
+    $light-warn:    mat-palette($mat-teal, 500);
+    $light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+    @include angular-material-theme($light-theme);
+    @include toolbar-theme($light-theme);
+    @include main-theme($light-theme);
+    @include list-theme($light-theme);
+    @include card-theme($light-theme);
+    @include modal-theme($light-theme);
+    @include simple-layout-theme($light-theme);
+    @include notifications-theme($light-theme);
+
+}
+
+.purple-cyan-orange {
+    $light-primary: mat-palette($mat-purple, 500);
+    $light-accent:  mat-palette($mat-orange, 500);
+    $light-warn:    mat-palette($mat-cyan, 500);
+    $light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+    @include angular-material-theme($light-theme);
+    @include toolbar-theme($light-theme);
+    @include main-theme($light-theme);
+    @include list-theme($light-theme);
+    @include card-theme($light-theme);
+    @include modal-theme($light-theme);
+    @include simple-layout-theme($light-theme);
+    @include notifications-theme($light-theme);
+
+}
+
+.pink-blue-orange {
+    $light-primary: mat-palette($mat-pink, 500);
+    $light-accent:  mat-palette($mat-blue, 500);
+    $light-warn:    mat-palette($mat-orange, 500);
+    $light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+    @include angular-material-theme($light-theme);
+    @include toolbar-theme($light-theme);
+    @include main-theme($light-theme);
+    @include list-theme($light-theme);
+    @include card-theme($light-theme);
+    @include modal-theme($light-theme);
+    @include simple-layout-theme($light-theme);
+    @include notifications-theme($light-theme);
+
+}
+
+
+.blue-grey-purple-orange {
+    $light-primary: mat-palette($mat-blue-grey, 500);
+    $light-accent:  mat-palette($mat-orange, 500);
+    $light-warn:    mat-palette($mat-purple, 500);
+    $light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+    @include angular-material-theme($light-theme);
+    @include toolbar-theme($light-theme);
+    @include main-theme($light-theme);
+    @include list-theme($light-theme);
+    @include card-theme($light-theme);
+    @include modal-theme($light-theme);
+    @include simple-layout-theme($light-theme);
+    @include notifications-theme($light-theme);
+
+}
+

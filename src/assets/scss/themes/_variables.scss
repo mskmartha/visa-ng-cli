@@ -1,0 +1,32 @@
+// toolbar - (extend material design)
+$mat-toolbar-height-desktop: 64px !default;
+$mat-toolbar-height-mobile-portrait: 56px !default;
+$mat-toolbar-height-mobile-landscape: 48px !default;
+
+// Sidebar
+$sidebar-width:                     260px;
+// Colors
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+@media ($mat-xsmall){
+    .hidden-xs {
+        display: none
+        }
+    }
+
+@media ($mat-small){
+    .hidden-sm {
+        display: none;
+        }
+    }
+
+
+
+
+

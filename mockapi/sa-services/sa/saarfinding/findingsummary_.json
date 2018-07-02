@@ -1,0 +1,15 @@
+{
+	"saarVulnerabilitySummaryDOList": [
+		{
+			"findingId": 32768,
+			"findingName": "TEst1",
+			"description": "TEST",
+			"mitigations": "While it does not weaken the other factors, privacy factors as well as least access principles suggest that the UDIDs not to be used for authentication/authorization purposes.",
+			"resolution": "TEST",
+			"impact": "Low",
+			"likely": "Low",
+			"vid": 3,
+			"resolutionStatus": "Open"
+		}
+	]
+}

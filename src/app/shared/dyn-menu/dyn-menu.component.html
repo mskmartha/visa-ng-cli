@@ -1,0 +1,11 @@
+
+
+<button mat-icon-button [matMenuTriggerFor]="menu" (click)="createActionsGearComponent(menuInfo)">
+<mat-icon class="material-icons.md-16">settings</mat-icon>
+  <span *ngIf="menuInfo.statusId === 13" class="badge"><mat-icon class="material-icons.md-8">info</mat-icon></span>
+</button>
+<mat-menu #menu="matMenu" class="mat-menu" [xPosition]="'before'">
+        <dynamic-component [componentData]="componentData"></dynamic-component>
+        <!-- <button mat-menu-item (click)="clickHandler('Item 1 of Menu ' + menuInfo)">Menu {{menuInfo}}:Item 1</button>
+        <button mat-menu-item (click)="clickHandler('Item 2 of Menu ' + menuInfo)">Menu {{menuInfo}}:Item 2</button> -->
+</mat-menu>

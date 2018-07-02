@@ -1,0 +1,59 @@
+<div class="mat-steppers flex" [ngClass]="{'mat-steppers-linear': options.linear,
+                                            'mat-steppers-alternative': options.alternative,
+                                            'mat-steppers-vertical': options.vertical,
+                                            'mat-steppers-mobile-step-text': options.mobileStepText,
+                                            'mat-steppers-has-feedback': hasFeedback}">
+    <div class="mat-steppers-header-region">
+    <div class="mat-steppers-header mat-steppers-horizontal mat-whiteframe-1dp">
+        <button class="mat-stepper-indicator"
+                *ngFor="let step of steps; let stepNumber = index"
+                [ngClass]="{'mat-active': stepNumber === currentStep,
+                            'mat-completed': isCompleted(stepNumber),
+                            'mat-error': step.hasError,
+                            'mat-stepper-optional': step.optional || step.hasError}"
+                (click)="goto(stepNumber)"
+                [disabled]="options.linear || stepNumber === currentStep">
+        <div class="mat-stepper-indicator-wrapper">
+            <div class="mat-stepper-number"
+                [ngClass]="{'mat-stepper-done': isCompleted(stepNumber)}"
+                *ngIf="!step.hasError">
+            <span *ngIf="!isCompleted(stepNumber)">{{ stepNumber + 1 }}</span>
+            <mat-icon class="mat-stepper-icon svg-icon" svgIcon="step-done"
+                        *ngIf="isCompleted(stepNumber) && options.enableSvgIcon"></mat-icon>
+            <mat-icon class="mat-stepper-icon"
+                        *ngIf="isCompleted(stepNumber) && !options.enableSvgIcon">done
+            </mat-icon>
+            </div>
+            <div class="mat-stepper-error-indicator" *ngIf="step.hasError">
+            <mat-icon *ngIf="options.enableSvgIcon" svgIcon="step-warning"></mat-icon>
+            <mat-icon *ngIf="!options.enableSvgIcon">warning</mat-icon>
+            </div>
+            <div class="mat-stepper-title">
+            <span>{{ step.label }}</span>
+            <small *ngIf="step.optional && !step.hasError">{{ step.optional }}</small>
+            <small class="mat-stepper-error-message" *ngIf="step.hasError">
+                {{ step.message }}
+            </small>
+            </div>
+        </div>
+        </button>
+    </div>
+    <div class="mat-steppers-mobile-header">
+        <mat-toolbar class="mat-whiteframe-1dp block"
+                    style="background: #f6f6f6 !important; color: #202020 !important;">
+        <div class="mat-toolbar-tools">
+            <h3>
+            <span>{{options.labelStep || 'Step'}} {{currentStep + 1}} {{options.labelOf || 'of'}} {{steps.length}}</span>
+            </h3>
+        </div>
+        </mat-toolbar>
+    </div>
+    <div class="mat-stepper-feedback-message" *ngIf="hasFeedback">
+        {{feedbackMessage}}
+    </div>
+    </div>
+    <div class="mat-steppers-content">
+    <ng-content select="app-work-flow"></ng-content>
+    </div>
+    <div class="mat-steppers-overlay"></div>
+</div>

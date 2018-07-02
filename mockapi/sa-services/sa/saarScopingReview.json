@@ -1,0 +1,32 @@
+[  
+   {  
+      "questionId":"SAAR01",
+      "question":"Are new APIs being introduced",
+      "answer":"Yes",
+      "description":"New APIs are introduced for Shift left Security Architecture Scoping"
+   },
+   {  
+      "questionId":"SAAR02",
+      "question":"Access Changes",
+      "answer":"No",
+      "description":"Test Access Changes description"
+   },
+   {  
+      "questionId":"SAAR03",
+      "question":"Network Connection",
+      "answer":"Yes",
+      "description":"Test Network connection description"
+   },
+   {  
+      "questionId":"SAAR04",
+      "question":"Network Zone Changes",
+      "answer":"Yes",
+      "description":"Test Network Zone Changes description"
+   },
+   {  
+      "questionId":"SAAR05",
+      "question":"Data Flow Changes",
+      "answer":"No",
+      "description":"Test Data Flow Changes description"
+   }
+]

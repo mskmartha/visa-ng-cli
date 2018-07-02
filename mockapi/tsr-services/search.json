@@ -1,0 +1,82 @@
+{
+	"content": [
+	  {
+		"id": 80,
+		"tsrTitle": null,
+		"tsrRequirement": null,
+		"rational": null,
+		"keyControl": null,
+		"pcidss": null,
+		"createdBy": "ShiftLeft Admin",
+		"lastModifiedBy": "ShiftLeft Admin",
+		"creationDate": 1512604446000,
+		"lastModifiedDate": 1512604446000
+	  },
+	  {
+		"id": 2566,
+		"tsrTitle": "",
+		"tsrRequirement": "",
+		"rational": "",
+		"keyControl": "Key Control “4.7.5.1 Sessions must time out after inactivity”",
+		"pcidss": "",
+		"createdBy": "ShiftLeft Admin",
+		"lastModifiedBy": "ShiftLeft Admin",
+		"creationDate": 1512604554000,
+		"lastModifiedDate": 1512604554000
+	  },
+	  {
+		"id": 1799,
+		"tsrTitle": "",
+		"tsrRequirement": "The setting that specifies that .rhosts and .shosts files will not be used and thus forces users to enter a password when authenticating with SSH must be set to IgnoreRhosts yes.",
+		"rational": "",
+		"keyControl": "KC: 7.2.1.3 Baseline security configurations must be defined and implemented \nBaseline security controls/ configurations must address known security vulnerabilities and, at a minimum, Industry standard hardening configuration settings, including disabling any unnecessary and/or insecure functions, services, and protocols \n",
+		"pcidss": "",
+		"createdBy": "ShiftLeft Admin",
+		"lastModifiedBy": "ShiftLeft Admin",
+		"creationDate": 1512604538000,
+		"lastModifiedDate": 1512604538000
+	  },
+	  {
+		"id": 776,
+		"tsrTitle": "",
+		"tsrRequirement": "",
+		"rational": "advantage of this additional function at some point in the future",
+		"keyControl": "",
+		"pcidss": "",
+		"createdBy": "ShiftLeft Admin",
+		"lastModifiedBy": "ShiftLeft Admin",
+		"creationDate": 1512604495000,
+		"lastModifiedDate": 1512604495000
+	  },
+	  {
+		"id": 2056,
+		"tsrTitle": "",
+		"tsrRequirement": null,
+		"rational": null,
+		"keyControl": null,
+		"pcidss": null,
+		"createdBy": "ShiftLeft Admin",
+		"lastModifiedBy": "ShiftLeft Admin",
+		"creationDate": 1512604545000,
+		"lastModifiedDate": 1512604545000
+	  }
+	],
+	"totalElements": 3059,
+	"totalPages": 612,
+	"last": false,
+	"size": 5,
+	"number": 0,
+	"sort": [
+	  {
+		"direction": "ASC",
+		"property": "tsrTitle",
+		"ignoreCase": false,
+		"nullHandling": "NATIVE",
+		"ascending": true,
+		"descending": false
+	  }
+	],
+	"first": true,
+	"numberOfElements": 5
+  }
+  

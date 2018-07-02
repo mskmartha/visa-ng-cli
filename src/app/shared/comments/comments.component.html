@@ -1,0 +1,63 @@
+<!--Display comment section-->
+<div class="row" *ngIf="question?.comments && question?.comments?.length > 0">
+  <div class="col-md-12 viewComments scrollbar" #scrollMe>
+    <div *ngFor="let comment of question?.comments; let i = index" class="sl-flex sl-stack row">
+      <!--If the comment is not from the logged in user then align it to left side-->
+      <ng-container *ngIf="comment.userName !== currentUser;else elseBlock">
+        <div class="sl-flex userName sl-tt-capitalize"> {{comment?.name || comment?.userName}} </div>
+        <div class="left sl-flex sl-main-start">
+          <div>
+            <div *ngIf="comment?.avatarImage; else defaultImage" class="smallProfilePic sl-image sl-border" [ngStyle]="{'background-image':'url(data:image/png;base64,' + comment?.avatarImage + ')'}"></div>
+            <ng-template #defaultImage>
+              <mat-icon mat-list-icon>account_circle</mat-icon>
+            </ng-template>
+          </div>
+          <div class="comment">
+            {{comment?.comment}}
+            <div class="time">{{comment.creationDate | date:'medium'}}</div>
+          </div>
+        </div>
+      </ng-container>
+      <!--If the comment is form the logged in user-->
+      <ng-template #elseBlock>
+        <div class="sl-flex userName sl-tt-capitalize sl-main-end"> {{comment?.name || comment?.userName}} </div>
+        <div class="right sl-flex sl-main-end">
+          <div class="comment">
+            {{comment?.comment}}
+            <div *ngIf="comment.creationDate; else defaultTime" class="time">{{comment.creationDate || today | date:'medium'}}</div>
+            <ng-template #defaultTime>
+              <div class="time">Just now</div>
+            </ng-template>
+          </div>
+          <div>
+            <div *ngIf="comment?.avatarImage; else defaultImage" class="smallProfilePic sl-image sl-border" [ngStyle]="{'background-image':'url(data:image/png;base64,' + comment?.avatarImage + ')'}"></div>
+            <ng-template #defaultImage>
+              <mat-icon mat-list-icon>account_circle</mat-icon>
+            </ng-template>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<!--New Comment Section visible only if the view is not disabled-->
+<form *ngIf="!isViewDisabled" novalidate>
+  <div class="row sl-m0">
+    <mat-form-field class="col-md-10 sl-pl0">
+      <textarea matInput #input  placeholder="{{question.placeHolder}}" [formControl]="commentFormControl"
+                [id]="question.questionId" [type]="'text'"
+                [pattern]="question.validation.regexPattern"
+                [required]="question?.validation?.required"
+                minlength=""
+                [maxlength]="question?.validation?.max"
+      ></textarea>
+      <mat-hint align="end">Max length: {{question?.validation?.max}} characters. {{question?.validation?.max - input.value?.length}} remaining.</mat-hint>
+      <mat-hint *ngIf="!commentFormControl?.valid && commentFormControl?.touched"  class="text-danger">Please provide appropriate value</mat-hint>
+    </mat-form-field>
+    <span *ngIf="input.value" matSuffix class="sl-flex">
+      <button mat-button aria-label="Clear" (click)="appendComment(input); commentFormControl.setValue('')">
+        Send <mat-icon>send</mat-icon>
+      </button>
+    </span>
+  </div>
+</form>

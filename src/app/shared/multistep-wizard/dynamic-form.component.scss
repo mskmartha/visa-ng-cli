@@ -1,0 +1,206 @@
+mat-card-actions{
+    bottom: 0;
+    right: 0;
+    border-top:1px solid grey;
+}
+mat-select, mat-form-field {
+   padding-left: 0 !important;
+}
+mat-select {
+  margin-bottom: 15px;
+}
+mat-radio-group, mat-checkbox{
+    font-size:12px;
+  mat-radio-button {
+  }
+}
+mat-expansion-panel{
+    margin-bottom: 20px !important;
+}
+mat-expansion-panel-header{
+    height:30px !important;
+    line-height: 30px !important;
+}
+mat-radio-group{
+  margin-left:-20px;
+}
+mat-checkbox {
+  vertical-align: middle;
+  float: left;
+  display: inline-block;
+  position: relative;
+}
+// AB: Added to override the default behavior of the material checkbox of not overlapping when the text is huge
+:host ::ng-deep mat-checkbox.customCheckBox {
+  .mat-checkbox-layout {
+    white-space: normal !important;
+  }
+}
+fieldset {
+  padding: 0 0 0 15px;
+}
+.mat-input-wrapper {
+  margin: 0 !important;
+}
+.mat-expansion-panel-header{
+    background: #fafafa !important;
+    height: 25px;
+    font-family: "Open Sans";
+    font-size: 14px;
+    text-align: left;
+    padding: 5px;
+
+}
+.mat-expansion-panel-header.accordion-group-valid{
+  background: #8fbc8f !important;
+}
+.mat-expansion-panel-header.accordion-group-invalid{
+  background: #fa8072 !important;
+}
+.mat-expansion-panel-header mat-icon.group-valid-icon{
+  color: #8fbc8f !important;
+  float: left;
+  padding: 0 10px;
+}
+.mat-expansion-panel-header mat-icon.group-invalid-icon{
+  color: #fa8072 !important;
+  float: left;
+  padding: 0 10px;
+}
+.sl-custom-btns{
+    left: 50%;
+}
+/* comments */
+
+
+.panel-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
+}
+.panel-white {
+  border: 1px solid #dddddd;
+}
+.panel-white  .panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-white  .panel-footer {
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.post .post-heading {
+  height: 35px;
+  padding: 15px;
+}
+.post .post-heading .avatar {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 15px;
+}
+.post .post-heading .meta .title {
+  margin-bottom: 0;
+}
+.post .post-heading .meta .title a {
+  color: black;
+}
+.post .post-heading .meta .title a:hover {
+  color: #aaaaaa;
+}
+.post .post-heading .meta .time {
+  margin-top: 8px;
+  color: #999;
+}
+.post .post-image .image {
+  width: 100%;
+  height: auto;
+}
+.post .post-description {
+  padding: 15px;
+}
+.post .post-description p {
+  font-size: 14px;
+}
+.post .post-description .stats {
+  margin-top: 20px;
+}
+.post .post-description .stats .stat-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+.post .post-description .stats .stat-item .icon {
+  margin-right: 8px;
+}
+.post .post-footer {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+}
+.post .post-footer .input-group-addon a {
+  color: #454545;
+}
+.post .post-footer .comments-list {
+  padding: 0;
+  margin-top: 20px;
+  list-style-type: none;
+}
+.post .post-footer .comments-list .comment {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+}
+.post .post-footer .comments-list .comment .avatar {
+  width: 35px;
+  height: 35px;
+}
+.post .post-footer .comments-list .comment .comment-heading {
+  display: block;
+  width: 100%;
+}
+.post .post-footer .comments-list .comment .comment-heading .user {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline;
+  margin-right: 10px;
+}
+.post .post-footer .comments-list .comment .comment-heading .time {
+  font-size: 12px;
+  color: #aaa;
+  display: inline;
+}
+.post .post-footer .comments-list .comment .comment-body {
+  margin-left: 50px;
+}
+.post .post-footer .comments-list .comment > .comments-list {
+  margin-left: 50px;
+}
+.comments-header{
+    background-color: lightgray;
+    padding:5px;
+    font-size:14px;
+}
+.mb-20 {
+   margin-bottom: 20px;
+}
+.flexClass {
+  display: flex;
+}
+.mat-card-actions {
+  min-height: 50px;
+  margin: auto;
+}
+/* indent class for child question up to four level */
+.indent_1{
+  padding-left: 20px;
+}
+.indent_2{
+  padding-left: 40px;
+}
+.indent_3{
+  padding-left: 60px;
+}
+.indent_4{
+  padding-left: 80px;
+}
+
+

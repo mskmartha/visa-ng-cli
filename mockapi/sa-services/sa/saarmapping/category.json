@@ -1,0 +1,29 @@
+{
+	"threatVulnerabilitiesDOList": [
+		{
+			"title": "Access control bypass through user-controlled keys",
+			"description": "Retrieval of a user record occurs in the system based on some key value that is under user control. The key would typically identify a user related record stored in the system and would be used to lookup that record for presentation to the user. It is likely that an attacker would have to be an authenticated user in the system. However, the authorization process would not properly check the data access operation to ensure that the authenticated user performing the operation has sufficient entitlements to perform the requested data access, hence bypassing any other authorization checks present in the system. One manifestation of this weakness would be if a system used sequential or otherwise easily guessable session ids that would allow one user to easily switch to another user's session and view/modify their data.",
+			"vid": 1
+		},
+		{
+			"title": "Client-Side Enforcement of Server-Side Security",
+			"description": "When the server relies on protection mechanisms placed on the client side, an attacker can modify the client-side behavior to bypass the protection mechanisms resulting in potentially unexpected interactions between the client and server. The consequences will vary, depending on what the mechanisms are trying to protect.",
+			"vid": 9
+		},
+		{
+			"title": "Direct Memory Access Attack",
+			"description": "Many hardware devices provide direct memory access (DMA) interfaces (e.g., Thunderbolt, PC Card, ExpressCard, and FireWire). These interfaces allow access to memory without any security restrictions by bypassing the authorization (The authorization is usually carried out by virtual memory controllers). This enables attackers to directly read memory and write into it. As a result, this vulnerability may lead to disclosure of sensitive information, bypass of security mechanisms, and ultimately may surrender the control of the entire system to adversaries.",
+			"vid": 15
+		},
+		{
+			"title": "Direct Request ('Forced Browsing')",
+			"description": "Web applications susceptible to direct request attacks often make the false assumption that such resources can only be reached through a given navigation path and so only apply authorization at certain points in the path.",
+			"vid": 16
+		},
+		{
+			"title": "Execution with Unnecessary Privileges",
+			"description": "New weaknesses can be exposed because running with extra privileges, such as root or Administrator, can disable the normal security checks being performed by the operating system or surrounding environment. Other pre-existing weaknesses can turn into security vulnerabilities if they occur while operating at raised privileges.\n\nPrivilege management functions can behave in some less-than-obvious ways, and they have different quirks on different platforms. These inconsistencies are particularly pronounced if you are transitioning from one non-root user to another. Signal handlers and spawned processes run at the privilege of the owning process, so if a process is running as root when a signal fires or a sub-process is executed, the signal handler or sub-process will operate with root privileges.",
+			"vid": 24
+		}
+	]
+}

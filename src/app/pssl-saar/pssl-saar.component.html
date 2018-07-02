@@ -1,0 +1,29 @@
+<div class="row" id="pssl-saar">
+    <div class="col-sm-12 col-md-12 col-xl-12">
+        <div>
+            <mat-card-content>
+                <mat-tab-group *ngIf="shouldShow" [(selectedIndex)]="selectedIndex" #tabgroup (selectChange)="loadTabContent(tabgroup)">
+                    <mat-tab layout-fill [attr.data-pid]="1">
+                        <ng-template mat-tab-label>
+                        <b> Security Architecture Scoping</b>
+                        </ng-template>
+                        <saar-scoping></saar-scoping>
+                    </mat-tab>
+                    <mat-tab layout-fill [attr.data-pid]="2">
+                        <ng-template mat-tab-label>
+                        <b> Security Architecture Finding</b>
+                        </ng-template>
+                        <saar-finding></saar-finding>
+                    </mat-tab>
+                    <mat-tab layout-fill [attr.data-pid]="3">
+                        <ng-template mat-tab-label>
+                        <b> Security Architecture Report</b>
+                        </ng-template>
+                        <coming-soon></coming-soon>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </div>
+    </div>
+</div>
+ 

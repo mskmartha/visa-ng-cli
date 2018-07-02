@@ -1,0 +1,27 @@
+{
+	"saarFindingDOList": [
+		{
+			"id": 65536,
+			"findingName": "test by shravan",
+			"findingType": "Authorization",
+			"vulnerabilityType": "Direct Memory Access Attack",
+			"vulnerabilityDescription": "Many hardware devices provide direct memory access (DMA) interfaces (e.g., Thunderbolt, PC Card, ExpressCard, and FireWire). These interfaces allow access to memory without any security restrictions by bypassing the authorization (The authorization is usually carried out by virtual memory controllers). This enables attackers to directly read memory and write into it. As a result, this vulnerability may lead to disclosure of sensitive information, bypass of security mechanisms, and ultimately may surrender the control of the entire system to adversaries.",
+			"impact": "Low",
+			"likely": "Low",
+			"description": "test by shravan",
+			"attackVector": "Adjacent",
+			"dataAsset": "",
+			"mitigation": "disable these interfaces in BIOS and protect the BIOS configurations with a strong password.",
+			"resolution": "low",
+			"resolutionStatus": "Close",
+			"vid": 15,
+			"tsrDOList": [
+				{
+					"number": "2.2",
+					"type": "Data Protection TSR",
+					"description": null
+				}
+			]
+		}
+	]
+}

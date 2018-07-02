@@ -1,0 +1,55 @@
+mat-card {
+	border-radius:0px !important; 
+}
+.table th, .table td{
+	padding: 0 !important;
+	text-align: left;
+	font-size: 14px;
+	text-indent: 5px;
+}
+.sl-card{
+	height: 140.2px !important;
+	padding:15px;
+	cursor: pointer;
+}
+.sl-card:hover{
+	box-shadow: 3px 3px 1px #888888;
+}
+.sl-card img{
+	position: absolute;
+}
+.sl-card mat-card-title{
+	color:#1a1f71;
+	font-size: 18px;
+	width:100%;
+	padding-left: 100px;
+}
+.sl-card mat-card-subtitle{
+	color:#000;
+	font-size: 12px;
+	width:100%;
+	padding-left: 100px;
+	line-height: 17px;
+}
+.sl-banner{
+	width:100%;
+}
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+.image h1.textOverImage {
+   position: absolute;
+   top: 70px;
+   left: 50px;
+   color: #fff;
+   font-size: 70px;
+   font-family: "Open Sans";
+}
+.image h2.textOverImage {
+   position: absolute;
+   top: 30px;
+   left: 50px;
+   font-family: "Open Sans";
+}

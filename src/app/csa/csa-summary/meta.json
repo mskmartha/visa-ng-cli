@@ -1,0 +1,70 @@
+{
+	"questionnaireVersion": "1.0",
+	"groupLayout": "",
+	"steps": [
+	  {
+		"stepId": "S4",
+		"stepName": "Step Four",
+		"group": [
+		  {
+			"groupId": "G18",
+			"groupName": "",
+			"comments":  null,
+			"questions": [
+				{
+					"questionId": "teamStatus",
+					"questionType": "dropdown",
+					"questionLabel": "Team Status",
+					"info": "",
+					"placeHolder": "Update Team Status",
+					"description": null,
+					"options": [
+						{
+							"optionId": "1",
+							"text": "Not Started",
+							"srule": null,
+							"grule": null,
+							"qrule": null,
+							"selected": false
+						},
+						{
+							"optionId": "2",
+							"text": "In Progress",
+							"srule": null,
+							"grule": null,
+							"qrule": null,
+							"selected": false
+						},
+						{
+							"optionId": "5",
+							"text": "Completed",
+							"srule": null,
+							"grule": null,
+							"qrule": null,
+							"selected": false
+						},
+						{
+							"optionId": "8",
+							"text": "Not Required",
+							"srule": null,
+							"grule": null,
+							"qrule": null,
+							"selected": false
+						}
+					],
+					"validation": {
+						"required": true,
+						"regexPattern": "[a-z]^[A-Z]^[0-9]",
+						"min": null,
+						"max": null
+					},
+					"answers": [
+						""
+					]
+				}
+			]
+		  }
+		]
+	  }
+	]
+  }

@@ -1,0 +1,27 @@
+{  
+   "saarFindingDOList":[  
+      {  
+         "id":98305,
+         "findingName":"Test2",
+         "findingType":"Data Validation",
+         "vulnerabilityTitle":"Buffer Copy without Checking the Bounds",
+         "vulnerabilityDescription":"The program copies data to a destination buffer without verifying the bounds of the buffer. If the size of the destination buffer is less than the size of the data the copy operation can lead to a buffer overflow. Alternatively, a buffer underflow can result if a pointer to the destination buffer moves past its starting memory location during a copy operation.\nThe simplest type of error, and the most common cause of buffer overflows, is the \"classic\" case in which the program copies into a buffer without checking its length at all. Many other variants exist, however, all of them will lead to corruption of the program's memory, possibly overwriting sensitive data and code.",
+         "impact":"Medium",
+         "likely":"Low",
+         "description":"mple: a network communication protocol or file structure which requires both null-terminators and a size field for strings. Within the code that processes this such data the buffer allocation code might rely on one size indicator, while the buffer copy might rely on the other size indicator. Without sufficient size validation by the code an attacker can craf",
+         "attackAgent":"Network",
+         "dataAsset":"Visa Public",
+         "mitigation":"mple: a network communication protocol or file structure which requires both null-terminators and a size field for strings. Within the code that processes this such data the buffer allocation code might rely on one size indicator, while the buffer copy might rely on the other size indicator. Without sufficient size validation by the code an attacker can craf",
+         "resolution":"mple: a network communication protocol or file structure which requires both null-terminators and a size field for strings. Within the code that processes this such data the buffer allocation code might rely on one size indicator, while the buffer copy might rely on the other size indicator. Without sufficient size validation by the code an attacker can craf",
+         "resolutionStatus":"Deferred",
+         "vid":5,
+         "tsrdoList":[  
+            {  
+               "number":"1.6",
+               "type":"Web Application TSR",
+               "description":null
+            }
+         ]
+      }
+   ]
+}

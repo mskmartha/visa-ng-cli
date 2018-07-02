@@ -1,0 +1,33 @@
+<div class="clearfix"></div>
+<div class="row" id="csa-summary">
+  <div class="col-sm-12 col-md-12 col-xl-12 table-wrapper">
+    <h3 class="dialog-title">Cloud Security Details</h3>
+    <div class="card-toolbar">
+        <mat-card-content>
+            <app-legend-component [legendData]="assmntDOsStatus"></app-legend-component>
+            <mat-tab-group *ngIf="CSASummary" [(selectedIndex)]="selectedIndex" #tabgroup (selectChange)="loadTabContent(tabgroup)">
+                <div *ngFor="let tab of CSASummary.manageSaTeamDOList">
+                    <mat-tab *ngIf="tab.stateId !== 8" [attr.data-pid]="tab.assessmentTeamId" layout-fill>
+                        <ng-template mat-tab-label>
+                          <div class="sl-flex sl-stack">
+                            <div>
+                              <mat-icon class="material-icons">filter</mat-icon>
+                              <svg width="10" height="10" style="position: absolute; margin-left: 5px;">
+                                <circle cx="5" cy="5" r="5" [attr.fill]="assmntDOsStatus[tab.stateId].color"></circle>
+                              </svg>
+                            </div>
+                            <div>
+                              <b>{{tab.assessmentTeamName}}</b>
+                            </div>
+                          </div>
+                        </ng-template>
+                    </mat-tab>
+                </div>
+            </mat-tab-group>
+            <div #tabContent></div>
+        </mat-card-content>
+    </div>
+    </div>
+
+
+</div>

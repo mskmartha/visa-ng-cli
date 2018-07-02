@@ -1,0 +1,28 @@
+{
+	"tsrGroups": [
+		{
+			"id": 10,
+			"name": "Web",
+			"tsrTypes": [
+				{
+					"id": 20,
+					"name": "Web Applcation Security template"
+				},
+                {
+					"id": 21,
+					"name": "some other type"
+				}
+			]
+		},
+        {
+			"id": 11,
+			"name": "Mobile",
+			"tsrTypes": [
+				{
+					"id": 22,
+					"name": "Mobile Applcation Security template"
+				}
+			]
+		}
+	]
+}

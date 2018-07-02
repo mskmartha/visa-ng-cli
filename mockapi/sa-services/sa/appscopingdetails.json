@@ -1,0 +1,16 @@
+{
+	"statusId": 5,
+	"jiraIssueFeaturesDOS": [
+		{
+			"id": 332,
+			"key": "VDPDEV-1163",
+			"summary": "F5 based HCS Implementation in CERT, PROD (Delivery in 1705)",
+			"networkChanges": true,
+			"authFlow": null,
+			"dataFlow": null,
+			"manualFeature": true,
+			"severity": "High",
+			"comments": "Comments here"
+		}
+	]
+}

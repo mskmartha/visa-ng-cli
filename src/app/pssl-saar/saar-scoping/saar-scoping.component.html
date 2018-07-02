@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-xl-12">
+        <div *ngIf="stillloading" class="loading">
+            <mat-spinner class="centered"></mat-spinner>
+            <h4>Loading ...</h4>
+        </div>
+        <div class="table-inner-wrapper" *ngIf="records && (readOnly || hasPermission)">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="tbodyTrRow">
+                        <th>Sec. Scoping Question</th>
+                        <th>Answer</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr class="tbodyTrRow" *ngFor="let key of saarSummaryDetails">
+                        <td class="column leftAlignedColumn">{{key.question}}</td>
+                        <td *ngIf="key.answer==1" class="column leftAlignedColumn">Yes</td>
+                        <td *ngIf="key.answer==2" class="column leftAlignedColumn">No</td>
+                        <td *ngIf="key.answer==3" class="column leftAlignedColumn">NA</td>
+                        <td class="column leftAlignedColumn">{{key.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button mat-raised-button *ngIf="!recordsErr && hasPermission" class="mt-2 mr-1 fl-r cta-1" (click)="openClassicDialog()"><span matTooltip="Submit new Finding/s">Edit</span></button>
+        </div>
+        <div *ngIf="norecords && (readOnly || hasPermission)" class="norecords-tile">
+            <div class="start-new-btn"><button type="button" [disabled]="!hasPermission" (click)="openClassicDialog()" mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button></div>
+            <h4>No Security Architecture Scoping submitted. Click to begin</h4>
+        </div>
+        <div *ngIf="(norecords || records) && !readOnly && !hasPermission" class="cta-screen">
+            <div>
+                <img src="assets/img/error-circle.svg"/>
+                <div class="clearfix"></div>
+                <h4>Forbidden - You don't have permission to access this.</h4>
+            </div>
+        </div>
+        <div *ngIf="recordsErr" class="err-msg">
+            <mat-icon class="centered">error</mat-icon>
+            <div class="clearfix"></div>
+            <h4>Error accessing the records</h4>
+        </div>
+    </div>
+</div>

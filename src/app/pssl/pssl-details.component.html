@@ -1,0 +1,256 @@
+<!--<button mat-fab (click)="openDialog('SA')" class="cta-top"><span matTooltip="Submit a new SA"><mat-icon class="whiteFont">add</mat-icon></span></button>-->
+<div *ngIf="!isAdmin" ngDraggable class="fabButtonTrigger slide-out-btn sl-flex">
+  <div class="fabButton">
+    <!--<button type="button" matTooltip="Assessment Overview" class="btn btn-default sl-p10 sl-mr10" (click)="showStyle = !showStyle;"><mat-icon>more</mat-icon></button>-->
+    <button mat-fab class="addButton sl-mr20" (click)="showStyle = !showStyle;" matTooltip="Assessment Overview"><mat-icon class="whiteFont">visibility</mat-icon></button>
+    <button mat-fab class="addButton sl-mr20" (click)="openDialog('SA')" matTooltip="Submit New Assessment"><mat-icon class="whiteFont">add</mat-icon></button>
+  </div>
+  <button mat-fab class="addButton" matTooltip="Draggable"><mat-icon class="whiteFont">more_horiz</mat-icon></button>
+</div>
+
+<!--<button type="button" class="btn btn-default slide-out-btn" (click)="showStyle = !showStyle;"><mat-icon>more</mat-icon></button>-->
+<!--AB: To enable closing of accordion on click outside-->
+<div class="closingWindow" *ngIf="showStyle" (click)="showStyle = false"></div>
+<div class="clearfix"></div>
+<div class="row" id="pssl">
+    <div class="col-sm-12 col-md-12 col-xl-12 table-wrapper">
+      <div *ngIf="!isAdmin" class="sl-flex dialog-title sl-main-space-between sl-cross-center">
+        <div>
+          Security Assessment Details
+        </div>
+        <div class="sl-flex sl-main-space-between sl-cross-center sl-mr10 sl-pointer"
+              (click)="showSearch = !showSearch">
+          <div class="btn">Filter</div>
+          <div class="sl-flex">
+            <mat-icon class="material-icons md-24 whiteFont">filter_list</mat-icon>
+          </div>
+        </div>
+      </div>
+
+        <div *ngIf="stillloading" class="loading">
+            <mat-spinner class="centered"></mat-spinner>
+            <h4>Loading ...</h4>
+        </div>
+        <div *ngIf="(records || filteredRecords) && !stillloading">
+          <div class="table-inner-wrapper">
+            <div class="displayF sl-mb10">
+              <button *ngIf="!isAdmin" class="btn sl-pointer sl-flex sl-cross-center sl-tt-inherit" (click)="clicked = ! clicked; userFilterTrigger('userId')" [ngClass]="{'btnBackground': clicked}">
+                <div>My SA's</div>
+              </button>
+              <div class="sl-full-width sl-flex filter-btn">
+                  <mat-chip-list #chipList>
+                    <mat-chip class="sl-tt-capitalize" *ngFor="let filter of filters; let i = index" [removable]="true" (remove)="removeFilter(filter, i)">
+                      {{filter}}
+                      <mat-icon matChipRemove matTooltip="Remove filter">cancel</mat-icon>
+                    </mat-chip>
+                  </mat-chip-list>
+              </div>
+            </div>
+
+            <form  [formGroup]="psslFilter" novalidate>
+              <div class="bodyHeight">
+                <table class="table tableBodyScroll table-hover">
+                  <thead>
+                    <!--Header Section-->
+                    <tr class="tbodyTrRow"><th *ngFor="let column of tableColumns">{{column.header}}</th></tr>
+                    <!--Filter Section-->
+                    <tr *ngIf="showSearch || isAdmin" class="tbodyTrRow">
+                      <th *ngFor="let column of tableColumns">
+                        <span *ngIf="column?.formControlName" class="sl-flex sl-cross-center">
+                          <span *ngIf="column?.type === 'date'" class="sl-flex sl-cross-center">
+                            <input [formControlName]="column?.formControlName" [matDatepicker]="picker" (click)="picker.open(); addFilter(column.formControlName)">
+                            <mat-datepicker #picker disabled="false"></mat-datepicker>
+                            {{dateMenu.value}}
+                            <!--todo : remove the ngIf from the next line to enable the date filter -->
+                            <mat-icon *ngIf="enableDateFilter" matTooltip="Additional date filter" [matMenuTriggerFor]="dateMenu">keyboard_arrow_down</mat-icon>
+                            <mat-menu #dateMenu="matMenu">
+                              <button mat-menu-item (click)="setDateFilter(':')">Equal To</button>
+                              <button mat-menu-item (click)="setDateFilter('>')">Greater Than</button>
+                              <button mat-menu-item (click)="setDateFilter('<')">Lower Than</button>
+                            </mat-menu>
+                          </span>
+                          <span class="sl-full-width" *ngIf="column.header === 'Application Type'">
+                            <mat-form-field class="sl-full-width">
+                              <mat-select [formControlName]="column.formControlName" multiple>
+                                <mat-option *ngFor="let type of appType" (click)="addFilter(column.formControlName)" [value]="type.type">{{type.displayName}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </span>
+                          <span class="sl-full-width" *ngIf="column.header === 'SA Rating' || column.header === 'ACM Rating'">
+                            <mat-form-field class="sl-full-width">
+                              <mat-select [formControlName]="column.formControlName" multiple>
+                                <mat-option *ngFor="let type of saRating" (click)="addFilter(column.formControlName)" [value]="type">{{type}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </span>
+                          <span class="sl-full-width" *ngIf="column.header === 'State'">
+                            <mat-form-field class="sl-full-width">
+                              <mat-select [formControlName]="column.formControlName" multiple>
+                                <mat-option *ngFor="let type of state" (click)="addFilter(column.formControlName)" [value]="type.id">{{type.value}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </span>
+                          <span *ngIf="column?.type === 'text'">
+                            <input [formControlName]="column?.formControlName"
+                                   (blur)="addFilter(column.formControlName)"
+                                   (keyup.enter)="addFilter(column.formControlName)"
+                                   type="text">
+                          </span>
+                          <span *ngIf="column?.type === 'actions'" class="centerAlignedColumn sl-full-width sl-flex sl-main-center">
+                            <mat-icon matTooltip="Filter" (click)="addFilter('')">filter_list</mat-icon>
+                          </span>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="bodyHeight">
+                  <!--calculating the iterations based on the page size based on the pagination and filtered data-->
+                  <ng-container *ngFor="let key of myDataSource?.filteredData || myDataSource?.data  |
+                      slice:((paginationDetail?.getValue()?.pageIndex * paginationDetail.getValue()?.pageSize) || 0): (((paginationDetail?.getValue().pageIndex * paginationDetail?.getValue()?.pageSize) + paginationDetail.getValue()?.pageSize) || 10); trackBy:saId">
+                    <tr class="tbodyTrRow">
+                      <td class="column centerAlignedColumn">
+                        <div class="displayF">
+                          <!--
+                          "1": "Pending Triage",
+                          "2": "Triage Complete",
+                          "3": "In Progress",
+                          "4": "Abandoned",
+                          "5": "Completed",
+                          "6": "Error",
+                          "7": "Accepted",
+                          "8": "In Review",
+                          "9": "Need More Info",
+                          "10": "Not Started",
+                          "11": "On Hold",
+                          "12": "Unknown",
+                          "13": "Pending Scoping"-->
+                          <!-- show expand view only when SA is In Progress or Completed -->
+                          <div *ngIf="(key.statusId === 3 || key.statusId === 5)">
+                            <mat-icon class="material-icons md-24" (click)="showMoreDetails(key)" *ngIf="enableEdit && (!key.isEditing || !(this.selectedRow === key.id))">keyboard_arrow_down</mat-icon>
+                            <mat-icon class="material-icons md-24" (click)="cancelEdit(key)" *ngIf="key.isEditing && (this.selectedRow === key.id)">keyboard_arrow_up</mat-icon>
+                          </div>
+                          <div>
+                            {{key.saId || 'N/A'}}
+                            <span *ngIf="key.statusId === 13" class="text-badge"><mat-icon class="material-icons.md-8">fiber_new</mat-icon></span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="column leftAlignedColumn" matTooltip="{{key?.camrShortName}}">
+                        <div class="displayF">
+                          <div>
+                            <mat-icon *ngIf="key?.camrDOS && key.camrDOS.length > 0" class="material-icons md-14" (click)="showAllCamrs($event, key)">more_vert</mat-icon>
+                          </div>
+                          <div>
+                            <span *ngIf="key?.applicationId">{{key?.applicationId}}</span>
+                            <span *ngIf="!key?.camrId && !key?.applicationId && !key?.camrShortName">{{'--'}}</span>
+                            <span *ngIf="key?.applicationId && key?.camrId">(</span>
+                            <span *ngIf="key?.camrId">{{key?.camrId}}</span>
+                            <span *ngIf="key?.applicationId && key?.camrId">)</span>
+                            <span *ngIf="key?.camrShortName">{{key?.camrShortName}}</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="column leftAlignedColumn">{{key?.departmentId}}</td>
+                      <td class="column leftAlignedColumn"  matTooltip="{{key?.releaseName}}">{{(key.releaseName) ? key.releaseName: '--'}}</td>
+                      <td class="column leftAlignedColumn">{{key?.saType === 'CSA' ? 'External' : 'Internal'}}</td>
+                      <td class="column leftAlignedColumn">{{key?.acmRatingName || '--'}}</td>
+                      <td class="column leftAlignedColumn">{{key?.saRatingName}}</td>
+                      <td class="column leftAlignedColumn">{{key?.statusMessage}}</td>
+                      <td class="column leftAlignedColumn">{{key?.releaseDate | date:'MM-dd-yyyy' || 'N/A'}}</td>
+                      <td class="column leftAlignedColumn">{{key?.submittedDate | date:'MM-dd-yyyy' || 'N/A'}}</td>
+                      <td class="column centerAlignedColumn">
+                        <app-dyn-menu [menuInfo]="key" [actnsComp]="actnsComp" (clickedItem)="hostClickHandler($event)"></app-dyn-menu>
+                      </td>
+                    </tr>
+                    <tr class="moreDetails" *ngIf="key.isEditing && (this.selectedRow === key.id)">
+                      <td colspan="11">
+
+
+                        <div *ngIf="stillloadingInner" class="loading">
+                          <mat-spinner class="centered md-12"></mat-spinner>
+                          <h4>Loading ...</h4>
+                        </div>
+                        <div *ngIf="norecordsInner" class="norecords-tile">
+                          <div class="start-new-btn" (click)="openDialog('SA')"><button mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button></div>
+                          <h4>None submitted. Click to begin</h4>
+                        </div>
+                        <div *ngIf="recordsErrInner" class="err-msg">
+                          <mat-icon class="centered">error</mat-icon>
+                          <div class="clearfix"></div>
+                          <h4>Error accessing the records</h4>
+                        </div>
+
+                        <div class="row" *ngIf="moreDetails">
+                          <div *ngIf="moreDetails?.secAccessorName" class="form-group col-xs-10 col-sm-6 col-md-4 col-lg-4">
+                            <p><b>Assessor Name</b>:  {{moreDetails?.secAccessorName}}</p>
+                          </div>
+                          <div *ngIf="moreDetails?.requestorName" class="form-group col-xs-10 col-sm-6 col-md-4 col-lg-4">
+                            <p><b>Requester Name</b>:  {{moreDetails?.requestorName}}</p>
+                          </div>
+                          <div *ngIf="moreDetails?.requestorRegion" class="form-group col-xs-10 col-sm-6 col-md-4 col-lg-4">
+                            <p><b>Requester Region</b>:  {{moreDetails?.requestorRegion}}</p>
+                          </div>
+                          <div *ngIf="moreDetails?.releaseDescription" class="form-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                            <p><b>Release Description</b>:  {{moreDetails?.releaseDescription}}</p>
+                          </div>
+                          <table *ngIf="moreDetails.assessmentDOs.length > 0" class="table small-table">
+                            <thead>
+                            <tr class="tbodyTrRow">
+                              <th>Engagement</th>
+                              <th>Assignee</th>
+                              <th>Status Message</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="tbodyTrRow" *ngFor="let x of moreDetails.assessmentDOs">
+                              <td class="column leftAlignedColumn">{{x.assessment}}</td>
+                              <td class="column leftAlignedColumn">{{sharedService.getUser(x?.assigneeUserId)}}</td>
+                              <td class="column leftAlignedColumn">{{sharedService.getStatus(x?.statusId)}}</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                  </ng-container>
+                  </tbody>
+                </table>
+              </div>
+              <div *ngIf="norecords && filteredRecords" class="norecords-tile">
+                <!--<div class="start-new-btn" (click)="openDialog('SA')"><button mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button></div>-->
+                <h4>No matching record found!</h4>
+              </div>
+
+              <mat-paginator class="sl-border sl-pr25" #paginator
+                             (page)="getUpdate($event)"
+                             [length]=" myDataSource?.filteredData?.length || myDataSource?.data?.length"
+                             [pageSize]="10"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </form>
+            </div>
+        </div>
+        <div *ngIf="norecords && !filteredRecords" class="norecords-tile">
+            <div class="start-new-btn" (click)="openDialog('SA')"><button mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button></div>
+            <h4>None submitted. Click to begin</h4>
+        </div>
+        <div *ngIf="recordsErr" class="err-msg">
+            <mat-icon class="centered">error</mat-icon>
+            <div class="clearfix"></div>
+            <h4>Error accessing the records</h4>
+        </div>
+    </div>
+    <div class="container summary-wrapper">
+        <div id="slideout" [class]="getStyle()">
+            <div class="summary-wrapper-inner">
+                <h5>Assessment Overview</h5>
+                <div *ngIf="psslDetails" class="summary-details">
+                    <p>SA not started: <b>{{psslDetails.notStarted}}</b></p>
+                    <p>SA in progress: <b>{{psslDetails.started}}</b></p>
+                    <p>SA on hold: <b>{{psslDetails.onHold}}</b></p>
+                    <p>SA abandoned: <b>{{psslDetails.abandoned}}</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

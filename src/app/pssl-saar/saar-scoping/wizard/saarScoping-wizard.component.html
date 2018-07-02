@@ -1,0 +1,24 @@
+<div *ngIf="modalStepper">
+  <div class="qns-window"><app-multistep-wiz [qnsMeta]="qnsMeta" [injectData]="injectData" (stepEvent)="submitQns($event)"></app-multistep-wiz></div>
+</div>
+
+<div *ngIf="submitSASucess">
+  <div class="submit-screen">
+    <img src="assets/img/ic-check-circle.svg"/>
+    <h5>Submitted</h5>
+  </div>
+</div>
+
+<div *ngIf="errOnSubmit">
+  <div class="submit-screen">
+    <img src="assets/img/error-circle.svg"/>
+    <h5>Something went wrong</h5>
+    <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain(model.data.formId);">Try Again</button>
+  </div>
+</div>
+<div *ngIf="showProgess">
+  <div class="submit-spinner">
+    <mat-spinner class="centered"></mat-spinner>
+    <h4>Processing...</h4>
+  </div>
+</div>

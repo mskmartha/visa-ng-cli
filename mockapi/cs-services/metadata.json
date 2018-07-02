@@ -1,0 +1,1441 @@
+{
+  "questionnaireDO": {
+    "questionnaireVersion": "1.0",
+    "groupLayout": "",
+    "steps": [
+      {
+        "stepId": "S1",
+        "stepName": "Step 1",
+        "group": [
+          {
+            "groupId": "G1",
+            "groupName": "General Info",
+            "comments": [
+              {
+                "userName": null,
+                "comment": null,
+                "creationDate": null
+              }
+            ],
+            "questions": [
+              {
+                "questionId": "CSA001",
+                "questionType": "text",
+                "questionLabel": "CAMR App Name",
+                "info": "",
+                "placeHolder": "CAMR App Name",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": true,
+                  "regexPattern": "[a-zA-Z0-9 ]*",
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "Cloud Security Assurance"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA006",
+                "questionType": "radio",
+                "questionLabel": "VISA Public",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "SIEM"
+              },
+              {
+                "questionId": "CSA013",
+                "questionType": "dropdown",
+                "questionLabel": "Data Volume",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Less than 1000",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Less than 1 Million",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Less than 5 Million",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "More than 5 Million",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "PENTEST"
+              },
+              {
+                "questionId": "CSA015",
+                "questionType": "dropdown",
+                "questionLabel": "Encryption Type",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "In clear text",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Encrypted by network protocol",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Encrypted by crypto key, managed by VISA",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "Encrypted by crypto key, managed by Service Provider",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA018",
+                "questionType": "radio",
+                "questionLabel": "VISA Restricted - PII Private/PAN",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "CASB"
+              },
+              {
+                "questionId": "CSA036",
+                "questionType": "radio",
+                "questionLabel": "VISA Restricted - Special Handling",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA042",
+                "questionType": "checkbox",
+                "questionLabel": "Please check the following boxes if TRUE",
+                "info": "Please check the following boxes if TRUE",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Data Loss Prevention (DLP) should be in place to avoid VISA DLP sensitive data to go to the cloud applications",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Data Loss Prevention (DLP) should be in place to avoid VISA DLP sensitive data to be leaked from the cloud applications to internet",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1, 2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA043",
+                "questionType": "checkbox",
+                "questionLabel": "The application is compliant with the following regulatory standards",
+                "info": "select one",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "GLBA",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "PCI-DSS",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "SOX",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "FFIEC",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "5",
+                    "text": "Others",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "6",
+                    "text": "None",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "4"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA044",
+                "questionType": "text",
+                "questionLabel": "Number of Admin users",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": true,
+                  "regexPattern": "[0-9]*",
+                  "min": 1,
+                  "max": 3
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA045",
+                "questionType": "text",
+                "questionLabel": "Number of users from VISA Internal network",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": true,
+                  "regexPattern": "[0-9]*",
+                  "min": 1,
+                  "max": 6
+                },
+                "answers": [
+                  "200"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA046",
+                "questionType": "text",
+                "questionLabel": "Number of users from external network",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": true,
+                  "regexPattern": "[0-9]*",
+                  "min": 1,
+                  "max": 6
+                },
+                "answers": [
+                  "0"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA048",
+                "questionType": "text",
+                "questionLabel": "Location (City)",
+                "info": "Location (City)",
+                "placeHolder": "Location (City)",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": false,
+                  "regexPattern": "[a-zA-Z0-9 ]*",
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "SFO"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA049",
+                "questionType": "radio",
+                "questionLabel": "VISA PAN/PII Data at rest?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA050",
+                "questionType": "checkbox",
+                "questionLabel": "Data Center physical security",
+                "info": "Select all that apply",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Badge Access",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Camera Surveillance",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Man Trap",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "Natural Disaster protection",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "5",
+                    "text": "Power redundancy",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "5"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA051",
+                "questionType": "text",
+                "questionLabel": "Operation SLA: 7/24/365",
+                "info": "",
+                "placeHolder": "99.9%",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": false,
+                  "regexPattern": "^(?!00?\\.00$)\\d{1,2}(?:\\.\\d{1,5})?$",
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "99.999"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA052",
+                "questionType": "radio",
+                "questionLabel": "High Availability",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA053",
+                "questionType": "radio",
+                "questionLabel": "Disaster Recovery",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA054",
+                "questionType": "radio",
+                "questionLabel": "Does the organization have a defined security office with staff dedicated to manage information security activities?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA055",
+                "questionType": "radio",
+                "questionLabel": "Have all employees passed US background check?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA056",
+                "questionType": "text",
+                "questionLabel": "Number of employees who can access VISA data?",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": true,
+                  "regexPattern": "[0-9]*",
+                  "min": 1,
+                  "max": 6
+                },
+                "answers": [
+                  "4"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA057",
+                "questionType": "radio",
+                "questionLabel": "Is the Data Center outsourced?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA060",
+                "questionType": "checkbox",
+                "questionLabel": "Will VISA specific security event logs be shared with VISA?",
+                "info": "Select all that apply",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Access Logs",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Authentication / Access failure logs",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Change of user accounts",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "Data access history",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "5",
+                    "text": "Administrative activities",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "6",
+                    "text": "Source of Access IP",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "3"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA061",
+                "questionType": "text",
+                "questionLabel": "Additional Comments",
+                "info": "",
+                "placeHolder": "Additional Comments if any",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": false,
+                  "regexPattern": "[a-zA-Z0-9 ]*",
+                  "min": 0,
+                  "max": 500
+                },
+                "answers": [
+                  "NA"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA062",
+                "questionType": "checkbox",
+                "questionLabel": "How will the log information be provided to VISA?",
+                "info": "Select all that apply",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "API interface",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Electrical file transfer (SFTP/FTPS, etc)",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Native admin console download",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "Manual process",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "4"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA063",
+                "questionType": "text",
+                "questionLabel": "SLA for latency in minutes for providing VISA specific security events",
+                "info": "",
+                "placeHolder": "SLA in minutes",
+                "description": null,
+                "options": [],
+                "validation": {
+                  "required": true,
+                  "regexPattern": "[0-9]*",
+                  "min": 1,
+                  "max": 10
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA064",
+                "questionType": "radio",
+                "questionLabel": "Can vendor provide pentest report?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA065",
+                "questionType": "radio",
+                "questionLabel": "Does vendor allow VISA to conduct pentesting?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA066",
+                "questionType": "radio",
+                "questionLabel": "Is there a defined process for incident management including incidents involving customer data?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA067",
+                "questionType": "radio",
+                "questionLabel": "Have there been incidents resulting in compromise of customer data in the past 2 years?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA071",
+                "questionType": "radio",
+                "questionLabel": "Is there any VISA developed code for this integration?",
+                "info": "Yes or No",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Yes",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "No",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA073",
+                "questionType": "checkbox",
+                "questionLabel": "Please check the folowing boxes if TRUE",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "For business reason, for example, conflict of interest, VISA cannot be the identity provider for this application",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Support SAML 2.0 for Single Sign On (VISA as IdP)",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Support SCIM for identity provisioning",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "Support SCIM for identity de-provisioning",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "5",
+                    "text": "Support JIT (Just-In-Time) for identity provisioning",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "6",
+                    "text": "Support JIT (Just-In-Time) for identity de-provisioning",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "7",
+                    "text": "Support API for identity provisioning",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "8",
+                    "text": "Support API for identity de-provisioning",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "9",
+                    "text": "Support Azure AD as identity provider with SAML",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "10",
+                    "text": "Support ForgeRock SAML Integration",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "11",
+                    "text": "The third party solution provides native second factor authentication",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "2"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA069",
+                "questionType": "checkbox",
+                "questionLabel": "Multi-tenancy model: Please mark the components that will be shared with other customers of the cloud service provider.",
+                "info": "Please check all the boxes that apply",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "Network Infrastructure",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Virutalization/Hypervisor/Orchestration Infrastructure",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Operating Systems",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "Middleware application servers, JVMs, etc",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": [
+                      "CSA076"
+                    ],
+                    "selected": false
+                  },
+                  {
+                    "optionId": "5",
+                    "text": "Databases/Hadoop",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "6",
+                    "text": "Tables, contents (structured and non-structured)",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "7",
+                    "text": "PaaS Application (AWS, Azure, Google Cloud)",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "4"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA076",
+                "questionType": "dropdown",
+                "questionLabel": "Middleware application servers, JVMs, etc",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "VISA Managed",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Service Provider Managed",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              },
+              {
+                "questionId": "CSA072",
+                "questionType": "checkbox",
+                "questionLabel": "Please check the folowing boxes if TRUE",
+                "info": "",
+                "placeHolder": "",
+                "description": null,
+                "options": [
+                  {
+                    "optionId": "1",
+                    "text": "The application provides mobile user access",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "2",
+                    "text": "Need to support IOS browser",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "3",
+                    "text": "Need to support Android browser",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "4",
+                    "text": "Need to support IOS native app",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "5",
+                    "text": "Need to support Android native app",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "6",
+                    "text": "Need to support managed device access from external network",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "7",
+                    "text": "Need to support un-managed device access from external network",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "8",
+                    "text": "Need to support managed device access from VISA on premise network",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  },
+                  {
+                    "optionId": "9",
+                    "text": "Need to support un-managed device access from VISA on premise network",
+                    "srule": null,
+                    "grule": null,
+                    "qrule": null,
+                    "selected": false
+                  }
+                ],
+                "validation": {
+                  "required": true,
+                  "regexPattern": null,
+                  "min": 0,
+                  "max": 0
+                },
+                "answers": [
+                  "1"
+                ],
+                "autocomplete": null,
+                "engagementName": "IAM"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "status": 0
+  },
+  "assigneeName": "Raj Gandhi",
+  "ticketDO": null
+}

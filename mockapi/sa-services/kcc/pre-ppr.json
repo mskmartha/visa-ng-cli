@@ -1,0 +1,68 @@
+{
+  "questionnaireVersion": "1.0",
+  "groupLayout": "accordion",
+  "steps": [
+    {
+      "stepId": "S4",
+      "stepName": "Step Four",
+      "group": [
+        {
+          "groupId": "G18",
+          "groupName": "",
+          "comments":[
+            {
+              "userName": "smartha",
+              "comment": "hello",
+              "creationDate": null
+            },
+            {
+              "userName": "smartha",
+              "comment": "hi",
+              "creationDate": null
+            }
+          ],
+          "questions": [
+            {
+              "questionId": "PPR-024",
+              "questionType": "text",
+              "questionLabel": "Please provide the name of the Systems Operations Manager",
+              "info": "Enter Systems Operations Manager Name",
+              "placeHolder": "Enter Systems Operations Manager Name",
+              "description": "",
+              "options": [
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": "[a-z]^[A-Z]^[0-9]",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [
+                "test"
+              ]
+            },
+            {
+              "questionId": "PPR-025",
+              "questionType": "text",
+              "questionLabel": "Please provide the name of the Network Operations Manager",
+              "info": "Enter Network Operations Manager Name",
+              "placeHolder": "Enter Network Operations Manager Name",
+              "description": "",
+              "options": [
+              ],
+              "validation": {
+                "required": true,
+                "regexPattern": "[a-z]^[A-Z]^[0-9]",
+                "min": 1,
+                "max": 100
+              },
+              "answers": [
+                "test"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

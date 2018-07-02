@@ -1,0 +1,63 @@
+{
+	"started": 0,
+	"completed": 0,
+	"notStarted": 1,
+	"cloudSecurityAssessmentDOS": [
+			{
+				"id": 1,
+				"saId": "SA-0001",
+				"camrId": 1007,
+				"saRequestorName": "rg",
+				"statusMessage": "Not Started",
+				"statusId": 1,
+				"saRatingName": null,
+				"createdDate": "2017-10-17 10:59:19.119",
+				"manageSaTeamListDO": {
+					"manageSaTeamDOList": [
+					{
+						"id": 1,
+						"assessmentTeamId": 1,
+						"assessmentTeamName": "IAM",
+						"stateId": 1,
+						"statusMessage": "Not Started"
+					},
+					{
+						"id": 2,
+						"assessmentTeamId": 2,
+						"assessmentTeamName": "DHC",
+						"stateId": 5,
+						"statusMessage": "Started"
+					}
+					]
+				}
+			},
+			{
+				"id": 2,
+				"saId": "SA-0002",
+				"camrId": 1007,
+				"saRequestorName": "rg",
+				"statusMessage": "Not Started",
+				"statusId": 2,
+				"saRatingName": null,
+				"createdDate": "2017-10-17 10:59:19.119",
+				"manageSaTeamListDO": {
+					"manageSaTeamDOList": [
+					{
+						"id": 1,
+						"assessmentTeamId": 1,
+						"assessmentTeamName": "IAM",
+						"stateId": 1,
+						"statusMessage": "Not Started"
+					},
+					{
+						"id": 1,
+						"assessmentTeamId": 2,
+						"assessmentTeamName": "SIEM",
+						"stateId": 5,
+						"statusMessage": "Not Started"
+					}
+					]
+				}
+			}
+		]
+  }

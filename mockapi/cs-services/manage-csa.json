@@ -1,0 +1,18 @@
+{
+	"manageSaTeamDOList": [
+	  {
+		"id": 1,
+		"assessmentTeamId": 1,
+		"assessmentTeamName": "IAM",
+		"stateId": 1,
+		"statusMessage": "Not Started"
+	  },
+	  {
+		"id": 1,
+		"assessmentTeamId": 2,
+		"assessmentTeamName": "SIEM",
+		"stateId": 5,
+		"statusMessage": "Complete"
+	  }
+	]
+  }

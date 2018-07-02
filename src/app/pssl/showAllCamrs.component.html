@@ -1,0 +1,26 @@
+<mat-radio-group>
+    <label class="sl-label col-sm-10">
+        <mat-radio-button [disabled]="true">
+            <div class="multiCamr" >
+                <span *ngIf="model.data?.applicationId">{{model.data?.applicationId}}</span>
+                <span *ngIf="!model.data?.camrId && !model.data?.applicationId && !model.data?.applicationName">{{'--'}}</span>
+                <span *ngIf="model.data?.camrId && model.data?.applicationId">(</span>
+                <span *ngIf="model.data?.camrId">{{model.data?.camrId}}</span>
+                <span *ngIf="model.data?.camrId && model.data?.applicationId">)</span>
+                <span *ngIf="model.data?.applicationName">{{model.data?.applicationName}}</span>
+            </div>
+        </mat-radio-button>
+    </label>
+    <label *ngFor="let camr of model.data.camrDOS" class="sl-label col-sm-10">
+        <mat-radio-button [value]="camr" [disabled]="true">
+            <div class="multiCamr" >
+              <span *ngIf="camr?.applicationId">{{camr?.applicationId}}</span>
+              <span *ngIf="!camr?.camrId && !camr?.applicationId && !camr?.applicationName">{{'--'}}</span>
+              <span *ngIf="camr?.applicationId && camr?.camrId">(</span>
+              <span *ngIf="camr?.camrId">{{camr?.camrId}}</span>
+              <span *ngIf="camr?.applicationId && camr?.camrId">)</span>
+              <span *ngIf="camr?.applicationName">{{camr?.applicationName}}</span>
+            </div>
+        </mat-radio-button>
+    </label>
+</mat-radio-group>

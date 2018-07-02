@@ -1,0 +1,10 @@
+{
+    "findingId":"0001",
+    "findingName":"XSS",
+    "findingDesc":"Cross Site Scripting",
+    "remediation":"Source Code has to be modified",
+    "severity":"High",
+    "componentName":"component.ts",
+    "status":"Open",
+    "comments":"High Priority Issue - Immediate fix required"
+}

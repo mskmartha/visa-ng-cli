@@ -1,0 +1,57 @@
+{  
+   "genericSeverityRatings":[  
+      "Critical",
+      "High",
+      "Medium",
+      "Low"
+   ],
+   "findingTypes":[  
+      "Spoofing",
+      "Tampering",
+      "Repudiation",
+      "Information disclosure",
+      "Denial of service",
+      "Elevation of privilege"
+   ],
+   "genericStatuses":[  
+      "Open",
+      "Resolved",
+      "Closed",
+      "Duplicate"
+   ],
+   "threatCategory":[  
+      "Authentication",
+      "Authorization",
+      "Data Validation",
+      "File Handling",
+      "Cryptography",
+      "Logging, Monitoring, and Error Handling",
+      "Session Management",
+      "XML and Web Services",
+      "Misc",
+      "Unknown"
+   ],
+   "attackVector":[  
+      "Network",
+      "Adjacent",
+      "Local",
+      "Physical",
+      "Unknown"
+   ],
+   "dataAsset":[  
+      "Visa Public",
+      "Visa Confidential",
+      "Visa Restricted - PII Private: CVV (Tier 0)",
+      "Visa Restricted - PII Private: PAN (Tier 1)",
+      "Visa Restricted - PII Private (Tier 1)",
+      "Visa Restricted - Other (special handling)",
+      "Unknown"
+   ],
+   "saarStatus":[  
+      "Open",
+      "Close",
+      "Deferred",
+      "Best Practice",
+      "Unknown"
+   ]
+}

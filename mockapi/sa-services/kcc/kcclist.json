@@ -1,0 +1,114 @@
+{
+	"accepted": 0,
+	"onHold": 0,
+	"abandoned": 0,
+	"inReview": 9,
+	"kccAssessmentDOs": [
+		{
+			"id": 25,
+			"isPMM": true,
+			"kccId": "KCC-0005",
+			"rtnOreu": "RTN#123456",
+			"projectName": null,
+			"projectManager": null,
+			"businessSponsor": null,
+			"kccRequestorName": "bmaddela",
+			"kccAccessorName": "Fernandez Luis",
+			"statusMessage": "Not Started",
+			"statusId": 9,
+      		"saLifeCycleActions": [
+				{
+					"name": "Pause",
+					"id": 1
+				},
+				{
+					"name": "Resume",
+					"id": 2
+				},
+				{
+					"name": "Abandon",
+					"id": 3
+				},
+				{
+					"name": "Manage KCC",
+					"id": 5
+				}
+			],
+			"saMiscActions": [
+				{
+					"name": "View KCC",
+					"id": 6
+				},
+				{
+					"name": "Need More Info",
+					"id": 7
+				},
+				{
+					"name": "Accept",
+					"id": 8
+				},
+				{
+					"name": "Edit",
+					"id": 9
+				},
+				{
+					"name": "Unknown",
+					"id": 10
+				}
+			]
+		},
+		{
+			"id": 32,
+			"isPMM": false,
+			"kccId": "KCC-0006",
+			"rtnOreu": "RTN#123456",
+			"projectName": null,
+			"projectManager": null,
+			"businessSponsor": null,
+			"kccRequestorName": "bmaddela",
+			"kccAccessorName": "Fernandez Luis",
+			"statusMessage": "Not Started",
+			"statusId": 1,
+			"saLifeCycleActions": [
+				{
+					"name": "Pause",
+					"id": 1
+				},
+				{
+					"name": "Resume",
+					"id": 2
+				},
+				{
+					"name": "Abandon",
+					"id": 3
+				},
+				{
+					"name": "Manage KCC",
+					"id": 5
+				}
+			],
+			"saMiscActions": [
+				{
+					"name": "View KCC",
+					"id": 6
+				},
+				{
+					"name": "Need More Info",
+					"id": 7
+				},
+				{
+					"name": "Accept",
+					"id": 8
+				},
+				{
+					"name": "Edit",
+					"id": 9
+				},
+				{
+					"name": "Unknown",
+					"id": 10
+				}
+			]
+		}
+	]
+}

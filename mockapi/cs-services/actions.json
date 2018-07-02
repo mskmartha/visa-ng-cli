@@ -1,0 +1,25 @@
+{
+    "id": 1,
+    "saId": "SA-0001",
+    "camrId": 1005,
+    "saRequestorName": "rgandhi",
+    "statusMessage": "In Progress",
+    "statusId": 2,
+    "saRatingName": null,
+    "createdDate": 1510184664000,
+    "manageSaTeamListDO": null,
+    "lifeCycleActionsDOS": [
+        {
+            "name": "View ",
+            "id": 1
+        },
+        {
+            "name": "Edit",
+            "id": 3
+        },
+        {
+            "name": "Manage",
+            "id": 2
+        }
+    ]
+}

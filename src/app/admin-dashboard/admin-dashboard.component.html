@@ -1,0 +1,172 @@
+<button class="scroll-to-top-icon" matTooltip="Scroll to top" id="scroll" (click)="scrollToId('top')"><mat-icon>navigation</mat-icon></button>
+<div id="top" style="height: 47px; background: #1a1f71; color: #fff; padding: 10px;" class="sl-pl20 sl-flex sl-cross-center dialog-title sl-mt10">
+  Admin Dashboard
+  <!--todo revisit in april for all the ngIf april-->
+  <mat-icon *ngIf="april" class="more-menu" matTooltip="More filter options" [matMenuTriggerFor]="menu">more_horiz</mat-icon>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="reloadMap(); chartData = statusChartData; chartLabels = statusChartLabels">Status</button>
+    <button mat-menu-item (click)="reloadMap(); chartData = ratingChartData; chartLabels = ratingChartLabels">Rating</button>
+    <button mat-menu-item (click)="reloadMap(); chartData = statusChartData; chartLabels = statusChartLabels">Department</button>
+    <button mat-menu-item (click)="reloadMap(); chartData = typeChartData; chartLabels = typeChartLabels">Type</button>
+  </mat-menu>
+
+</div>
+<div *ngIf="!summaryReceived" class="row">
+  <mat-spinner class="centered md-12 sl-mt20"></mat-spinner>
+</div>
+<div *ngIf="summaryReceived">
+    <div class="row parentcard sl-mb10 sl-ml0">
+      <ng-container class="" *ngFor="let data of assessmentSummary; let i = index" label="ACM Rating">
+        <custom-mat-card [data]="data" (filterEmitter)="quickCardFilter($event)"></custom-mat-card>
+      </ng-container>
+    </div>
+
+  <!-- todo enable dateFilterEnable whenever ready for date filter-->
+  <div class="filter" *ngIf="dateFilterEnable" [ngClass]="{'dateFilter': showFilter}">
+    <button class="filter-icon" matTooltip="Date filter" (click)="showFilter = !showFilter">
+      <img src="../../assets/img/Filter.svg"/>
+    </button>
+    <div class="filterBody">
+      The filter will apply on Required Resolution Date and Exception End Date.
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!--Graphs-->
+  <mat-accordion *ngIf="april">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Graphical representation
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row sl-m0">
+        <!--<div class="col-md-4 sl-border sl-white-background">-->
+          <!--<ng-container  *ngIf="tabsDataReceived; else spinner">-->
+            <!--<span><b>SA State</b></span>-->
+            <!--<canvas baseChart-->
+                    <!--[data]="chartData"-->
+                    <!--[labels]="chartLabels"-->
+                    <!--[chartType]="pieChartType"-->
+                    <!--(chartHover)="chartHovered($event)"-->
+                    <!--(chartClick)="chartClicked($event, 'state')"></canvas>-->
+          <!--</ng-container>-->
+          <!--<ng-template #spinner><mat-spinner class="centered"></mat-spinner></ng-template>-->
+        <!--</div>-->
+        <div class="col-md-4 sl-border sl-white-background">
+          <span><b>State VS Time</b></span>
+          <canvas baseChart
+                  [datasets]="lineChartData"
+                  [labels]="alineChartLabels"
+                  [chartType]="alineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        <div class="col-md-4 sl-border sl-white-background">
+          <span><b>Number of SA VS Rating VS Time</b></span>
+          <canvas baseChart
+                  [datasets]="lineChartData"
+                  [labels]="alineChartLabels"
+                  [chartType]="'radar'"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+          <button href="#target1" (click)="randomize()">Randomize</button>
+          <button (click)="randomizeType()" style="display: inline-block">Toggle</button>
+          <button (click)="pieChartType = 'bar'" style="display: inline-block">Bar</button>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div class="row" id="table">
+  <div *ngIf="tableDataReceived" class="col-md-12 sl-border sl-white-background sl-pt15 sl-pb15">
+    <table class="table table-responsive table-condensed">
+      <tr>
+        <th *ngFor="let obj of tableLabels">{{obj?.label}}</th>
+      </tr>
+      <ng-container *ngFor="let assessment of myDataSource?.data  |
+                      slice:((paginationDetail?.getValue()?.pageIndex * paginationDetail.getValue()?.pageSize) || 0): (((paginationDetail?.getValue().pageIndex * paginationDetail?.getValue()?.pageSize) + paginationDetail.getValue()?.pageSize) || 10); trackBy:saId">
+        <tr>
+          <td *ngFor="let obj of tableLabels; let j=index">
+            <span class="sl-flex">
+              <div *ngIf="assessment.statusId !== 1  && j === 0">
+                <mat-icon class="material-icons md-24" (click)="showMoreDetails(assessment)" *ngIf="(!assessment.isEditing || !(this.selectedRow === assessment.id))">keyboard_arrow_down</mat-icon>
+                <mat-icon class="material-icons md-24" (click)="cancelEdit(assessment)" *ngIf="assessment.isEditing && (this.selectedRow === assessment.id)">keyboard_arrow_up</mat-icon>
+              </div>
+              <ng-container *ngIf="obj.columnName !== 'releaseDate'; else elseBlock">
+                {{assessment && assessment[obj.columnName] || '--'}}
+              </ng-container>
+              <ng-template #elseBlock>
+                {{ assessment[obj.columnName]  | date:'MM-dd-yyyy' || 'N/A'}}
+              </ng-template>
+            </span>
+          </td>
+          <!--<td *ngIf="obj?.columnName === 'releaseDate'"></td>-->
+        </tr>
+        <tr class="moreDetails" style="pointer-events: none" *ngIf="assessment.isEditing && (this.selectedRow === assessment.id)">
+          <td colspan="7">
+            <div *ngIf="stillloadingInner" class="loading">
+              <mat-spinner class="centered md-12"></mat-spinner>
+              <h4>Loading ...</h4>
+            </div>
+            <div *ngIf="norecordsInner" class="norecords-tile">
+              <div class="start-new-btn" (click)="openDialog('SA')"><button mat-mini-fab><mat-icon class="whiteFont">add</mat-icon></button></div>
+              <h4>None submitted. Click to begin</h4>
+            </div>
+            <div *ngIf="recordsErrInner" class="err-msg">
+              <mat-icon class="centered">error</mat-icon>
+              <div class="clearfix"></div>
+              <h4>Error accessing the records</h4>
+            </div>
+
+            <div class="row" *ngIf="moreDetails">
+              <div *ngIf="moreDetails?.requestorName" class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
+                <p><b>Requester Name</b>:  {{moreDetails?.requestorName}}</p>
+              </div>
+              <div *ngIf="moreDetails?.requestorRegion" class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
+                <p><b>Requester Region</b>:  {{moreDetails?.requestorRegion}}</p>
+              </div>
+              <div class="form-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <p><b>Release Description</b>:  {{moreDetails?.releaseDescription}}</p>
+              </div>
+              <table *ngIf="moreDetails.assessmentDOs.length > 0" class="table small-table">
+                <thead>
+                <tr class="tbodyTrRow">
+                  <th>Engagement</th>
+                  <th>Assignee</th>
+                  <th>Status Message</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tbodyTrRow" *ngFor="let x of moreDetails.assessmentDOs">
+                  <td class="column leftAlignedColumn">{{x.assessment}}</td>
+                  <td class="column leftAlignedColumn">{{sharedService.getUser(x?.assigneeUserId)}}</td>
+                  <td class="column leftAlignedColumn">{{sharedService.getStatus(x?.statusId)}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+
+    </table>
+    <mat-paginator class="sl-border sl-mt15 sl-pr25" #paginator
+                   (page)="getUpdate($event)"
+                   [length]=" myDataSource?.filteredData?.length || myDataSource?.data?.length"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </div>
+  <div *ngIf="!tableDataReceived && summaryReceived" class=" col-md-12 ">
+    <mat-spinner class="centered sl-mt20"></mat-spinner>
+  </div>
+</div>

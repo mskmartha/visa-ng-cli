@@ -1,0 +1,77 @@
+@mixin simple-layout-theme($theme) {
+    
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: mat-color($mat-red, 500); 
+
+ 
+    app-user .user-container {
+        
+        .mat-input-underline .mat-input-ripple.mat-warn {
+            background-color: $warn; 
+        }
+
+        .full-page-background {
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            display: block;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center center;
+            opacity: .6;
+        }
+        
+        background-color: mat-color($mat-grey, 300); 
+
+        .user-card {
+            z-index: 2;
+            .mat-card-header {
+                margin: -8px 0 20px;
+                .mat-icon {
+                        font-size: 48px;
+                        width: 48px;
+                        height: 48px;
+                        color: mat-color($primary, 300); 
+                    }
+            }
+            .mat-card-content {
+                color: mat-color($mat-grey, 700); 
+                .mat-hint {
+                     color: mat-color($mat-red, 500); 
+                }
+            }
+
+            .mat-card-actions {
+                margin-left: 0px;
+                margin-right: 0px;
+                padding: 0 0 8px;
+                .login-button {
+                    width: 100%;
+                }
+            }
+   
+
+            .mat-card-footer {
+                .link-button {
+                    
+                    text-transform: uppercase;
+                    min-width: 88px;
+                    line-height: 36px;
+                    padding: 0 16px;
+                    color: mat-color($primary, 300); 
+                    font-size: 12px;
+                    font-weight: 400;
+                    &:hover {
+                        color: mat-color($primary, 500); 
+                    }
+                }
+              
+            }
+        }
+    }
+
+    
+}

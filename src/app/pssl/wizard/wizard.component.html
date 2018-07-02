@@ -1,0 +1,89 @@
+<div *ngIf="askCAMR">
+  <form [formGroup]="camrForm" novalidate class="sl-pl15">
+    <mat-dialog-content>
+      <div class="form-group">
+        <app-autocomplete [isViewDisabled]="false" [placeholder]="'Search CAMR by name or ID'" [autocomplete]="autocompleteConfig" (eventEmit)="autocompleteEvent($event)"></app-autocomplete>
+        <!--{{camrForm.value | json}}-->
+      </div>
+    </mat-dialog-content>
+
+    <mat-card-actions align="end">
+      <span (mouseenter)="mouseoverActionButton=true" (mouseleave)="mouseoverActionButton=false">
+        <button mat-raised-button type="button" color="primary" class="cta-1" (click)="camrForm.valid ? saveCAMR(camrForm.valid) : invalidSubmitError()">Next</button>
+      </span>
+    </mat-card-actions>
+  </form>
+</div>
+
+<div *ngIf="modalStepper">
+  <div *ngIf="validAction;else elseBlock">
+    <mat-horizontal-stepper *ngIf="validAction" [linear]="isLinear" #stepper="matHorizontalStepper" [selectedIndex]="this.selectedIndex" (selectionChange)="selectionChange($event)">
+      <mat-step *ngIf="intakeStep" [completed]="false">
+        <ng-template matStepLabel>SA Intake</ng-template>
+        <div *ngIf="SAIntakeTabLoaded; then saIntakeThenBlock; else saElseBlock"> </div>
+      </mat-step>
+      <mat-step *ngIf="scopingStep" [completed]="false">
+        <ng-template matStepLabel>SA Scoping</ng-template>
+        <div *ngIf="SAScopingTabLoaded; then saScopingThenBlock; else saElseBlock"> </div>
+      </mat-step>
+      <mat-step *ngIf="triageStep" [completed]="false">
+        <ng-template matStepLabel>SA Triage</ng-template>
+
+        <ng-template *ngIf="model.data.actionId === 1" [ngTemplateOutlet]="newQns"></ng-template>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <ng-template [ngTemplateOutlet]="newQns"></ng-template>
+</ng-template>
+
+<ng-template #newQns>
+  <div class="qns-window"><app-multistep-wiz *ngIf="qnsMeta" [qnsMeta]="qnsMeta" [injectData]="injectData" (stepEvent)="submitQns($event)"></app-multistep-wiz></div>
+</ng-template>
+
+<ng-template #loadingBlock>
+  <div class="submit-spinner">
+    <mat-spinner class="centered"></mat-spinner>
+    <h4>Processing...</h4>
+  </div>
+</ng-template>
+
+<ng-template #errorBlock>
+  <div class="submit-screen">
+    <img src="assets/img/error-circle.svg"/>
+    <h5>Something went wrong</h5>
+    <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain();">Try Again</button>
+  </div>
+</ng-template>
+
+<ng-template #saIntakeBlock>
+  <div class="qns-window"><app-multistep-wiz *ngIf="SAIntakeQnsMeta" [qnsMeta]="SAIntakeQnsMeta" [injectData]="injectSAIntakeData"></app-multistep-wiz></div>
+</ng-template>
+
+<ng-template #saScopingBlock>
+  <ng-template *ngIf="model.data.actionId === 20" [ngTemplateOutlet]="newQns"></ng-template>
+  <div *ngIf="model.data.actionId === 1" class="qns-window"><app-multistep-wiz *ngIf="SAScopingQnsMeta" [qnsMeta]="SAScopingQnsMeta" [injectData]="injectSAScopingData"></app-multistep-wiz></div>
+</ng-template>
+
+<div *ngIf="submitSASucess">
+  <div class="submit-screen">
+    <img src="assets/img/ic-check-circle.svg"/>
+    <h5>Submitted <b>{{saIdSubmitted}}</b></h5>
+  </div>
+</div>
+
+<div *ngIf="errOnSubmit">
+  <div class="submit-screen">
+    <img src="assets/img/error-circle.svg"/>
+    <h5>Something went wrong</h5>
+    <button mat-raised-button type="submit" color="primary" class="cta-1" (click)="tryAgain(model.data.formId);">Try Again</button>
+  </div>
+</div>
+<div *ngIf="showProgess">
+  <div class="submit-spinner">
+    <mat-spinner class="centered"></mat-spinner>
+    <h4>Processing...</h4>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+@mixin notifications-theme($theme) {
+    
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+
+     .snackbar {
+        background-color: mat-color($primary, 300);
+        height: 100%;
+        .mat-list {
+            .mat-list-item-content {
+                color: #fff;
+            }
+        }
+    }
+
+    .snackbar.success {
+        background-color: #4CAF50;
+        height: 100%;
+        color: #FFF;
+    }
+
+    .snackbar.danger {
+        background-color: #E91E63;
+        height: 100%;
+        color: #FFF;
+    }
+
+    .snackbar.primary {
+        background-color: mat-color($primary, 500);
+        height: 100%;
+        color: #FFF;
+    }
+
+    .snackbar.info {
+        background-color: #00bcd4;
+        height: 100%;
+        color: #FFF;
+    }
+
+    .snackbar.warning {
+        background-color: #FF9800;
+        height: 100%;
+        color: #FFF;
+    }
+
+    .alert {
+        border: 0;
+        position: relative;
+        padding: 20px 15px;
+        line-height: 20px;
+        .close {
+            outline: 0;
+            font-size: 18px;
+            color: #fff;
+            position: relative;
+            top: -13px;
+            right: -1.25rem;
+            padding: 0.75rem 1.25rem;
+            color: inherit;
+        }
+    }
+
+    .alert.alert-primary {
+        background-color: mat-color($primary, 500);
+        color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 
+        0 4px 20px 0px rgba(0, 0, 0, 0.14), 
+        0 7px 10px -5px rgba(mat-color($primary, 500), 0.4);
+    }
+
+    .alert.alert-info {
+        background-color: #00bcd4;
+        color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 
+        0 4px 20px 0px rgba(0, 0, 0, 0.14), 
+        0 7px 10px -5px rgba(0, 188, 212, 0.4);
+    }
+
+    .alert.alert-success {
+        background-color: #4CAF50;
+        color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 
+        0 7px 10px -5px rgba(76, 175, 80, 0.4)
+    }
+
+    .alert.alert-warning {
+        background-color: #FF9800;
+        color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 
+        0 4px 20px 0px rgba(0, 0, 0, 0.14), 
+        0 7px 10px -5px rgba(255, 152, 0, 0.4);
+    }
+    .alert.alert-danger {
+        background-color: #E91E63;
+        color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 
+        0 4px 20px 0px rgba(0, 0, 0, 0.14), 
+        0 7px 10px -5px rgba(233, 30, 99, 0.4);
+    }
+
+
+}
